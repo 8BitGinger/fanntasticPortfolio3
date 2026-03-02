@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import profilePic from '../assets/pictures/profile-standard.png';
+import profilePic from '../assets/pictures/profile-standard.webp';
 
 // 1. Widened 'x' gaps for bigger hitboxes, and added a 'y' drop for a perfect arc
 const genres = [
@@ -75,7 +75,7 @@ export default function CassetteSelector() {
             >
               <div className="tape-container">
                 <img 
-                  src={`/images/tape-${g.id}.png`} 
+                  src={`/images/tape-${g.id}.webp`} 
                   alt={g.label}
                   className="tape-image"
                 />

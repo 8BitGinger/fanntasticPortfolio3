@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { FaHamburger, FaTimes } from 'react-icons/fa'; 
 import '../assets/styles/navbar.css'; 
-import navbarIcon from '../assets/pictures/navbarIcon.png'; 
+import navbarIcon from '../assets/pictures/navbarIcon.webp'; 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

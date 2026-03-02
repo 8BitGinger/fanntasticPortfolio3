@@ -58,6 +58,7 @@ function MarqueeSection({ section }) {
               ease: "linear",
             },
           }}
+          
           // If we pause, we don't want it to "snap" back to 0, 
           // but for now, this is the most stable Framer approach.
           style={{ display: 'flex', width: 'max-content' }}

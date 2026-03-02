@@ -10,51 +10,51 @@ const themeData = {
     title: "8 Bit Rebel",
     subtitle: "Ryan '8BitGinger' Fann",
     text: "I build things that break the mold. With a passion for heavy riffs and even heavier code, I specialize in creating custom OBS tools and web sites that punch through the noise to tell a story. When I'm not writing functions, I'm probably writing campaigns.",
-    image: "/images/profile-rock.png", // Replace with your actual image path later
-    background: "/images/rock-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-rock.webp", // Replace with your actual image path later
+    background: "/images/rock-background.webp" // Optional: A themed background for the about page
   },
   jazz: {
     title: "8Bit Architect",
     subtitle: "Ryan '8BitGinger' Fann",
     text: "Welcome to the late-night lounge. I approach coding like improvisation—finding the perfect rhythm and elegant solutions to complex problems. I specialize in creating seamless user experiences and intuitive interfaces.",
-    image: "/images/profile-jazz.png",
-    background: "/images/jazz-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-jazz.webp",
+    background: "/images/jazz-background.webp" // Optional: A themed background for the about page
   },
   // We will fill these in as we go!
   pop: { 
     title: "8Bit Visionary", 
     subtitle: "Ryan '8BitGinger' Fann",
     text: "I believe code should be as catchy as a top-40 hit and as polished as a neon skyline. I specialize in building vibrant OBS tools, engaging TTRPG experiences, and web sites that absolutely pop off the screen. For me, development isn't just about pure function—it's about creating joyful, frictionless experiences that your community will love.", 
-    image: "/images/profile-pop.png",
-    background: "/images/pop-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-pop.webp",
+    background: "/images/pop-background.webp" // Optional: A themed background for the about page
   },
   cinematic: { 
     title: "8Bit World Builder", 
     subtitle: "Ryan '8BitGinger' Fann",
     text: "Every unforgettable campaign starts with a spark of imagination, and every great application requires a masterful narrative. I specialize in weaving code and creativity together to build immersive TTRPG worlds and powerful, stream-enhancing OBS tools. Whether I'm orchestrating a sprawling tabletop setting or architecting a seamless backend, my goal is to make every interaction feel truly epic.", 
-    image: "/images/profile-cinematic.png",
-    background: "/images/cinematic-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-cinematic.webp",
+    background: "/images/cinematic-background.webp" // Optional: A themed background for the about page
   },
   rap: { 
     title: "8Bit Flow-Master", 
     subtitle: "Ryan '8BitGinger' Fann",
     text: "In development, just like on the mic, it's all about the hustle and the flow. I engineer custom OBS tools, dynamic web apps, and raw TTRPG experiences that never skip a beat. Whether I'm dropping high-performance code, building out a fresh campaign, or optimizing a stream's setup, I bring relentless energy and street-level authenticity to every project I touch.", 
-    image: "/images/profile-rap.png",
-      background: "/images/rap-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-rap.webp",
+      background: "/images/rap-background.webp" // Optional: A themed background for the about page
   },
   country: { 
     title: "8Bit Campfire Storyteller", 
     subtitle: "Ryan '8BitGinger' Fann",
     text: "Just like a classic country ballad, the best applications and tabletop games are built on honest, compelling storytelling. I handcraft solid websites, reliable OBS tools and weave rich TTRPG campaigns that bring people together around the virtual campfire. I believe in hard work, strong foundations, and writing code that stands the test of time.", 
-    image: "/images/profile-country.png",
-    background: "/images/country-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-country.webp",
+    background: "/images/country-background.webp" // Optional: A themed background for the about page
   },
   lofi: { 
     title: "8Bit Midnight Coder", 
     subtitle: "Ryan '8BitGinger' Fann",
     text: "There is a certain kind of magic that happens at 2 AM with a hot coffee and a steady, ambient beat. I specialize in deep-focus development, quietly crafting visual story-based websites, seamless OBS tools and vast TTRPG worlds while the rest of the world sleeps. My approach is all about creating a relaxed, intuitive user experience—building software.", 
-    image: "/images/profile-lofi.png",
-    background: "/images/lofi-background.png" // Optional: A themed background for the about page
+    image: "/images/profile-lofi.webp",
+    background: "/images/lofi-background.webp" // Optional: A themed background for the about page
   },
 };
 
