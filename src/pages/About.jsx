@@ -20,7 +20,6 @@ const themeData = {
     image: "/images/profile-jazz.webp",
     background: "/images/jazz-background.webp" // Optional: A themed background for the about page
   },
-  // We will fill these in as we go!
   pop: { 
     title: "8Bit Visionary", 
     subtitle: "Ryan '8BitGinger' Fann",
