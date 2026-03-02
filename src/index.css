@@ -27,6 +27,7 @@ body {
   width: 100%;
   height: 100vh;
   max-height: calc(100vh - 40px); /* Account for margins */
+  isolation: isolate;
 }
 
 .loading-text {
@@ -45,6 +46,27 @@ body {
 .link:hover {
   text-decoration: underline;
   color: #c9531c;
+}
+
+/* Update this in Navbar, About, and Contact wrappers */
+.navbar, .about-wrapper, .contact-wrapper, .projects-wrapper {
+  background: rgba(70, 69, 69, 0.192); /* Keep it very transparent */
+  
+  /* 1. The Standard */
+  backdrop-filter: blur(16px);
+  
+  /* 2. The Safari/iOS Fix (The missing piece!) */
+  -webkit-backdrop-filter: blur(16px); 
+  
+  /* 3. The Performance Guard */
+  transform: translateZ(0); 
+  will-change: backdrop-filter;
+}
+
+.navbar{
+  background: rgba(9, 9, 11, 0.8); /* A bit darker for the navbar */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* =========================================
