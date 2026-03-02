@@ -238,6 +238,7 @@ body {
 
   .selector-page {
     padding-top: 2rem;
+    background: transparent;
   }
 
   .title {
