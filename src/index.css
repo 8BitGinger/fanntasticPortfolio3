@@ -104,9 +104,9 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6); /* Slightly darker for better text contrast */
+  background: rgba(0, 0, 0, 0.3); /* Slightly darker for better text contrast */
   /* Sits directly on top of the video but under the content */
-  z-index: 1; 
+  z-index: -1; 
 }
 
 /* Content Layout */
@@ -139,8 +139,9 @@ html, body {
 .title2 {
   font-size: 3rem !important; /* 40px */
   opacity: 0.9;
-  margin-top: 1.5rem;
+  margin-top: 2.5rem;
   background: linear-gradient(to right, #08d5e4, #1c67c9);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
@@ -223,12 +224,14 @@ html, body {
     font-size: 3rem; /* 48px */
     margin-bottom: 5rem;
   }
+  
 
   .logo {
 
-      width: 280px;
-    height: 280px;
+      width: 260px;
+    height: 260px;
     margin-top: 20px;
+    margin-bottom: -20px;
   }
   
   .ghost-wrapper {
@@ -242,19 +245,19 @@ html, body {
   }
 
   .title {
-    font-size: 3rem; /* 48px */
-    margin-bottom: 2rem;
+    font-size: 2.5rem; /* 48px */
+    margin-bottom: 0;
   }
 
   .title2 {
     font-size: 5rem !important; /* 56px */
     position: fixed;
-    bottom: 20%;
+    bottom: 10%;
     left: 50%;
     right: auto;
     
     transform: translate(-50%, 50%);
-    margin-top: 5rem;
+    
   }
 
   .subtitle {
