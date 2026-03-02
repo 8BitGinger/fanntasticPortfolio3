@@ -8,7 +8,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  if (location.pathname === '/') return null;
+  // if (location.pathname === '/') return null;
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
