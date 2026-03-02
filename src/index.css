@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: transparent !important;
   padding-top: 5rem;
 }
 
@@ -238,7 +238,7 @@ body {
 
   .selector-page {
     padding-top: 2rem;
-    background: transparent;
+    background: transparent !important;
   }
 
   .title {
