@@ -7,15 +7,16 @@
 /* =========================================
    Global Resets & App Shell
    ========================================= */
-* { 
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   /* We remove the background color from here so it doesn't block the video */
-  background-color: transparent; 
+  background-color: transparent;
   color: white;
   overflow-x: hidden;
   min-height: 100vh;
@@ -25,7 +26,7 @@ html, body {
   width: 100%;
   min-height: 100vh;
   /* This ensures our content stays above the fixed video */
-  position: relative; 
+  position: relative;
   z-index: 1;
   background-color: var(--bg-dark); /* Fallback color lives here now */
 }
@@ -49,27 +50,27 @@ html, body {
 }
 
 /* Update this in Navbar, About, and Contact wrappers */
-.navbar, .contact-wrapper, .projects-wrapper {
+.navbar,
+.contact-wrapper,
+.projects-wrapper {
   background: rgba(70, 69, 69, 0.192); /* Keep it very transparent */
-  
+
   /* 1. The Standard */
   backdrop-filter: blur(16px);
-  
+
   /* 2. The Safari/iOS Fix (The missing piece!) */
-  -webkit-backdrop-filter: blur(16px); 
-  
+  -webkit-backdrop-filter: blur(16px);
+
   /* 3. The Performance Guard */
-  transform: translateZ(0); 
+  transform: translateZ(0);
   will-change: backdrop-filter;
 }
 
-.navbar{
+.navbar {
   background: rgba(9, 9, 11, 0.9); /* A bit darker for the navbar */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
-
-
 
 /* =========================================
    Cassette Selector Page
@@ -83,7 +84,7 @@ html, body {
   align-items: center;
   justify-content: center;
   /* Content z-index must be higher than video/overlay (0 and 1) */
-  z-index: 10; 
+  z-index: 10;
   background: transparent !important;
 }
 
@@ -106,7 +107,7 @@ html, body {
   height: 100vh;
   background: rgba(0, 0, 0, 0.3); /* Slightly darker for better text contrast */
   /* Sits directly on top of the video but under the content */
-  z-index: -1; 
+  z-index: -1;
 }
 
 /* Content Layout */
@@ -127,13 +128,11 @@ html, body {
   letter-spacing: 0.1em;
   opacity: 0.7;
   margin-bottom: 2rem;
-  
+
   filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.767));
   font-family: 'Rock Salt', cursive;
   -webkit-text-stroke: 2px rgba(10, 216, 231, 0.349);
   transform: rotate(-13deg);
-  animation: float 3s ease-in-out infinite;
-
 }
 
 .title2 {
@@ -146,10 +145,10 @@ html, body {
   -webkit-text-fill-color: transparent;
 
   filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.9));
-  font-family: "Corinthia", cursive;
+  font-family: 'Corinthia', cursive;
   font-weight: 400;
   font-style: normal;
-  
+
   -webkit-text-stroke: 2px rgba(251, 252, 252, 0.7);
 }
 
@@ -182,35 +181,41 @@ html, body {
 }
 
 .logo {
-    position: fixed;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 2px solid rgba(7, 129, 138, 0.384);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    z-index: 20;
-    z-index: 0;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid rgba(7, 129, 138, 0.384);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  z-index: 0;
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes pulse {
-  0%, 100% {
-    transform: scale(1) ;
+  0%,
+  100% {
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.1) ;
+    transform: scale(1.1);
   }
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1) rotate(-13deg);
   }
   50% {
@@ -224,16 +229,14 @@ html, body {
     font-size: 3rem; /* 48px */
     margin-bottom: 5rem;
   }
-  
 
   .logo {
-
-      width: 260px;
+    width: 260px;
     height: 260px;
     margin-top: 20px;
     margin-bottom: -20px;
   }
-  
+
   .ghost-wrapper {
     width: 324px; /* Desktop width */
     height: 214px; /* Desktop height */
@@ -255,16 +258,12 @@ html, body {
     bottom: 10%;
     left: 50%;
     right: auto;
-    
+
     transform: translate(-50%, 50%);
-    
   }
 
   .subtitle {
     font-size: 1.5rem;
     margin-top: -1rem;
   }
-
-  
 }
-
