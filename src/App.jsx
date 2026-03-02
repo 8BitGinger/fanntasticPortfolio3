@@ -2,7 +2,9 @@ import { Routes, Route, useLocation } from 'react-router-dom'; // <-- 1. Import 
 import { useState, useRef, useEffect } from 'react';
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
-import About from './pages/About'; // <-- Import the new page!
+import About from './pages/About'; 
+import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 
 function App() {
   const [theme, setTheme] = useState('default'); // Start blank!
@@ -60,8 +62,8 @@ function App() {
       {/* Pass the theme state into the About component */}
       <Route path="/about" element={<About theme={theme} />} />
       
-      <Route path="/projects" element={<div className="loading-text" style={{paddingTop: '100px'}}>Projects Page</div>} />
-      <Route path="/contact" element={<div className="loading-text" style={{paddingTop: '100px'}}>Contact Page</div>} />
+      <Route path="/projects" element={<Projects theme={theme} />} />
+      <Route path="/contact" element={<Contact theme={theme} />} />
     </Routes>
   </div>
     </div>

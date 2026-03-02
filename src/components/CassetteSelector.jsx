@@ -83,6 +83,7 @@ export default function CassetteSelector() {
             </motion.div>
           ))}
         </div>
+        <h2 className="title2">Ryan J. Fann</h2>
       </div>
     </div>
   );

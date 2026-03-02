@@ -14,7 +14,10 @@
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+    font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400; /* Use 300 for a sleeker, lighter tech look, or 400 for standard readability */
+  font-size: 1.2rem;
+  line-height: 1.4;
   background-color: var(--bg-dark);
   color: white;
   overflow-x: hidden; /* Prevent horizontal scrolling */
@@ -50,33 +53,35 @@ body {
 .selector-page {
   position: relative;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: var(--bg-dark);
+  background: transparent;
+  padding-top: 5rem;
 }
 
 /* Video Background */
 .video-bg {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  width: 100%;
-  height: 100%;
+  position: fixed; /* This is the magic fix */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
-  opacity: 0.5;
-  z-index: 0;
-  pointer-events: none;
+  z-index: -2; /* Sit behind everything */
 }
 
 .video-overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 0;
-  pointer-events: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
+  z-index: -1; /* Sit between video and content */
 }
 
 /* Content Layout */
@@ -86,7 +91,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  width: 100vw;
+  margin: 0 auto;
 }
 
 .title {
@@ -94,15 +100,31 @@ body {
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  opacity: 0.9;
+  opacity: 0.7;
   margin-bottom: 2rem;
-  margin-left: 15px;
+  
   filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.767));
   font-family: 'Rock Salt', cursive;
   -webkit-text-stroke: 2px rgba(10, 216, 231, 0.349);
   transform: rotate(-13deg);
       animation: pulse 2s infinite;
 
+}
+
+.title2 {
+  font-size: 1.9rem; /* 30px */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.9;
+  margin-top: 3rem;
+  background: linear-gradient(to right, #08d5e4, #1c67c9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.9));
+  font-family: 'Oswald', sans-serif;
+  -webkit-text-stroke: 2px rgba(251, 252, 252, 0.7);
 }
 
 /* The Ghost Wrapper defines the size of the tape.
@@ -169,7 +191,7 @@ body {
   }
 
   .logo {
-    margin-left: -40px;
+
       width: 300px;
     height: 300px;
   }
@@ -179,9 +201,34 @@ body {
     height: 214px; /* Desktop height */
   }
 
-  .content-wrapper {
-    
-    margin-left: -80px;
+  .selector-page {
+    padding-top: 2rem;
   }
+
+  .title {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 2rem;
+  }
+
+  .title2 {
+    font-size: 3.5rem; /* 48px */
+    position: fixed;
+    bottom : 10%;
+    left: 50%;
+    right: auto;
+    
+    transform: translate(-50%, 50%);
+    margin-top: 5rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-top: -1rem;
+  }
+
   
+}
+
+@media (min-width: 1024px) {
+ 
 }

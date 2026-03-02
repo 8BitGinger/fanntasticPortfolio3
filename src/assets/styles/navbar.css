@@ -124,6 +124,14 @@ a {
   transform: scaleX(1);
 }
 
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: rgba(25, 231, 238, 0.8);
+  cursor: pointer;
+  z-index: 1001;
+}
+
 @media screen and (max-width: 768px) {
   .nav-links {
     gap: 1rem;
@@ -143,4 +151,52 @@ a {
     height: 48px;
   }
   
+
+
+.menu-icon {
+  display: none;
+  font-size: 1.8rem;
+  color: rgba(25, 231, 238, 0.8);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+
+  .menu-icon {
+    display: block; /* Show hamburger on mobile */
+  }
+
+  .nav-links {
+    /* Transform nav-links into a full-screen overlay */
+    position: fixed;
+    top: 70px; /* Right below the navbar shell */
+    right: -100%; 
+    width: 100%;
+    height: calc(100vh - 70px);
+    background: rgba(9, 9, 11, 0.95); /* Matches your navbar color but more opaque */
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    transition: right 0.4s ease-in-out;
+  }
+
+  .nav-links.active {
+    right: 0; /* Slide in the menu */
+  }
+
+  .nav-item {
+    font-size: 1.5rem; /* Larger text for mobile taps */
+  }
+
+  .nav-title {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .nav-logo img {
+    width: 48px;
+    height: 48px;
+  }
 }

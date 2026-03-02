@@ -73,11 +73,21 @@
   
 }
 
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+ 
+}
+
 .about-paragraph {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: rgba(255, 255, 255, 0.85);
+
   margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400; /* Use 300 for a sleeker, lighter tech look, or 400 for standard readability */
+  font-size: 1.2rem;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .rock {
@@ -85,6 +95,8 @@
     font-family: 'Rock Salt', cursive;
     font-weight: 900 !important;
 }
+
+
 
 .jazz {
     color: rgb(136, 117, 109);
@@ -113,7 +125,16 @@
 
 .lofi {
     color: rgb(88, 61, 184);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Changa One', sans-serif;
+}
+
+.subtitle {
+    font-size: 1rem;
+    font-weight: 300;
+    color: #08d5e4a8;
+    margin-bottom: 0;
+    text-shadow: 0 2px 5px rgba(8, 213, 228, 0.5);
+  font-style: italic;
 }
 
 @keyframes fadeIn {
@@ -124,7 +145,7 @@
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .about-title { font-size: 1.5rem; margin: 0; }
-  .profile-image-container { width: 200px; height: 200px; }
+  .profile-image-container { width: 150px; height: 150px; }
   .about-paragraph { font-size: 0.8rem; }
     .about-wrapper { width: calc(100vw - 40px); 
    padding-top: 120px; /* Adjust for smaller screens */
