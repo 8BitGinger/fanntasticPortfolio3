@@ -1,0 +1,133 @@
+/* src/components/About.css */
+
+.about-wrapper {
+  /* The viewport is 100vh/100vw. 
+    Subtracting 40px accounts for the 20px margin on BOTH sides (top/bottom, left/right).
+  */
+  width: calc(100vw - 50px);
+  max-width: 900px;
+  height: fit-content;
+  max-height: 80vh; /* Account for margins */
+  margin: auto;
+  padding: 20px;
+  padding-top: 130px; /* Push content down so it doesn't collide with the 70px fixed Navbar */
+  /* The Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(7, 129, 138, 0.384);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  
+  /* Inner Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Push content down so it doesn't collide with the 70px fixed Navbar */
+
+    /* Prevent scrolling inside the box unless the text gets too long on mobile */
+  overflow-y: auto;
+  position: relative;
+  z-index: 10;
+}
+
+/* Content Styling */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 800px;
+  gap: 2rem;
+  
+  /* A smooth fade-in animation every time the page loads */
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.profile-image-container {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: -20px;
+  margin-top: -40px;
+  border: 3px solid rgba(7, 129, 138, 0.384);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-title {
+  font-size: 2.3rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  
+}
+
+.about-paragraph {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.rock {
+    color: red;
+    font-family: 'Rock Salt', cursive;
+    font-weight: 900 !important;
+}
+
+.jazz {
+    color: rgb(136, 117, 109);
+    font-family: 'Limelight', display;
+}
+
+.cinematic {
+    color: rgb(209, 196, 79);
+  font-family: 'Bona Nova', serif;
+}
+
+.pop {
+    color: rgb(255, 20, 147);
+    font-family: 'Bungee Shade', cursive;
+}
+
+.rap {
+    color: rgb(42, 161, 18);
+    font-family: 'Permanent Marker', cursive;
+}
+
+.country {
+    color: rgb(153, 115, 61);
+    font-family: 'Special Elite', system-ui;
+}
+
+.lofi {
+    color: rgb(88, 61, 184);
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .about-title { font-size: 1.5rem; margin: 0; }
+  .profile-image-container { width: 200px; height: 200px; }
+  .about-paragraph { font-size: 0.8rem; }
+    .about-wrapper { width: calc(100vw - 40px); 
+   padding-top: 120px; /* Adjust for smaller screens */
+    max-height: 95vh;}
+
+}
