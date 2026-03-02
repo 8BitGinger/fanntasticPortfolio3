@@ -7,11 +7,11 @@
 /* =========================================
    Global Resets & App Shell
    ========================================= */
-* {
+* { 
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
+  box-sizing: border-box;
 }
 
 body {
@@ -132,7 +132,7 @@ body {
   font-family: 'Rock Salt', cursive;
   -webkit-text-stroke: 2px rgba(10, 216, 231, 0.349);
   transform: rotate(-13deg);
-      animation: pulse 2s infinite;
+  animation: float 3s ease-in-out infinite;
 
 }
 
@@ -201,6 +201,15 @@ body {
 
 @keyframes pulse {
   0%, 100% {
+    transform: scale(1) ;
+  }
+  50% {
+    transform: scale(1.1) ;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
     transform: scale(1) rotate(-13deg);
   }
   50% {
@@ -217,8 +226,9 @@ body {
 
   .logo {
 
-      width: 300px;
-    height: 300px;
+      width: 280px;
+    height: 280px;
+    margin-top: 20px;
   }
   
   .ghost-wrapper {
@@ -254,6 +264,3 @@ body {
   
 }
 
-@media (min-width: 1024px) {
- 
-}

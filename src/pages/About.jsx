@@ -63,11 +63,12 @@ export default function About({ theme }) {
   const content = themeData[theme] || themeData['jazz'];
 
   return (
-    <motion.div className="about-wrapper"
+    <>
+    <motion.div className={`about-wrapper wrapper-${theme}`}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.4 }}
     >
       <div className="about-content">
         <img src={content.background} alt={`${content.title} background`} className="about-background" />
@@ -88,5 +89,9 @@ export default function About({ theme }) {
         <Link to="/" className="link">Switch Tapes?</Link>
       </div>
     </motion.div>
+
+    
+
+    </>
   );
 }

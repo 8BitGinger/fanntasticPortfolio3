@@ -14,14 +14,14 @@
   
    /* Push content down so it doesn't collide with the 70px fixed Navbar */
   /* The Glassmorphism Effect */
-  background: rgb(12, 12, 12);
+  background: rgba(12, 12, 12, 0.8);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(7, 129, 138, 0.384);
+  border-bottom: 2px solid rgba(166, 185, 187, 0.274);
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
   border-top: 0;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 40px 8px rgba(0, 0, 0, 0.7);
     overflow: hidden;
   /* Inner Layout */
   display: flex;
@@ -35,6 +35,34 @@
   
   position: relative;
   z-index: 10;
+}
+
+.wrapper-rock {
+  border-bottom: 2px solid rgba(255, 0, 0, 0.7);
+}
+
+.wrapper-jazz {
+  border-bottom: 2px solid rgba(136, 117, 109, 0.7);
+}
+
+.wrapper-cinematic {
+  border-bottom: 2px solid rgba(209, 196, 79, 0.7);
+}
+
+.wrapper-pop {
+  border-bottom: 2px solid rgba(255, 20, 147, 0.7);
+}
+
+.wrapper-lofi {
+  border-bottom: 2px solid rgba(88, 61, 184, 0.7);
+}
+
+.wrapper-rap {
+  border-bottom: 2px solid rgba(61, 235, 26, 0.7);
+}
+
+.wrapper-country {
+  border-bottom: 2px solid rgba(153, 115, 61, 0.7);
 }
 
 /* Content Styling */
@@ -77,12 +105,18 @@
   margin-top: -40px;
   border: 3px solid rgba(7, 129, 138, 0.384);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      
+
 }
 
 .profile-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+   animation: pulse 4s ease-in-out infinite;
+     transition: transform 0.3s ease-in-out;
+
+
 }
 
 .about-title {
@@ -92,6 +126,7 @@
   text-transform: uppercase;
   text-shadow: 0 4px 10px rgba(0,0,0,0.5);
   margin: 0 auto;
+  transform: rotate(0deg);
 }
 
 .subtitle {
@@ -132,7 +167,7 @@
 
 .pop {
     color: rgb(255, 20, 147);
-    font-family: 'Bungee Shade', cursive;
+    font-family: 'Bungee Shade', cursive
 }
 
 .rap {
@@ -162,6 +197,12 @@
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flip {
+  0% { transform: rotateY(0deg); }
+  50% { transform: rotateY(180deg); }
+  100% { transform: rotateY(360deg); }
 }
 
 /* Mobile Adjustments */

@@ -56,6 +56,7 @@ const Contact = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
     </div>
   );
 };
