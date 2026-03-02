@@ -11,24 +11,23 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-    font-family: 'Space Grotesk', sans-serif;
-  font-weight: 400; /* Use 300 for a sleeker, lighter tech look, or 400 for standard readability */
-  font-size: 1.2rem;
-  line-height: 1.4;
-  background-color: var(--bg-dark);
+html, body {
+  /* We remove the background color from here so it doesn't block the video */
+  background-color: transparent; 
   color: white;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .app-container {
   width: 100%;
-  height: 100vh;
-  max-height: calc(100vh - 40px); /* Account for margins */
-  isolation: isolate;
+  min-height: 100vh;
+  /* This ensures our content stays above the fixed video */
+  position: relative; 
+  z-index: 1;
+  background-color: var(--bg-dark); /* Fallback color lives here now */
 }
 
 .loading-text {
@@ -79,13 +78,13 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  /* Content z-index must be higher than video/overlay (0 and 1) */
+  z-index: 10; 
   background: transparent !important;
-  padding-top: 5rem;
 }
 
 /* Video Background */
@@ -105,19 +104,20 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
-  z-index: -1; /* Sit between video and content */
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker for better text contrast */
+  /* Sits directly on top of the video but under the content */
+  z-index: 1; 
 }
 
 /* Content Layout */
 .content-wrapper {
   position: relative;
-  z-index: 10;
+  z-index: 20;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  margin: 0 auto;
+  background: transparent;
 }
 
 .title {
