@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bungee+Shade&family=Cal+Sans&family=Changa+One:ital@0;1&family=Limelight&family=Lobster&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Oswald:wght@200..700&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rock+Salt&family=Space+Grotesk:wght@300..700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bungee+Shade&family=Cal+Sans&family=Changa+One:ital@0;1&family=Corinthia:wght@400;700&family=Limelight&family=Oswald:wght@200..700&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=Rock+Salt&family=Space+Grotesk:wght@300..700&family=Special+Elite&display=swap');
 
 :root {
   --bg-dark: #09090b; /* Zinc 950 */
@@ -50,7 +50,7 @@ body {
 }
 
 /* Update this in Navbar, About, and Contact wrappers */
-.navbar, .about-wrapper, .contact-wrapper, .projects-wrapper {
+.navbar, .contact-wrapper, .projects-wrapper {
   background: rgba(70, 69, 69, 0.192); /* Keep it very transparent */
   
   /* 1. The Standard */
@@ -70,12 +70,7 @@ body {
   -webkit-backdrop-filter: blur(12px);
 }
 
-.about-wrapper {
-  background: rgba(9, 9, 11, 0.6); /* A bit darker for the about section */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  
-}
+
 
 /* =========================================
    Cassette Selector Page
@@ -142,18 +137,18 @@ body {
 }
 
 .title2 {
-  font-size: 1.9rem; /* 30px */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  font-size: 3rem !important; /* 40px */
   opacity: 0.9;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
   background: linear-gradient(to right, #08d5e4, #1c67c9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.9));
-  font-family: 'Oswald', sans-serif;
+  font-family: "Corinthia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  
   -webkit-text-stroke: 2px rgba(251, 252, 252, 0.7);
 }
 
@@ -241,9 +236,9 @@ body {
   }
 
   .title2 {
-    font-size: 3.5rem; /* 48px */
+    font-size: 5rem !important; /* 56px */
     position: fixed;
-    bottom : 10%;
+    bottom: 20%;
     left: 50%;
     right: auto;
     

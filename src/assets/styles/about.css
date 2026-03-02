@@ -4,17 +4,17 @@
   /* The viewport is 100vh/100vw. 
     Subtracting 40px accounts for the 20px margin on BOTH sides (top/bottom, left/right).
   */
-  width: calc(100vw - 50px);
-  max-width: 900px;
+  width: 100vw;
+  
   height: fit-content;
-  max-height: 80vh; /* Account for margins */
+  
   margin: auto;
   
  
-  padding: 20px;
-  padding-top: 130px; /* Push content down so it doesn't collide with the 70px fixed Navbar */
+  
+   /* Push content down so it doesn't collide with the 70px fixed Navbar */
   /* The Glassmorphism Effect */
-  background: rgba(255, 255, 255, 0.03);
+  background: rgb(12, 12, 12);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(7, 129, 138, 0.384);
@@ -22,7 +22,7 @@
   border-bottom-right-radius: 20%;
   border-top: 0;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  
+    overflow: hidden;
   /* Inner Layout */
   display: flex;
   flex-direction: column;
@@ -32,7 +32,7 @@
   /* Push content down so it doesn't collide with the 70px fixed Navbar */
 
     /* Prevent scrolling inside the box unless the text gets too long on mobile */
-  overflow-y: auto;
+  
   position: relative;
   z-index: 10;
 }
@@ -43,11 +43,28 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 800px;
-  gap: 2rem;
+  padding: 10px 40px;
+  padding-top: 130px;
+  padding-bottom: 30px;
+
+  gap: 1.5rem;
+
   
   /* A smooth fade-in animation every time the page loads */
   animation: fadeIn 0.8s ease-out forwards;
+}
+
+.about-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110vw;
+  height: auto;
+  object-fit: cover;
+  filter: blur(3px);
+  opacity: 0.3; /* Adjust for more or less visibility */
+  z-index: -1; /* Sit behind the content */
+
 }
 
 .profile-image-container {
@@ -85,6 +102,7 @@
 }
 
 .about-paragraph {
+  width: 90%;
 
   margin: 0 auto;
   font-family: 'Space Grotesk', sans-serif;
@@ -151,8 +169,9 @@
   .about-title { font-size: 1.5rem; margin: 0; }
   .profile-image-container { width: 150px; height: 150px; }
   .about-paragraph { font-size: 0.9rem; }
-    .about-wrapper { width: calc(100vw - 40px); 
-   padding-top: 120px; /* Adjust for smaller screens */
-    max-height: 95vh;}
+    .about-wrapper { width: 100vw; height: fit-content;
+   padding-top: 20px; /* Adjust for smaller screens */
+    }
+    .about-background { width: 120vw; height: 100vh; margin-top: -40px; }
 
 }
