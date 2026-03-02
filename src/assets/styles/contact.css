@@ -22,10 +22,13 @@
 
 .theme-styled-title {
   font-family: var(--theme-font);
-  color: var(--theme-accent);
+  color: turquoise;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 2.2rem;
   margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px rgb(53, 220, 241), 0 0 10px rgb(163, 238, 243), 0 0 20px rgb(5, 218, 233);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.9);
 }
 
 .contact-subtitle {

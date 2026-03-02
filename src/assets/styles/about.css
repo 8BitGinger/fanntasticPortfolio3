@@ -146,7 +146,7 @@
 @media (max-width: 768px) {
   .about-title { font-size: 1.5rem; margin: 0; }
   .profile-image-container { width: 150px; height: 150px; }
-  .about-paragraph { font-size: 0.8rem; }
+  .about-paragraph { font-size: 1rem; }
     .about-wrapper { width: calc(100vw - 40px); 
    padding-top: 120px; /* Adjust for smaller screens */
     max-height: 95vh;}

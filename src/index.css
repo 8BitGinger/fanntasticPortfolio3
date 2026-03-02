@@ -11,6 +11,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 body {
@@ -67,6 +68,13 @@ body {
   background: rgba(9, 9, 11, 0.8); /* A bit darker for the navbar */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+}
+
+.about-wrapper {
+  background: rgba(9, 9, 11, 0.6); /* A bit darker for the about section */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
 }
 
 /* =========================================
