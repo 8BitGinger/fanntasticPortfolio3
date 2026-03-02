@@ -21,7 +21,8 @@
 }
 
 .theme-styled-title {
-  font-family: var(--theme-font);
+    font-family: 'Space Grotesk', sans-serif; /* A pixelated font for that retro vibe */
+
   color: turquoise;
   font-weight: bold;
   text-transform: uppercase;
@@ -48,8 +49,8 @@
 .input-group textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.493);
   border-radius: 12px;
   color: white;
   font-family: 'Space Grotesk', sans-serif;
@@ -65,7 +66,7 @@
 .input-group input:focus, 
 .input-group textarea:focus {
   outline: none;
-  border-color: var(--theme-accent);
+  border-color: turquoise;
   background: rgba(0, 0, 0, 0.5);
 }
 

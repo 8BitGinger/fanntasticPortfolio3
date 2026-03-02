@@ -66,7 +66,7 @@ function MarqueeSection({ section }) {
           {displayProjects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="card-image-wrapper">
-                <img src={project.img} alt={project.title} className="card-image" />
+                <img loading='lazy' src={project.img} alt={project.title} className="card-image" />
               </div>
               <div className="card-content">
                 <h3 className="card-title">{project.title}</h3>

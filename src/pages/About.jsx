@@ -71,11 +71,12 @@ export default function About({ theme }) {
       transition={{ duration: 0.4 }}
     >
       <div className="about-content">
-        <img src={content.background} alt={`${content.title} background`} className="about-background" />
+        <img  src={content.background} alt={`${content.title} background`} className="about-background" />
         
         <div className={`profile-image-container`}>
           {/* Using a placeholder if you don't have the Rock image ready yet */}
           <img 
+           
             src={content.image} 
             alt={`8BitGinger - ${content.title}`} 
             className="profile-image"

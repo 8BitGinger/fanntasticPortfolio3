@@ -16,7 +16,8 @@
   
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  
+    font-family: 'Special Elite', cursive; /* A pixelated font for that retro vibe */
+
   /* A very subtle border on the bottom to separate it from the page */
   border-bottom: 1px solid rgba(7, 205, 240, 0.7);
   z-index: 1000;
