@@ -72,7 +72,7 @@ export default function About({ theme }) {
         <h3 className={`subtitle ${theme}`}>{content.subtitle}</h3>
         
         <p className="about-paragraph">{content.text}</p>
-        <Link to="/" className="link">Switch Vibes?</Link>
+        <Link to="/" className="link">Switch Tapes?</Link>
       </div>
     </div>
   );

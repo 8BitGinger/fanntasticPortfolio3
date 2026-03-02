@@ -27,9 +27,9 @@ const projectList = [
   { img: img3, title: 'SocialUp↑', subtitle: 'React, Gemini API', link: 'https://social-up.vercel.app/', git: 'https://github.com/8BitGinger/socialUp', category: 'ai' },
   { img: img6, title: 'Workforce Manager', subtitle: 'BackEnd CRM', link: 'https://8bitginger.github.io/workforceManager/', git: 'https://github.com/8BitGinger/workforceManager', category: 'web' },
   { img: img10, title: 'Desktop Cleaner', subtitle: 'Python', link: 'https://8bitginger.github.io/desktopCleaner/', git: 'https://github.com/8BitGinger/desktopCleaner', category: 'web' },
-  { img: img17, title: 'TicTacTypescript', subtitle: 'Typescript, Next.js', link: 'https://tictactypscript-5cd5d0597c27.herokuapp.com/', git: 'https://tictactypscript-5cd5d0597c27.herokuapp.com/', category: 'web' },
+  { img: img17, title: 'TicTacTypescript', subtitle: 'Typescript, Next.js', link: 'https://tictactypscript-5cd5d0597c27.herokuapp.com/', git: 'https://tictactypscript-5cd5d0597c27.herokuapp.com/', category: 'ttrpg' },
   { img: img18, title: 'Citrus Photo', subtitle: 'Python', link: 'https://8bitginger.github.io/citrus/', git: 'https://github.com/8BitGinger/citrus', category: 'web' },
-  { img: img13, title: 'Casino Slots', subtitle: 'JS, Sass', link: 'https://8bitginger.github.io/casinoSlot/', git: 'https://github.com/8BitGinger/casinoSlot', category: 'web' },
+  { img: img13, title: 'Casino Slots', subtitle: 'JS, Sass', link: 'https://8bitginger.github.io/casinoSlot/', git: 'https://github.com/8BitGinger/casinoSlot', category: 'ttrpg' },
   { img: img16, title: 'Quizzed', subtitle: 'Vanilla JS', link: 'https://8bitginger.github.io/quizzed/', git: 'https://github.com/8BitGinger/quizzed', category: 'web' },
 ];
 

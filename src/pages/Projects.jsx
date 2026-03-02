@@ -7,9 +7,9 @@ import '../assets/styles/projects.css'; // Import the CSS for styling
 
 export default function Projects() {
   const sections = [
-    { id: 'web', title: 'Websites', size: 'large' },
+    { id: 'web', title: 'Websites & Scripts', size: 'large' },
     { id: 'obs', title: 'OBS Plugins & Tutorials', size: 'small' },
-    { id: 'ttrpg', title: 'TTRPGs', size: 'medium' },
+    { id: 'ttrpg', title: 'Game Design', size: 'large' },
     { id: 'ai', title: 'AI Skills', size: 'medium' },
     
   ];

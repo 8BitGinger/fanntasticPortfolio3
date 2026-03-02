@@ -10,16 +10,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding:  2rem;
   
   /* Semi-transparent dark background with a blur effect */
-  background: rgba(9, 9, 11, 0.6);
+  
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   
   /* A very subtle border on the bottom to separate it from the page */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(7, 205, 240, 0.7);
   z-index: 1000;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  
 }
 
 /* Brand & Logo */

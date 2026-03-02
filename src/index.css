@@ -65,7 +65,7 @@ body {
 }
 
 .navbar{
-  background: rgba(9, 9, 11, 0.8); /* A bit darker for the navbar */
+  background: rgba(9, 9, 11, 0.9); /* A bit darker for the navbar */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }

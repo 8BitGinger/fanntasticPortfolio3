@@ -9,6 +9,8 @@
   height: fit-content;
   max-height: 80vh; /* Account for margins */
   margin: auto;
+  
+ 
   padding: 20px;
   padding-top: 130px; /* Push content down so it doesn't collide with the 70px fixed Navbar */
   /* The Glassmorphism Effect */
@@ -16,7 +18,9 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(7, 129, 138, 0.384);
-  border-radius: 24px;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  border-top: 0;
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   
   /* Inner Layout */
@@ -51,7 +55,7 @@
   height: 250px;
   border-radius: 50%;
   overflow: hidden;
-  margin: auto;
+  margin: 0 auto;
   margin-bottom: -20px;
   margin-top: -40px;
   border: 3px solid rgba(7, 129, 138, 0.384);
@@ -70,19 +74,19 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-shadow: 0 4px 10px rgba(0,0,0,0.5);
-  
+  margin: 0 auto;
 }
 
 .subtitle {
   font-size: 1rem;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.8);
- 
+  margin: 0 auto;
 }
 
 .about-paragraph {
 
-  margin: 0;
+  margin: 0 auto;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 400; /* Use 300 for a sleeker, lighter tech look, or 400 for standard readability */
   font-size: 1.2rem;
@@ -146,7 +150,7 @@
 @media (max-width: 768px) {
   .about-title { font-size: 1.5rem; margin: 0; }
   .profile-image-container { width: 150px; height: 150px; }
-  .about-paragraph { font-size: 1rem; }
+  .about-paragraph { font-size: 0.9rem; }
     .about-wrapper { width: calc(100vw - 40px); 
    padding-top: 120px; /* Adjust for smaller screens */
     max-height: 95vh;}
