@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Bungee+Shade&family=Cal+Sans&family=Changa+One:ital@0;1&family=Corinthia:wght@400;700&family=Limelight&family=Oswald:wght@200..700&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Press+Start+2P&family=Rock+Salt&family=Space+Grotesk:wght@300..700&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Changa+One:ital@0;1&family=Corinthia:wght@400;700&family=Limelight&family=Oswald:wght@200..700&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rock+Salt&family=Space+Grotesk:wght@300..700&family=Special+Elite&display=swap');
 
 :root {
   --bg-dark: #09090b; /* Zinc 950 */
@@ -54,17 +54,26 @@ body {
 }
 
 .link {
-  color: var(--accent-cyan);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.575);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 255, 255, 0.623);
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
   font-size: 1.3rem;
+  box-shadow: 0 4px 15px rgba(23, 24, 24, 0.767);
 }
 
 .link:hover {
-  text-decoration: underline;
-  color: #c9531c;
+  color: var(--accent-cyan);
+  background-color: rgba(0, 0, 0, 0.7);
+  transform: translateY(-3px);
+  border: 1px dotted rgba(0, 255, 255, 0.623);
 }
 
 /* =========================================
@@ -250,6 +259,16 @@ body {
   .title {
     font-size: 2.8rem;
     margin-bottom: 3rem;
+    will-change: transform, opacity, filter;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    /* Use fixed opacity to prevent FOUC (Flash of Unstyled Content) */
+    opacity: 1 !important;
+
+    -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
+    transform: rotate(-13deg);
+    animation: glow 4s ease-in-out infinite;
   }
 
   .logo {

@@ -33,9 +33,7 @@
   --theme-accent: #f35bac;
   --theme-font: 'Bungee Shade', cursive;
 }
-[data-theme='cinematic'] .projects-wrapper {
-  --theme-accent: #d1c44f;
-  --theme-font: 'Bona Nova SC', serif;
+
 }
 [data-theme='rap'] .projects-wrapper {
   --theme-accent: #40db21;

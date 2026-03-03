@@ -31,10 +31,6 @@
   border-bottom: 2px solid rgba(136, 117, 109, 0.7);
 }
 
-.wrapper-cinematic {
-  border-bottom: 2px solid rgba(209, 196, 79, 0.7);
-}
-
 .wrapper-pop {
   border-bottom: 2px solid rgba(255, 20, 147, 0.7);
 }
@@ -87,7 +83,7 @@
   margin: 0 auto;
   margin-bottom: -20px;
   margin-top: -80px;
-  border: 3px solid rgba(7, 129, 138, 0.384);
+  border: 3px solid rgba(7, 129, 138, 0.8);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
@@ -137,11 +133,6 @@
 .jazz {
   color: rgb(136, 117, 109);
   font-family: 'Limelight', display;
-}
-
-.cinematic {
-  color: rgb(209, 196, 79);
-  font-family: 'Bona Nova', serif;
 }
 
 .pop {
