@@ -2,16 +2,16 @@
 .projects-wrapper {
   width: 100vw;
   height: calc(100vh - 60px); /* Height minus navbar */
-   /* Offset for fixed navbar */
-  padding: 20px 0; 
-  
+  /* Offset for fixed navbar */
+  padding: 10px 0;
+
   /* Universal Glass Effects */
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
-  
-  overflow: hidden; 
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center; /* Centers the single row vertically */
@@ -24,25 +24,51 @@
 }
 
 /* 🎨 THEME FONT & COLOR OVERRIDES */
-[data-theme="rock"] .projects-wrapper      { --theme-accent: #f14e4e; --theme-font: 'Rock Salt', cursive; }
-[data-theme="jazz"] .projects-wrapper      { --theme-accent: #88756d; --theme-font: 'Limelight', cursive; }
-[data-theme="pop"] .projects-wrapper       { --theme-accent: #f35bac; --theme-font: 'Bungee Shade', cursive; }
-[data-theme="cinematic"] .projects-wrapper { --theme-accent: #d1c44f; --theme-font: 'Bona Nova SC', serif; }
-[data-theme="rap"] .projects-wrapper       { --theme-accent: #40db21; --theme-font: 'Permanent Marker', cursive; }
-[data-theme="country"] .projects-wrapper   { --theme-accent: #cc974e; --theme-font: 'Special Elite', serif; }
-[data-theme="lofi"] .projects-wrapper      { --theme-accent: #b4a7ff; --theme-font: 'Changa One', sans-serif; }
+[data-theme='rock'] .projects-wrapper {
+  --theme-accent: #f14e4e;
+  --theme-font: 'Rock Salt', cursive;
+}
+[data-theme='jazz'] .projects-wrapper {
+  --theme-accent: #88756d;
+  --theme-font: 'Limelight', cursive;
+}
+[data-theme='pop'] .projects-wrapper {
+  --theme-accent: #f35bac;
+  --theme-font: 'Bungee Shade', cursive;
+}
+[data-theme='cinematic'] .projects-wrapper {
+  --theme-accent: #d1c44f;
+  --theme-font: 'Bona Nova SC', serif;
+}
+[data-theme='rap'] .projects-wrapper {
+  --theme-accent: #40db21;
+  --theme-font: 'Permanent Marker', cursive;
+}
+[data-theme='country'] .projects-wrapper {
+  --theme-accent: #cc974e;
+  --theme-font: 'Special Elite', serif;
+}
+[data-theme='lofi'] .projects-wrapper {
+  --theme-accent: #b4a7ff;
+  --theme-font: 'Changa One', sans-serif;
+}
 
 .projects-page-title {
   font-family: var(--theme-font);
-  font-size: 2.5rem;
-  color: white;
+  font-size: 2rem;
+  color: var(--theme-accent);
   text-transform: uppercase;
-  margin-bottom: 2rem;
+  margin: 0;
+  margin-top: 0;
   text-align: center;
-  position: absolute;
-  top: 100px;
+
   letter-spacing: 0.2rem;
   z-index: 15;
+  text-shadow:
+    0 0 10px var(--theme-accent),
+    0 0 20px var(--theme-accent);
+  padding: 10px 20px;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.603);
 }
 
 /* 🎡 MARQUEE CONTAINER */
@@ -57,8 +83,8 @@
 
 .project-card {
   flex-shrink: 0;
-  width: 500px; 
-  height: 500px; 
+  width: 500px;
+  height: 500px;
   margin-right: 40px;
   background: rgba(0, 0, 0, 0.7);
   border: 2px solid var(--theme-accent);
@@ -70,16 +96,17 @@
 }
 
 .project-card:hover {
-  border-color: white;
   transform: scale(1.02) translateY(-10px);
   background: rgba(0, 0, 0, 0.85);
+  box-shadow: 0 10px 20px var(--theme-accent);
+  border: 3px solid var(--theme-accent);
 }
 
 .card-image-wrapper {
   width: 100%;
   height: 320px; /* Allocated space for the image */
   flex-shrink: 0;
-  border-bottom: 3px solid var(--theme-accent);
+  border-bottom: 3px solid black;
   overflow: hidden;
 }
 
@@ -103,7 +130,7 @@
 }
 
 .card-title {
-  font-family: var(--theme-font);
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   margin: 0;
   color: white;
@@ -111,7 +138,7 @@
 }
 
 .card-subtitle {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Oswald', sans-serif;
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.5;
@@ -182,15 +209,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--theme-accent); /* Dynamic color based on tape! */
-  
+
   padding: 8px;
   border-radius: 10px;
   font-size: 1.2rem;
-  
+
   transition: all 0.3s ease;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }

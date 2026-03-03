@@ -35,14 +35,14 @@ const themeData = {
     background: '/images/rap-background.webp', // Optional: A themed background for the about page
   },
   country: {
-    title: '8Bit Campfire Storyteller',
+    title: '8Bit Storyteller',
     subtitle: "Ryan '8BitGinger' Fann",
     text: 'Just like a classic country ballad, the best applications and tabletop games are built on honest, compelling storytelling. I handcraft solid websites, reliable OBS tools and weave rich TTRPG campaigns that bring people together around the virtual campfire. I believe in hard work, strong foundations, and writing code that stands the test of time.',
     image: '/images/profile-country.webp',
     background: '/images/country-background.webp', // Optional: A themed background for the about page
   },
   lofi: {
-    title: '8Bit Midnight Coder',
+    title: '8Bit Vibe Coder',
     subtitle: "Ryan '8BitGinger' Fann",
     text: 'There is a certain kind of magic that happens at 2 AM with a hot coffee and a steady, ambient beat. I specialize in deep-focus development, quietly crafting visual story-based websites, seamless OBS tools and vast TTRPG worlds while the rest of the world sleeps. My approach is all about creating a relaxed, intuitive user experience—building software.',
     image: '/images/profile-lofi.webp',
