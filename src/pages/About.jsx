@@ -68,6 +68,7 @@ export default function About({ theme }) {
             src={content.background}
             alt={`${content.title} background`}
             className="about-background"
+            fetchpriority="high"
           />
 
           <div className={`profile-image-container`}>
@@ -76,6 +77,7 @@ export default function About({ theme }) {
               src={content.image}
               alt={`8BitGinger - ${content.title}`}
               className="profile-image"
+              fetchpriority="high"
               onError={(e) => (e.target.src = 'https://placehold.co/600x400')}
             />
           </div>
