@@ -3,7 +3,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../assets/styles/contact.css';
 
-const Contact = () => {
+const Contact = (theme) => {
   const [state, handleSubmit] = useForm('mjvnrreq');
 
   return (

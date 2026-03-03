@@ -1,18 +1,21 @@
 /* 🧪 CONTAINER & GLASSMORPHISM */
 .projects-wrapper {
   width: 100vw;
-    min-height: calc(100vh - 30px);
-  max-height: 100vh;
-  margin: 30px auto;
-  padding: 100px 30px 20px 30px; 
+  height: calc(100vh - 60px); /* Height minus navbar */
+   /* Offset for fixed navbar */
+  padding: 20px 0; 
   
+  /* Universal Glass Effects */
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(16px);
-
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
   
-  overflow: hidden; /* No vertical scroll needed */
+  overflow: hidden; 
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centers the single row vertically */
+  align-items: center;
   z-index: 10;
 
   /* --- DYNAMIC THEME DEFAULTS --- */
@@ -20,7 +23,7 @@
   --theme-font: 'Space Grotesk', sans-serif;
 }
 
-/* 🎨 THEME FONT & COLOR OVERRIDES (Apply your About page fonts here) */
+/* 🎨 THEME FONT & COLOR OVERRIDES */
 [data-theme="rock"] .projects-wrapper      { --theme-accent: #f14e4e; --theme-font: 'Rock Salt', cursive; }
 [data-theme="jazz"] .projects-wrapper      { --theme-accent: #88756d; --theme-font: 'Limelight', cursive; }
 [data-theme="pop"] .projects-wrapper       { --theme-accent: #f35bac; --theme-font: 'Bungee Shade', cursive; }
@@ -31,145 +34,205 @@
 
 .projects-page-title {
   font-family: var(--theme-font);
-  font-size: 1.8rem;
+  font-size: 2.5rem;
   color: white;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
   text-align: center;
-}
-
-/* 📏 SECTION HEIGHT LOGIC */
-.project-section {
-  flex: 1; 
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-height: 0;
-  margin-bottom: 5px;
-    border: 1px solid rgba(14, 229, 245, 0.753);
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(
-    90deg,
-    rgba(22, 22, 22, 0.6) 0%,
-    rgba(48, 223, 230, 0.4) 50%,
-    rgba(7, 7, 7, 0.6) 100%
-
-  );
-  overflow: hidden;
-
-
-}
-
-.section-header {
-  font-family: var(--theme-font);
-  font-size: 1.2rem;
-  color: var(--theme-accent);
-  border-left: 3px solid var(--theme-accent);
-  padding-left: 12px;
-  margin-left: 10px;
-  margin-bottom: 8px;
-  text-transform: uppercase;
-
+  position: absolute;
+  top: 100px;
+  letter-spacing: 0.2rem;
+  z-index: 15;
 }
 
 /* 🎡 MARQUEE CONTAINER */
 .marquee-container {
   width: 100%;
+  padding: 40px 0;
   overflow: hidden;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .project-card {
   flex-shrink: 0;
-  width: 380px; /* Card width */
-  margin-right: 25px;
-  background: rgba(0, 0, 0, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  width: 500px; 
+  height: 500px; 
+  margin-right: 40px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--theme-accent);
+  border-radius: 20px;
   display: flex;
-  flex-direction: row;
-  height: 110px; /* Compact height to fit 4 sections */
-  transition: border-color 0.3s ease;
+  flex-direction: column; /* Stack image on top of text for large cards */
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover {
-  border-color: var(--theme-accent);
+  border-color: white;
+  transform: scale(1.02) translateY(-10px);
+  background: rgba(0, 0, 0, 0.85);
 }
 
 .card-image-wrapper {
-  width: 120px;
-  height: 100%;
+  width: 100%;
+  height: 320px; /* Allocated space for the image */
   flex-shrink: 0;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 3px solid var(--theme-accent);
+  overflow: hidden;
 }
 
 .card-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image {
+  transform: scale(1.1);
 }
 
 .card-content {
-  padding: 0.7rem 1rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
+  justify-content: flex-start;
+  height: 180px;
 }
 
 .card-title {
   font-family: var(--theme-font);
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   margin: 0;
   color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  margin-bottom: 0.5rem;
 }
 
 .card-subtitle {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.6);
-  margin: 2px 0 8px 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* Truncate text after 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-links {
+  margin-top: auto;
   display: flex;
-  gap: 15px;
+  gap: 20px;
 }
 
 .card-links a {
   text-decoration: none;
   color: var(--theme-accent);
-  font-size: 0.7rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
+.card-links a:hover {
+  color: white;
+}
+
+/* 🎡 MARQUEE LOGIC */
+.marquee-container {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  /* Adjust the 40s to change the overall speed */
+  animation: scrollMarquee 40s linear infinite;
+}
+
+/* 🛑 THE FIX: This pauses the animation in place without resetting it */
+.marquee-container:hover .marquee-content {
+  animation-play-state: paused;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between; /* This pushes them to opposite sides */
+  align-items: center;
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+.card-title {
+  margin: 0; /* Clear previous margin */
+  flex: 1;
+  padding-right: 10px;
+}
+
+.category-icon-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--theme-accent); /* Dynamic color based on tape! */
+  
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle glow when you hover the whole card */
+.project-card:hover .category-icon-pill {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--theme-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--theme-accent);
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Since we tripled the list, we move 1/3 of the total width */
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Ensure the cards don't shrink */
+.project-card {
+  flex-shrink: 0;
+  /* ... keep your existing card styles ... */
+}
+
+/* 📱 MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
-  .projects-wrapper{
-    margin-top: 0;
-    position: relative;
+  .projects-page-title {
+    font-size: 1.5rem;
+    top: 80px;
   }
 
-  .section-header {
-    font-size: 0.8rem;
-
-    margin-bottom: -30%;
-    position: absolute;
-    
-    z-index: 10;
-    background-color: #f2f5f542;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--theme-accent);
-    padding: 4px 8px;
-    border-radius: 4px;
-    border-top-right-radius: 100%;
+  .project-card {
+    width: 300px; /* Scale down for mobile */
+    height: 400px;
+    margin-right: 20px;
   }
 
-
+  .card-image-wrapper {
+    height: 200px;
+  }
 }
