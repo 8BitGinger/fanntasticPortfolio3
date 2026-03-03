@@ -128,7 +128,7 @@ body {
   filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.5));
   -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
-  animation: float 4s ease-in-out infinite;
+  animation: glow 2s ease-in-out infinite;
   transition: all 0.3s ease;
 }
 
@@ -197,33 +197,19 @@ body {
 /* =========================================
    6. Animations
    ========================================= */
-@keyframes float {
+@keyframes glow {
   0%,
   100% {
-    /* Keep all transform properties present in every step */
-    transform: translateY(0) rotate(-13deg) scale(1);
-
     /* Standard Teal Glow */
+  }
+  50% {
+    /* Transition to Red Glow */
     text-shadow:
       0 0 5px rgba(8, 213, 228, 0.5),
       0 0 10px rgba(8, 213, 228, 0.4),
-      0 0 20px rgba(8, 213, 228, 0.3);
+      0 0 20px rgba(8, 213, 228, 0.5);
 
-    /* Define the starting stroke color for smooth blending */
     -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
-  }
-  50% {
-    /* Added translateY(-10px) back so the floating motion is fluid */
-    transform: translateY(-10px) rotate(-13deg) scale(1.05);
-
-    /* Transition to Red Glow */
-    text-shadow:
-      0 0 10px rgba(92, 8, 228, 0.7),
-      0 0 20px rgba(129, 8, 228, 0.6),
-      0 0 30px rgba(147, 8, 228, 0.5);
-
-    /* Smoothly blend to the red stroke */
-    -webkit-text-stroke: 1px rgba(124, 10, 231, 0.3);
   }
 }
 
