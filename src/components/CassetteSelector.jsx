@@ -76,31 +76,35 @@ export default function CassetteSelector() {
   // Inside CassetteSelector.jsx
 
   const handleSelect = (g) => {
-    // 1. Clear any old audio if it exists
-    if (window.currentAudio) {
-      window.currentAudio.pause();
-      window.currentAudio.src = '';
-    }
+  // 1. THE KILL SWITCH: Find and stop ANY existing global audio
+  if (window.currentAudio) {
+    window.currentAudio.pause();
+    window.currentAudio.currentTime = 0; // Reset track to start
+    window.currentAudio.src = "";        // Clear the source from memory
+    window.currentAudio.load();          // Force the browser to dump the buffer
+    window.currentAudio = null;          // Clear the reference
+  }
 
-    // 2. CREATE the audio object and attach it to the window
-    const audio = new Audio(g.track);
-    audio.volume = 0.3;
-    audio.loop = true;
-    audio.preload = 'none'; // We already preloaded on hover, so this is just a fallback
-    audio.play().catch(() => console.log('Interaction required for audio'));
+  // 2. INITIALIZE: Create the new track
+  const audio = new Audio(g.track);
+  audio.volume = 0.3;
+  audio.loop = true;
+  
+  // 3. ATTACH: Re-assign the global reference BEFORE playing
+  window.currentAudio = audio;
 
-    // This is the global link the MusicPlayer looks for
-    window.currentAudio = audio;
+  // 4. PLAY: Start the new vibe
+  audio.play().catch(e => console.warn("Audio play deferred for interaction:", e));
 
-    // 3. Dispatch the theme switch event
-    const event = new CustomEvent('theme-switch', {
-      detail: { theme: g.id, track: g.track, volume: 0.3 },
-    });
-    window.dispatchEvent(event);
+  // 5. THEME SWITCH: Dispatch the event for the rest of the app
+  const event = new CustomEvent('theme-switch', {
+    detail: { theme: g.id, track: g.track, volume: 0.3 }
+  });
+  window.dispatchEvent(event);
 
-    // 4. Navigate
-    setTimeout(() => navigate('/about'), 600);
-  };
+  // 6. NAVIGATE
+  setTimeout(() => navigate('/about'), 600);
+};
 
   return (
     <div className="selector-page">
