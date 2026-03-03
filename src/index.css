@@ -126,7 +126,7 @@ body {
   margin-top: 5rem;
   margin-bottom: -3rem;
   color: white;
-  filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.5));
+  filter: drop-shadow(0 4px 6px rgba(11, 142, 230, 0.877));
   -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
   animation: glow 2s ease-in-out infinite;
@@ -139,12 +139,12 @@ body {
   opacity: 0.9;
   margin-top: 4rem;
   margin-bottom: -4rem;
-  background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
+  background: linear-gradient(to right, dodgerblue, turquoise, dodgerblue);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.6));
-  -webkit-text-stroke: 1px rgba(251, 252, 252, 0.5);
+  filter: drop-shadow(0 12px 14px rgba(11, 88, 230, 0.877));
+  -webkit-text-stroke: 1px rgba(23, 24, 24, 0.301);
   transition: all 0.3s ease;
 }
 
@@ -188,8 +188,8 @@ body {
 }
 
 .tape-container.vertical {
-  width: 85px; /* Mobile width */
-  height: 125px; /* Mobile height */
+  width: 105px; /* Mobile width */
+  height: 145px; /* Mobile height */
   position: relative;
   filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
   transition: filter 0.3s ease;

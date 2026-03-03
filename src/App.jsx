@@ -5,7 +5,6 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import MusicPlayer from './components/MusicPlayer';
 
 function App() {
   const [theme, setTheme] = useState('default'); // Start blank!
@@ -74,7 +73,6 @@ function App() {
           <Route path="/projects" element={<Projects theme={theme} />} />
           <Route path="/contact" element={<Contact theme={theme} />} />
         </Routes>
-        <MusicPlayer />
       </div>
     </div>
   );

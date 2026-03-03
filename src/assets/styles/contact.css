@@ -2,8 +2,8 @@
 
 .contact-wrapper {
   /* Matching your About/Projects container */
-  width: calc(100vw - 50px);
-  max-width: 700px;
+  width: 80%;
+  max-width: 650px;
   height: fit-content;
   margin: auto;
   padding: 40px;
@@ -38,10 +38,14 @@
   -webkit-text-stroke: 2px rgba(19, 42, 48, 0.6);
 }
 
+.icon {
+  font-size: 25px;
+}
+
 .contact-subtitle {
   font-family: 'Space Grotesk', sans-serif;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem;
+  margin-bottom: 0rem;
 }
 
 /* Form Layout */
@@ -78,10 +82,10 @@
 
 /* The Button */
 .contact-btn {
-  background: var(--theme-accent);
+  background: rgba(0, 0, 0, 0.5);
   color: white;
-  padding: 1rem;
-  border: none;
+  padding: 0.7rem;
+  border: 1px solid turquoise;
   border-radius: 12px;
   font-family: var(--theme-font);
   font-size: 1.1rem;
@@ -90,6 +94,8 @@
     transform 0.2s ease,
     filter 0.2s ease;
   text-transform: uppercase;
+  width: 70%;
+  margin: 0 auto;
 }
 
 .contact-btn:hover {

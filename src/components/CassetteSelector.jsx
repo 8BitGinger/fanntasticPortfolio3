@@ -73,11 +73,31 @@ export default function CassetteSelector() {
     }
   };
 
+  // Inside CassetteSelector.jsx
+
   const handleSelect = (g) => {
+    // 1. Clear any old audio if it exists
+    if (window.currentAudio) {
+      window.currentAudio.pause();
+      window.currentAudio.src = '';
+    }
+
+    // 2. CREATE the audio object and attach it to the window
+    const audio = new Audio(g.track);
+    audio.volume = 0.3;
+    audio.loop = true;
+    audio.play().catch(() => console.log('Interaction required for audio'));
+
+    // This is the global link the MusicPlayer looks for
+    window.currentAudio = audio;
+
+    // 3. Dispatch the theme switch event
     const event = new CustomEvent('theme-switch', {
       detail: { theme: g.id, track: g.track, volume: 0.3 },
     });
     window.dispatchEvent(event);
+
+    // 4. Navigate
     setTimeout(() => navigate('/about'), 600);
   };
 

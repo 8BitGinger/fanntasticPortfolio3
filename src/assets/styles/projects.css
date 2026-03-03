@@ -1,17 +1,12 @@
 /* 🧪 CONTAINER & GLASSMORPHISM */
 .projects-wrapper {
   width: 100vw;
-  height: calc(100vh - 60px);
-  max-height: calc(100vh - 70px); /* Height minus navbar */
+  height: 100vh;
+  max-height: 100vh; /* Height minus navbar */
   /* Offset for fixed navbar */
   padding: 10px 0;
-  padding-top: 60px;
-  margin-top: 60px;
+
   /* Universal Glass Effects */
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
 
   overflow: hidden;
   display: flex;
@@ -51,7 +46,7 @@
   --theme-font: 'Special Elite', serif;
 }
 [data-theme='lofi'] .projects-wrapper {
-  --theme-accent: #b4a7ff;
+  --theme-accent: #9d8df7;
   --theme-font: 'Changa One', sans-serif;
 }
 

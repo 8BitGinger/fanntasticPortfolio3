@@ -104,9 +104,10 @@
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 4px 10px var(--theme-accent, #e6deded3);
   margin: 0 auto;
   transform: rotate(0deg);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
 }
 
 .subtitle {
