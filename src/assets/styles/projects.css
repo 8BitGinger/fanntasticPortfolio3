@@ -25,24 +25,27 @@
   --theme-accent: #f14e4e;
   --theme-font: 'Rock Salt', cursive;
 }
+
 [data-theme='jazz'] .projects-wrapper {
   --theme-accent: #88756d;
   --theme-font: 'Limelight', cursive;
 }
+
 [data-theme='pop'] .projects-wrapper {
   --theme-accent: #f35bac;
   --theme-font: 'Bungee Shade', cursive;
 }
 
-}
 [data-theme='rap'] .projects-wrapper {
   --theme-accent: #40db21;
   --theme-font: 'Permanent Marker', cursive;
 }
+
 [data-theme='country'] .projects-wrapper {
   --theme-accent: #cc974e;
   --theme-font: 'Special Elite', serif;
 }
+
 [data-theme='lofi'] .projects-wrapper {
   --theme-accent: #9d8df7;
   --theme-font: 'Changa One', sans-serif;
