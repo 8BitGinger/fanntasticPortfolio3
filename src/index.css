@@ -2,10 +2,12 @@
 
 :root {
   --bg-dark: #09090b; /* Zinc 950 */
+  --accent-cyan: #08d5e4;
+  --accent-blue: #1c67c9;
 }
 
 /* =========================================
-   Global Resets & App Shell
+   1. Global Resets & App Shell
    ========================================= */
 * {
   box-sizing: border-box;
@@ -15,33 +17,48 @@
 
 html,
 body {
-  /* We remove the background color from here so it doesn't block the video */
-  background-color: transparent;
+  background-color: transparent; /* Allows video to show through */
   color: white;
   overflow-x: hidden;
   min-height: 100vh;
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.4;
 }
 
 .app-container {
   width: 100%;
   min-height: 100vh;
-  /* This ensures our content stays above the fixed video */
   position: relative;
   z-index: 1;
-  background-color: var(--bg-dark); /* Fallback color lives here now */
+  background-color: var(--bg-dark); /* Fallback if video fails */
+  isolation: isolate;
 }
 
-.loading-text {
-  padding: 2.5rem;
-  text-align: center;
-  font-size: 1.5rem;
+/* =========================================
+   2. Shared UI Elements (Glassmorphism)
+   ========================================= */
+.navbar,
+.contact-wrapper,
+.projects-wrapper {
+  background: rgba(70, 69, 69, 0.192);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari support */
+  transform: translateZ(0);
+  will-change: backdrop-filter;
+}
+
+.navbar {
+  background: rgba(9, 9, 11, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .link {
-  color: #08d5e4;
+  color: var(--accent-cyan);
   text-decoration: none;
   font-weight: bold;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .link:hover {
@@ -49,54 +66,17 @@ body {
   color: #c9531c;
 }
 
-/* Update this in Navbar, About, and Contact wrappers */
-.navbar,
-.contact-wrapper,
-.projects-wrapper {
-  background: rgba(70, 69, 69, 0.192); /* Keep it very transparent */
-
-  /* 1. The Standard */
-  backdrop-filter: blur(16px);
-
-  /* 2. The Safari/iOS Fix (The missing piece!) */
-  -webkit-backdrop-filter: blur(16px);
-
-  /* 3. The Performance Guard */
-  transform: translateZ(0);
-  will-change: backdrop-filter;
-}
-
-.navbar {
-  background: rgba(9, 9, 11, 0.9); /* A bit darker for the navbar */
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
 /* =========================================
-   Cassette Selector Page
+   3. Background Video & Overlay
    ========================================= */
-.selector-page {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  /* Content z-index must be higher than video/overlay (0 and 1) */
-  z-index: 10;
-  background: transparent !important;
-}
-
-/* Video Background */
 .video-bg {
-  position: fixed; /* This is the magic fix */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  z-index: -2; /* Sit behind everything */
+  z-index: -2;
 }
 
 .video-overlay {
@@ -105,12 +85,25 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.3); /* Slightly darker for better text contrast */
-  /* Sits directly on top of the video but under the content */
+  background: rgba(0, 0, 0, 0.35); /* Adjust for text readability */
   z-index: -1;
 }
 
-/* Content Layout */
+/* =========================================
+   4. Cassette Selector Page
+   ========================================= */
+.selector-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 60px); /* Account for navbar height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: transparent !important;
+}
+
 .content-wrapper {
   position: relative;
   z-index: 20;
@@ -121,77 +114,94 @@ body {
   background: transparent;
 }
 
+/* Typography */
 .title {
-  font-size: 1.5rem; /* 30px */
+  font-family: 'Rock Salt', cursive;
+  font-size: 1.5rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  opacity: 0.7;
-  margin-bottom: 2rem;
-
-  filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.767));
-  font-family: 'Rock Salt', cursive;
-  -webkit-text-stroke: 2px rgba(10, 216, 231, 0.349);
+  opacity: 0.8;
+  margin-top: 2rem;
+  color: white;
+  filter: drop-shadow(0 4px 6px rgba(8, 213, 228, 0.5));
+  -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
+  animation: float 4s ease-in-out infinite;
 }
 
 .title2 {
-  font-size: 3rem !important; /* 40px */
+  font-family: 'Corinthia', cursive;
+  font-size: 3.5rem !important;
   opacity: 0.9;
   margin-top: 2.5rem;
-  background: linear-gradient(to right, #08d5e4, #1c67c9);
-  background-clip: text;
+  background: linear-gradient(to right, var(--accent-cyan), var(--accent-blue));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-
-  filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.9));
-  font-family: 'Corinthia', cursive;
-  font-weight: 400;
-  font-style: normal;
-
-  -webkit-text-stroke: 2px rgba(251, 252, 252, 0.7);
+  filter: drop-shadow(0 6px 8px rgba(4, 234, 250, 0.6));
+  -webkit-text-stroke: 1px rgba(251, 252, 252, 0.5);
 }
 
-/* The Ghost Wrapper defines the size of the tape.
-  We use a media query to make it larger on desktop. 
-*/
-.ghost-wrapper {
+/* Logo / Profile Pic */
+.logo {
+  position: fixed;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px solid rgba(7, 129, 138, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* =========================================
+   5. Vertical Cassette Fan Logic
+   ========================================= */
+.ghost-wrapper.vertical-fan {
   position: relative;
-  width: 160px; /* Mobile width */
-  height: 112px; /* Mobile height */
-}
-
-/* The actual tape image container */
-.tape-container {
   width: 100%;
-  height: 100%;
+  height: 140px; /* Mobile height base */
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  transform: scale(0.7); /* Mobile scale */
+  transition: all 0.3s ease;
+}
+
+.tape-container.vertical {
+  width: 85px; /* Mobile width */
+  height: 125px; /* Mobile height */
   position: relative;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
   transition: filter 0.3s ease;
 }
 
-.tape-container:hover {
-  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.8));
+.tape-container.vertical:hover {
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.8));
 }
 
 .tape-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 4px;
 }
 
-.logo {
-  position: fixed;
-  top: 30%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-  border: 2px solid rgba(7, 129, 138, 0.384);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  z-index: 20;
-  z-index: 0;
+/* =========================================
+   6. Animations
+   ========================================= */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-13deg) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-13deg) scale(1.05);
+  }
 }
 
 @keyframes spin {
@@ -203,67 +213,38 @@ body {
   }
 }
 
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: scale(1) rotate(-13deg);
-  }
-  50% {
-    transform: scale(1.1) rotate(-13deg);
-  }
-}
-
-/* Desktop sizing (screens 768px and wider) */
+/* =========================================
+   7. Desktop Responsive Sizing
+   ========================================= */
 @media (min-width: 768px) {
   .title {
-    font-size: 3rem; /* 48px */
-    margin-bottom: 5rem;
+    font-size: 2.8rem;
+    margin-bottom: 0rem;
   }
 
   .logo {
-    width: 260px;
-    height: 260px;
-    margin-top: 20px;
-    margin-bottom: -20px;
+    width: 280px;
+    height: 280px;
+    top: 30%;
   }
 
-  .ghost-wrapper {
-    width: 324px; /* Desktop width */
-    height: 214px; /* Desktop height */
+  .ghost-wrapper.vertical-fan {
+    height: 220px;
+    margin-top: 0rem;
+    transform: scale(1.1); /* Desktop scale */
   }
 
-  .selector-page {
-    padding-top: 2rem;
-    background: transparent !important;
-  }
-
-  .title {
-    font-size: 2.5rem; /* 48px */
-    margin-bottom: 0;
+  .tape-container.vertical {
+    width: 130px; /* Desktop width */
+    height: 190px; /* Desktop height */
   }
 
   .title2 {
-    font-size: 5rem !important; /* 56px */
+    font-size: 4.5rem !important;
     position: fixed;
-    bottom: 10%;
+    bottom: 12%;
     left: 50%;
-    right: auto;
-
-    transform: translate(-50%, 50%);
-  }
-
-  .subtitle {
-    font-size: 1.5rem;
-    margin-top: -1rem;
+    transform: translateX(-50%);
+    z-index: 10;
   }
 }
