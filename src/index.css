@@ -126,11 +126,20 @@ body {
   margin-top: 5rem;
   margin-bottom: -3rem;
   color: white;
-  filter: drop-shadow(0 4px 6px rgba(11, 142, 230, 0.877));
+
   -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
   animation: glow 2s ease-in-out infinite;
   transition: all 0.3s ease;
+  /* 🚀 THE FIX: Promotes the element to the GPU for faster painting */
+  will-change: transform, opacity, filter;
+
+  /* Ensure it starts visible so there is no "pop-in" */
+  opacity: 1 !important;
+
+  /* Use backface-visibility to prevent flickering during the float animation */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .title2 {
