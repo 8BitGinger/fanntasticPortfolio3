@@ -66,7 +66,7 @@ export default function CassetteSelector() {
   const handleHover = (trackPath) => {
     if (!document.querySelector(`link[href="${trackPath}"]`)) {
       const link = document.createElement('link');
-      link.rel = 'preload';
+      // link.rel = 'preload';
       link.as = 'audio';
       link.href = trackPath;
       document.head.appendChild(link);
@@ -86,6 +86,7 @@ export default function CassetteSelector() {
     const audio = new Audio(g.track);
     audio.volume = 0.3;
     audio.loop = true;
+    audio.preload = 'none'; // We already preloaded on hover, so this is just a fallback
     audio.play().catch(() => console.log('Interaction required for audio'));
 
     // This is the global link the MusicPlayer looks for
