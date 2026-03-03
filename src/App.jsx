@@ -51,7 +51,7 @@ function App() {
         <source src="/videos/retro-bg.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
-      <audio ref={audioRef} loop preload='none' controls={theme && theme !== 'default'} playsInline></audio>
+      <audio ref={audioRef} loop preload='none' controls playsInline></audio>
 
       <Navbar /> 
 
