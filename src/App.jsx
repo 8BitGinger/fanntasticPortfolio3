@@ -2,9 +2,10 @@ import { Routes, Route, useLocation } from 'react-router-dom'; // <-- 1. Import 
 import { useState, useRef, useEffect } from 'react';
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
-import About from './pages/About'; 
+import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import MusicPlayer from './components/MusicPlayer';
 
 function App() {
   const [theme, setTheme] = useState('default'); // Start blank!
@@ -17,7 +18,7 @@ function App() {
     if (location.pathname !== '/' && !document.documentElement.dataset.theme) {
       setTheme('jazz');
       document.documentElement.dataset.theme = 'jazz';
-      
+
       if (audioRef.current) {
         audioRef.current.src = '/music/jazz.mp3';
         audioRef.current.volume = 0.2;
@@ -37,7 +38,9 @@ function App() {
       if (audioRef.current) {
         audioRef.current.src = track;
         audioRef.current.volume = volume || 0.2;
-        audioRef.current.play().catch(err => console.log("Audio play blocked:", err));
+        audioRef.current
+          .play()
+          .catch((err) => console.log('Audio play blocked:', err));
       }
     };
 
@@ -51,21 +54,28 @@ function App() {
         <source src="/videos/retro-bg.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
-      <audio ref={audioRef} loop preload='none' controls playsInline></audio>
+      <audio
+        ref={audioRef}
+        loop
+        preload="none"
+        controls={false}
+        playsInline
+      ></audio>
 
-      <Navbar /> 
+      <Navbar />
 
-<div className="page-content"> 
-    <Routes>
-      <Route path="/" element={<CassetteSelector />} /> 
-      
-      {/* Pass the theme state into the About component */}
-      <Route path="/about" element={<About theme={theme} />} />
-      
-      <Route path="/projects" element={<Projects theme={theme} />} />
-      <Route path="/contact" element={<Contact theme={theme} />} />
-    </Routes>
-  </div>
+      <div className="page-content">
+        <Routes>
+          <Route path="/" element={<CassetteSelector />} />
+
+          {/* Pass the theme state into the About component */}
+          <Route path="/about" element={<About theme={theme} />} />
+
+          <Route path="/projects" element={<Projects theme={theme} />} />
+          <Route path="/contact" element={<Contact theme={theme} />} />
+        </Routes>
+        <MusicPlayer />
+      </div>
     </div>
   );
 }

@@ -76,10 +76,7 @@ export default function About({ theme }) {
               src={content.image}
               alt={`8BitGinger - ${content.title}`}
               className="profile-image"
-              onError={(e) =>
-                (e.target.src =
-                  'https://via.placeholder.com/200/333/fff?text=Image+Missing')
-              }
+              onError={(e) => (e.target.src = 'https://placehold.co/600x400')}
             />
           </div>
 
