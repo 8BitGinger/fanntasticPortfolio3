@@ -47,10 +47,8 @@ body {
   will-change: backdrop-filter;
 }
 
-.navbar {
-  background: rgba(9, 9, 11, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+.projects-wrapper {
+  backdrop-filter: none;
 }
 
 .link {
@@ -74,6 +72,11 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   transform: translateY(-3px);
   border: 1px dotted rgba(0, 255, 255, 0.623);
+}
+
+.link:active {
+  transform: scale(0.9);
+  border: 1px solid rgba(0, 255, 255, 0.623);
 }
 
 /* =========================================

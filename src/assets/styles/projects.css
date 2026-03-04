@@ -54,7 +54,7 @@
 .projects-page-title {
   font-family: var(--theme-font);
   font-size: 2rem;
-  color: var(--theme-accent);
+  color: white;
   text-transform: uppercase;
   margin: 0;
   margin-top: 0;
@@ -66,7 +66,7 @@
     0 0 10px var(--theme-accent),
     0 0 20px var(--theme-accent);
   padding: 10px 20px;
-  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.603);
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
 }
 
 /* 🎡 MARQUEE CONTAINER */
@@ -84,7 +84,7 @@
   width: 500px;
   height: 500px;
   margin-right: 40px;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   border: 2px solid var(--theme-accent);
   border-radius: 20px;
   display: flex;
@@ -125,6 +125,8 @@
   flex-direction: column;
   justify-content: flex-start;
   height: 180px;
+  backdrop-filter: blur(16px) !important; /* Apply blur to the content area */
+  -webkit-backdrop-filter: blur(16px) !important; /* Safari support */
 }
 
 .card-title {
@@ -247,8 +249,9 @@
 /* 📱 MOBILE ADJUSTMENTS */
 @media (max-width: 768px) {
   .projects-page-title {
-    font-size: 1.5rem;
-    top: 80px;
+    font-size: 1.1rem;
+    margin-top: 40px;
+    margin-bottom: -30px;
   }
 
   .project-card {

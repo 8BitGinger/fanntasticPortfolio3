@@ -5,11 +5,11 @@ import { getCategoryIcon } from '../data/projectList';
 
 export default function Projects() {
   // Triple the list to ensure it's long enough to never show a gap
-  const displayProjects = [...projectList, ...projectList];
+  const displayProjects = [...projectList, ...projectList, ...projectList];
 
   return (
     <div className="projects-wrapper">
-      <h1 className="projects-page-title">My Projects</h1>
+      <h1 className="projects-page-title">Project Showcase</h1>
 
       <div className="marquee-container">
         <div className="marquee-content">
