@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import profilePic from '../assets/pictures/profile-standard.webp';
+import { vibeManager } from '../Utils/VibeManager'; // Adjust path accordingly
 
 const genres = [
   {
@@ -76,33 +77,16 @@ export default function CassetteSelector() {
   // Inside CassetteSelector.jsx
 
   const handleSelect = (g) => {
-  // 1. THE KILL SWITCH: Find and stop ANY existing global audio
-  if (window.currentAudio) {
-    window.currentAudio.pause();
-    window.currentAudio.currentTime = 0; // Reset track to start
-    window.currentAudio.src = "";        // Clear the source from memory
-    window.currentAudio.load();          // Force the browser to dump the buffer
-    window.currentAudio = null;          // Clear the reference
-  }
+  // Tell the manager to swap tracks (it handles the "kill switch" internally)
+  vibeManager.play(g.track);
 
-  // 2. INITIALIZE: Create the new track
-  const audio = new Audio(g.track);
-  audio.volume = 0.3;
-  audio.loop = true;
-  
-  // 3. ATTACH: Re-assign the global reference BEFORE playing
-  window.currentAudio = audio;
-
-  // 4. PLAY: Start the new vibe
-  audio.play().catch(e => console.warn("Audio play deferred for interaction:", e));
-
-  // 5. THEME SWITCH: Dispatch the event for the rest of the app
+  // Dispatch theme event
   const event = new CustomEvent('theme-switch', {
     detail: { theme: g.id, track: g.track, volume: 0.3 }
   });
   window.dispatchEvent(event);
 
-  // 6. NAVIGATE
+  // Navigate
   setTimeout(() => navigate('/about'), 600);
 };
 
