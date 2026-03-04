@@ -5,24 +5,23 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import MiniPlayer from './components/MiniPlayer'; // ← add this
+import './assets/styles/mini-player.css';          // ← adjust path to match your styles folder
 
 function App() {
   const [theme, setTheme] = useState('default');
   const location = useLocation();
 
-  // Apply a default visual theme if landing directly on a non-home route
   useEffect(() => {
     if (location.pathname !== '/' && !document.documentElement.dataset.theme) {
       setTheme('jazz');
       document.documentElement.dataset.theme = 'jazz';
-      // ✅ No audio here — browsers block autoplay on direct page loads anyway
     }
   }, [location.pathname]);
 
-  // Listen for cassette selection — theme/visual only, no audio
   useEffect(() => {
     const handleThemeSwitch = (e) => {
-      const { theme: newTheme } = e.detail; // ✅ Only destructure theme — vibeManager owns audio
+      const { theme: newTheme } = e.detail;
       setTheme(newTheme);
       document.documentElement.dataset.theme = newTheme;
     };
@@ -37,7 +36,6 @@ function App() {
         <source src="/videos/retro-bg.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
-      {/* ✅ <audio> ref removed — vibeManager handles all playback */}
 
       <Navbar />
 
@@ -49,6 +47,9 @@ function App() {
           <Route path="/contact" element={<Contact theme={theme} />} />
         </Routes>
       </div>
+
+      {/* Floats above all pages, hidden until a track is selected */}
+      <MiniPlayer theme={theme} />
     </div>
   );
 }

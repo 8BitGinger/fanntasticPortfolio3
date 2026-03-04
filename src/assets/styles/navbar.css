@@ -20,7 +20,7 @@
     'Special Elite', cursive; /* A pixelated font for that retro vibe */
 
   /* A very subtle border on the bottom to separate it from the page */
-  border-bottom: 1px solid rgba(7, 205, 240, 0.7);
+  border-bottom: 1px solid rgba(7, 205, 240, 0.8);
   z-index: 1000;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
   background: linear-gradient(45deg, black, rgb(56, 55, 55)) !important;

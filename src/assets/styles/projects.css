@@ -22,32 +22,32 @@
 
 /* 🎨 THEME FONT & COLOR OVERRIDES */
 [data-theme='rock'] .projects-wrapper {
-  --theme-accent: #f14e4e;
+  --theme-accent: rgba(255, 0, 0, 0.8);
   --theme-font: 'Rock Salt', cursive;
 }
 
 [data-theme='jazz'] .projects-wrapper {
-  --theme-accent: #88756d;
+  --theme-accent: rgba(136, 117, 109, 0.8);
   --theme-font: 'Limelight', cursive;
 }
 
 [data-theme='pop'] .projects-wrapper {
-  --theme-accent: #f35bac;
+  --theme-accent: rgba(255, 20, 147, 0.8);
   --theme-font: 'Bungee Shade', cursive;
 }
 
 [data-theme='rap'] .projects-wrapper {
-  --theme-accent: #40db21;
+  --theme-accent: rgba(42, 161, 18, 0.8);
   --theme-font: 'Permanent Marker', cursive;
 }
 
 [data-theme='country'] .projects-wrapper {
-  --theme-accent: #cc974e;
+  --theme-accent: rgba(153, 115, 61, 0.8);
   --theme-font: 'Special Elite', serif;
 }
 
 [data-theme='lofi'] .projects-wrapper {
-  --theme-accent: #9d8df7;
+  --theme-accent: rgba(157, 141, 247, 0.8);
   --theme-font: 'Changa One', sans-serif;
 }
 
@@ -55,7 +55,6 @@
   font-family: var(--theme-font);
   font-size: 2rem;
   color: white;
-  text-transform: uppercase;
   margin: 0;
   margin-top: 0;
   text-align: center;
@@ -81,30 +80,33 @@
 
 .project-card {
   flex-shrink: 0;
-  width: 500px;
-  height: 500px;
+  width: 250px;
+  height: fit-content;
   margin-right: 40px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   border: 2px solid var(--theme-accent);
   border-radius: 20px;
   display: flex;
+ 
   flex-direction: column; /* Stack image on top of text for large cards */
   overflow: hidden;
+  justify-content:space-between;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover {
   transform: scale(1.02) translateY(-10px);
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.91);
   box-shadow: 0 10px 20px var(--theme-accent);
   border: 3px solid var(--theme-accent);
 }
 
 .card-image-wrapper {
   width: 100%;
-  height: 320px; /* Allocated space for the image */
+  height: 50%; /* Allocated space for the image */
+  min-height: 250px;
+  background: rgba(255, 255, 255, 0.1);
   flex-shrink: 0;
-  border-bottom: 3px solid black;
   overflow: hidden;
 }
 
@@ -112,11 +114,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  margin: 0;
   transition: transform 0.5s ease;
 }
 
 .project-card:hover .card-image {
   transform: scale(1.1);
+  animation: pulse 2s infinite;
 }
 
 .card-content {
@@ -124,14 +128,14 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 180px;
-  backdrop-filter: blur(16px) !important; /* Apply blur to the content area */
-  -webkit-backdrop-filter: blur(16px) !important; /* Safari support */
+  max-height: 180px;
+  position: relative;
 }
 
 .card-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
   margin: 0;
   color: white;
   margin-bottom: 0.5rem;
@@ -139,8 +143,8 @@
 
 .card-subtitle {
   font-family: 'Oswald', sans-serif;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  color: gray;
   line-height: 1.5;
   margin-bottom: 1.5rem;
   display: -webkit-box;
@@ -209,7 +213,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--theme-accent); /* Dynamic color based on tape! */
