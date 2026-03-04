@@ -10,8 +10,8 @@
   padding-top: 130px;
 
   background: rgba(20, 20, 20, 0.281);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px) !important;
+  backdrop-filter: blur(16px) saturate(1.8);
+  -webkit-backdrop-filter: blur(16px) saturate(1.8);
   border: 1px solid turquoise;
   border-top: none;
 
@@ -40,6 +40,7 @@
 
 .icon {
   font-size: 25px;
+  opacity: 0.9;
 }
 
 .contact-subtitle {
@@ -59,12 +60,14 @@
 .input-group textarea {
   width: 100%;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.493);
   border-radius: 12px;
   color: white;
   font-family: 'Space Grotesk', sans-serif;
   transition: all 0.3s ease;
+  backdrop-filter: blur(8px) saturate(1.6);
+  -webkit-backdrop-filter: blur(8px) saturate(1.6);
 }
 
 .input-group textarea {
