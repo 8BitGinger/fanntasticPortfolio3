@@ -102,7 +102,7 @@
 
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(7, 129, 138, 0.5); /* default teal */
-  background: transparent;
+  background: rgba(15, 15, 15, 0.705); /* default teal */
   transition: color 0.25s ease, border-color 0.25s ease, background 0.25s ease;
 }
 
