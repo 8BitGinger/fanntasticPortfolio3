@@ -1,0 +1,159 @@
+/* ============================================
+   SKILL BARS — About page skills section
+   ============================================ */
+
+.skills-section {
+  width: 90%;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 0 2rem;
+}
+
+/* Section heading — reuses the same title classes from about.css */
+.skills-heading {
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0 0 1.5rem;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
+}
+
+/* Each skill row fades + slides in */
+.skill-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 1.1rem;
+  opacity: 0;
+  transform: translateX(-12px);
+  animation: skillRowIn 0.4s ease-out forwards;
+}
+
+@keyframes skillRowIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Name + level on the same line */
+.skill-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.skill-name {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  /* color comes from the shared theme title classes in about.css */
+}
+
+.skill-level {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Progress track */
+.skill-track {
+  width: 100%;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  /* Subtle inner shadow to give the track depth */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Fill bar */
+.skill-fill {
+  height: 100%;
+  border-radius: 999px;
+  width: 0%;
+  transition: width 0.9s cubic-bezier(0.25, 1, 0.5, 1);
+  position: relative;
+}
+
+/* Shine sweep on the fill */
+.skill-fill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  animation: shineSweep 2.2s ease-in-out infinite;
+}
+
+@keyframes shineSweep {
+  0%   { left: -40%; }
+  60%  { left: 110%; }
+  100% { left: 110%; }
+}
+
+/* ============================================
+   THEME FILL COLORS
+   Matches the exact accents from about.css
+   ============================================ */
+
+.skill-fill--default {
+  background: linear-gradient(90deg, rgba(7, 129, 138, 0.9), rgba(8, 213, 228, 0.85));
+  box-shadow: 0 0 8px rgba(8, 213, 228, 0.4);
+}
+
+.skill-fill--rock {
+  background: linear-gradient(90deg, rgba(180, 0, 0, 0.9), rgba(255, 0, 0, 0.85));
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+}
+
+.skill-fill--jazz {
+  background: linear-gradient(90deg, rgba(100, 85, 79, 0.9), rgba(136, 117, 109, 0.85));
+  box-shadow: 0 0 8px rgba(136, 117, 109, 0.4);
+}
+
+.skill-fill--pop {
+  background: linear-gradient(90deg, rgba(200, 10, 110, 0.9), rgba(255, 20, 147, 0.85));
+  box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
+}
+
+.skill-fill--lofi {
+  background: linear-gradient(90deg, rgba(60, 40, 140, 0.9), rgba(88, 61, 184, 0.85));
+  box-shadow: 0 0 8px rgba(88, 61, 184, 0.4);
+}
+
+.skill-fill--rap {
+  background: linear-gradient(90deg, rgba(30, 120, 12, 0.9), rgba(42, 161, 18, 0.85));
+  box-shadow: 0 0 8px rgba(42, 161, 18, 0.4);
+}
+
+.skill-fill--country {
+  background: linear-gradient(90deg, rgba(110, 82, 40, 0.9), rgba(153, 115, 61, 0.85));
+  box-shadow: 0 0 8px rgba(153, 115, 61, 0.4);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 1.1rem;
+  }
+
+  .skill-name {
+    font-size: 0.85rem;
+  }
+
+  .skill-track {
+    height: 5px;
+  }
+}

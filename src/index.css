@@ -178,7 +178,7 @@ body {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 2px solid rgba(7, 129, 138, 0.3);
+  border: 2px solid rgba(7, 129, 138, 0.8); /* default teal */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   object-fit: cover;
   z-index: 0;
