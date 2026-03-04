@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import skills from '../utils/skills.js';
+import skills from '../Utils/skills';
 import { motion } from 'framer-motion';
 
 const LEVEL_ORDER = ['Advanced', 'Intermediate', 'Experienced', 'Beginner'];
