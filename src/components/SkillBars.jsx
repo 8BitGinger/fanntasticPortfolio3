@@ -35,11 +35,7 @@ export default function SkillBars({ theme }) {
   }, [theme]);
 
   return (
-    <motion.div
-         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 2 }}
+    <div
 
     className={`skills-section skills-section--${theme}`} ref={ref}>
       <h2 className={`skills-heading ${theme}`}>Web Skills</h2>
@@ -68,6 +64,6 @@ export default function SkillBars({ theme }) {
           </div>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

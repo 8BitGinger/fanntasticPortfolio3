@@ -57,9 +57,9 @@ export default function About({ theme }) {
     <>
       <motion.div
         className={`about-wrapper wrapper-${theme}`}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial={{ y: 50 }}
+        animate={{ y: 0 }}
+        exit={{ y: 50 }}
         transition={{ duration: 0.4 }}
       >
         <div className="about-content">
