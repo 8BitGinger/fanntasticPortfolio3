@@ -34,6 +34,37 @@ body {
   isolation: isolate;
 }
 
+/* 1. Chrome, Safari, and Edge (WebKit) */
+
+/* The width of the scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* The background track */
+::-webkit-scrollbar-track {
+  background: #222222; 
+  border-radius: 10px;
+}
+
+/* The actual draggable handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 10px;
+  border: 3px solid #222222; /* Creates a "padding" effect around the thumb */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+/* 2. Firefox (Standard) */
+* {
+  scrollbar-width: thin;          /* "auto" or "thin" */
+  scrollbar-color: rgba(64, 224, 208, 0.849) #222222;  /* thumb color | track color */
+}
+
 /* =========================================
    2. Shared UI Elements (Glassmorphism)
    ========================================= */
