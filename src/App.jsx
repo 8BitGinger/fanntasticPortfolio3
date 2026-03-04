@@ -1,5 +1,5 @@
-import { Routes, Route, useLocation } from 'react-router-dom'; // <-- 1. Import useLocation
-import { useState, useRef, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
 import About from './pages/About';
@@ -7,40 +7,24 @@ import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 
 function App() {
-  const [theme, setTheme] = useState('default'); // Start blank!
-  const audioRef = useRef(null);
-  const location = useLocation(); // <-- 2. Get the current URL path
+  const [theme, setTheme] = useState('default');
+  const location = useLocation();
 
-  // 3. The "Default Vibe" Setup (Now location-aware!)
+  // Apply a default visual theme if landing directly on a non-home route
   useEffect(() => {
-    // ONLY apply the default if they are NOT on the home page AND haven't picked a theme
     if (location.pathname !== '/' && !document.documentElement.dataset.theme) {
       setTheme('jazz');
       document.documentElement.dataset.theme = 'jazz';
-
-      if (audioRef.current) {
-        audioRef.current.src = '/music/jazz.mp3';
-        audioRef.current.volume = 0.2;
-        // Note: We don't force .play() here because browsers block it on direct page loads.
-        // The track is loaded and ready for whenever you add a play/pause toggle to your navbar!
-      }
+      // ✅ No audio here — browsers block autoplay on direct page loads anyway
     }
-  }, [location.pathname]); // Re-run this check whenever the URL changes
+  }, [location.pathname]);
 
-  // 4. The Cassette Click listener (remains unchanged)
+  // Listen for cassette selection — theme/visual only, no audio
   useEffect(() => {
     const handleThemeSwitch = (e) => {
-      const { theme: newTheme, track, volume } = e.detail;
+      const { theme: newTheme } = e.detail; // ✅ Only destructure theme — vibeManager owns audio
       setTheme(newTheme);
       document.documentElement.dataset.theme = newTheme;
-
-      if (audioRef.current) {
-        audioRef.current.src = track;
-        audioRef.current.volume = volume || 0.2;
-        audioRef.current
-          .play()
-          .catch((err) => console.log('Audio play blocked:', err));
-      }
     };
 
     window.addEventListener('theme-switch', handleThemeSwitch);
@@ -53,23 +37,14 @@ function App() {
         <source src="/videos/retro-bg.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
-      <audio
-        ref={audioRef}
-        loop
-        preload="none"
-        controls={false}
-        playsInline
-      ></audio>
+      {/* ✅ <audio> ref removed — vibeManager handles all playback */}
 
       <Navbar />
 
       <div className="page-content">
         <Routes>
           <Route path="/" element={<CassetteSelector />} />
-
-          {/* Pass the theme state into the About component */}
           <Route path="/about" element={<About theme={theme} />} />
-
           <Route path="/projects" element={<Projects theme={theme} />} />
           <Route path="/contact" element={<Contact theme={theme} />} />
         </Routes>

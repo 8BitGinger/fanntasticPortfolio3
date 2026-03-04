@@ -59,36 +59,30 @@ export default function CassetteSelector() {
 
   const isMobile = windowWidth < 768;
 
-  // 🎯 TIGHTENED SPREAD: 40px for mobile makes them overlap beautifully
   const spreadMultiplier = isMobile ? 40 : 120;
-  // 🎯 TIGHTENED ROTATION: Tapes stand more "upright" on mobile to save space
   const rotationMultiplier = isMobile ? 0.6 : 1;
 
   const handleHover = (trackPath) => {
     if (!document.querySelector(`link[href="${trackPath}"]`)) {
       const link = document.createElement('link');
-      // link.rel = 'preload';
       link.as = 'audio';
       link.href = trackPath;
       document.head.appendChild(link);
     }
   };
 
-  // Inside CassetteSelector.jsx
-
   const handleSelect = (g) => {
-  // Tell the manager to swap tracks (it handles the "kill switch" internally)
-  vibeManager.play(g.track);
+    // ✅ Single source of truth for audio — vibeManager only
+    vibeManager.play(g.track);
 
-  // Dispatch theme event
-  const event = new CustomEvent('theme-switch', {
-    detail: { theme: g.id, track: g.track, volume: 0.3 }
-  });
-  window.dispatchEvent(event);
+    // ✅ Theme event carries ONLY visual/theme data — no volume, no track playback trigger
+    const event = new CustomEvent('theme-switch', {
+      detail: { theme: g.id }
+    });
+    window.dispatchEvent(event);
 
-  // Navigate
-  setTimeout(() => navigate('/about'), 600);
-};
+    setTimeout(() => navigate('/about'), 600);
+  };
 
   return (
     <div className="selector-page">

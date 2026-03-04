@@ -1,11 +1,17 @@
-// This class acts as a physical gatekeeper. 
+// This class acts as a physical gatekeeper.
 // It is impossible to have two instances of "player" here.
 class VibeManager {
   constructor() {
     this.player = null;
+    this._currentTrack = null; // 🛡️ Guard: track what's already playing
   }
 
   play(trackPath) {
+    // 🛡️ If this exact track is already playing, do nothing
+    if (this._currentTrack === trackPath && this.player && !this.player.paused) {
+      return;
+    }
+
     // 1. Kill the old one definitively
     if (this.player) {
       this.player.pause();
@@ -15,10 +21,11 @@ class VibeManager {
     }
 
     // 2. Start the new one
+    this._currentTrack = trackPath;
     this.player = new Audio(trackPath);
     this.player.volume = 0.3;
     this.player.loop = true;
-    
+
     // 3. Global reference just for the "currentAudio" logic if needed elsewhere
     window['currentAudio'] = this.player;
 
@@ -32,6 +39,7 @@ class VibeManager {
       this.player.pause();
       this.player.src = "";
       this.player = null;
+      this._currentTrack = null;
     }
   }
 }
