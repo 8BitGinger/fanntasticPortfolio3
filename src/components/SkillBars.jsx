@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import skills from '../utils/skills';
+import skills from '../utils/skills.js';
+import { motion } from 'framer-motion';
 
 const LEVEL_ORDER = ['Advanced', 'Intermediate', 'Experienced', 'Beginner'];
 
@@ -34,8 +35,14 @@ export default function SkillBars({ theme }) {
   }, [theme]);
 
   return (
-    <section className={`skills-section skills-section--${theme}`} ref={ref}>
-      <h2 className={`skills-heading ${theme}`}>Skills</h2>
+    <motion.div
+         initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 2 }}
+
+    className={`skills-section skills-section--${theme}`} ref={ref}>
+      <h2 className={`skills-heading ${theme}`}>Web Skills</h2>
 
       <div className="skills-list">
         {sorted.map((skill, i) => (
@@ -61,6 +68,6 @@ export default function SkillBars({ theme }) {
           </div>
         ))}
       </div>
-    </section>
+    </motion.div>
   );
 }
