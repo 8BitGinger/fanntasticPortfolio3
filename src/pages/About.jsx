@@ -54,22 +54,19 @@ export default function About({ theme }) {
   const content = themeData[theme] || themeData['jazz'];
 
   return (
-    <>
-      <motion.div
+    <motion.div
+      className="about-page"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.4 }}
+    >
+      {/* ── Hero wrapper ── */}
+      <div
         className={`about-wrapper wrapper-${theme}`}
-        initial={{ y: 50 }}
-        animate={{ y: 0 }}
-        exit={{ y: 50 }}
-        transition={{ duration: 0.4 }}
+        style={{ backgroundImage: `url(${content.background})` }}
       >
         <div className="about-content">
-          <img
-            src={content.background}
-            alt={`${content.title} background`}
-            className="about-background"
-            fetchpriority="high"
-          />
-
           <div className="profile-image-container">
             <img
               src={content.image}
@@ -82,18 +79,18 @@ export default function About({ theme }) {
 
           <h1 className={`about-title ${theme}`}>{content.title}</h1>
           <p className="subtitle">{content.subtitle}</p>
-
           <p className="about-paragraph">{content.text}</p>
-
-          {/* ── Skills ── */}
-          
 
           <Link to="/" className="link">
             Switch Tapes?
           </Link>
         </div>
-      </motion.div>
-      <SkillBars theme={theme} />
-    </>
+      </div>
+
+      {/* ── Skills — outside the hero, own blurred section ── */}
+      <div className={`about-section about-section--${theme}`}>
+        <SkillBars theme={theme} />
+      </div>
+    </motion.div>
   );
 }

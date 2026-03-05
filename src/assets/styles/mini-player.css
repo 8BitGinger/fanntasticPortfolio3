@@ -15,19 +15,21 @@
   padding: 10px 16px;
   border-radius: 999px;
 
-  /* Glassmorphism base — matches .about-wrapper */
-  background: rgba(12, 12, 12, 0.4);
-  backdrop-filter: blur(8px) saturate(1.6);
-  -webkit-backdrop-filter: blur(8px) saturate(1.6);
-  border: 1px double rgba(166, 185, 187, 0.274);
+  /* background must be semi-transparent for backdrop-filter to show through */
+  background: rgba(12, 12, 12, 0.55);
+  backdrop-filter: blur(20px) saturate(1.8);
+  -webkit-backdrop-filter: blur(20px) saturate(1.8);
+  /* isolation prevents parent stacking contexts from swallowing backdrop-filter */
+  isolation: isolate;
+  border: 1px solid rgba(166, 185, 187, 0.274);
   box-shadow:
     0 15px 40px 8px rgba(0, 0, 0, 0.9),
     0 1px 0 rgba(255, 255, 255, 0.04) inset;
 
-  animation: playerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  /* animation: playerFadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) both; */
 }
 
-@keyframes playerFadeIn {
+/* @keyframes playerFadeIn {
   from {
     opacity: 0;
     transform: translateY(12px) scale(0.97);
@@ -36,7 +38,7 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-}
+} */
 
 /* Track label */
 .mini-player__label {
@@ -66,8 +68,10 @@
   flex-shrink: 0;
 
   background: rgba(7, 129, 138, 0.3);
-  color: #ffffffa2;
-  transition: background 0.2s ease, transform 0.15s ease;
+  color: #fff;
+  transition:
+    background 0.2s ease,
+    transform 0.15s ease;
 }
 
 .mini-player__btn:hover {
@@ -132,61 +136,133 @@
 .mini-player--rock {
   border-color: rgba(255, 0, 0, 0.7);
 }
-.mini-player--rock .mini-player__btn        { background: rgba(255, 0, 0, 0.2); }
-.mini-player--rock .mini-player__btn:hover  { background: rgba(255, 0, 0, 0.38); }
-.mini-player--rock .mini-player__label      { color: red; text-shadow: 0 2px 5px rgba(255,0,0,0.5); }
-.mini-player--rock .mini-player__slider::-webkit-slider-thumb { background: red; box-shadow: 0 0 6px rgba(255,0,0,0.5); }
-.mini-player--rock .mini-player__slider::-moz-range-thumb     { background: red; }
+.mini-player--rock .mini-player__btn {
+  background: rgba(255, 0, 0, 0.2);
+}
+.mini-player--rock .mini-player__btn:hover {
+  background: rgba(255, 0, 0, 0.38);
+}
+.mini-player--rock .mini-player__label {
+  color: red;
+  text-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
+}
+.mini-player--rock .mini-player__slider::-webkit-slider-thumb {
+  background: red;
+  box-shadow: 0 0 6px rgba(255, 0, 0, 0.5);
+}
+.mini-player--rock .mini-player__slider::-moz-range-thumb {
+  background: red;
+}
 
 /* Jazz — warm brown */
 .mini-player--jazz {
   border-color: rgba(136, 117, 109, 0.7);
 }
-.mini-player--jazz .mini-player__btn        { background: rgba(136, 117, 109, 0.25); }
-.mini-player--jazz .mini-player__btn:hover  { background: rgba(136, 117, 109, 0.45); }
-.mini-player--jazz .mini-player__label      { color: rgb(136, 117, 109); text-shadow: 0 2px 5px rgba(136,117,109,0.5); }
-.mini-player--jazz .mini-player__slider::-webkit-slider-thumb { background: rgb(136, 117, 109); box-shadow: 0 0 6px rgba(136,117,109,0.5); }
-.mini-player--jazz .mini-player__slider::-moz-range-thumb     { background: rgb(136, 117, 109); }
+.mini-player--jazz .mini-player__btn {
+  background: rgba(136, 117, 109, 0.25);
+}
+.mini-player--jazz .mini-player__btn:hover {
+  background: rgba(136, 117, 109, 0.45);
+}
+.mini-player--jazz .mini-player__label {
+  color: rgb(136, 117, 109);
+  text-shadow: 0 2px 5px rgba(136, 117, 109, 0.5);
+}
+.mini-player--jazz .mini-player__slider::-webkit-slider-thumb {
+  background: rgb(136, 117, 109);
+  box-shadow: 0 0 6px rgba(136, 117, 109, 0.5);
+}
+.mini-player--jazz .mini-player__slider::-moz-range-thumb {
+  background: rgb(136, 117, 109);
+}
 
 /* Pop — hot pink */
 .mini-player--pop {
   border-color: rgba(255, 20, 147, 0.7);
 }
-.mini-player--pop .mini-player__btn        { background: rgba(255, 20, 147, 0.2); }
-.mini-player--pop .mini-player__btn:hover  { background: rgba(255, 20, 147, 0.38); }
-.mini-player--pop .mini-player__label      { color: rgb(255, 20, 147); text-shadow: 0 2px 5px rgba(255,20,147,0.5); }
-.mini-player--pop .mini-player__slider::-webkit-slider-thumb { background: rgb(255, 20, 147); box-shadow: 0 0 6px rgba(255,20,147,0.5); }
-.mini-player--pop .mini-player__slider::-moz-range-thumb     { background: rgb(255, 20, 147); }
+.mini-player--pop .mini-player__btn {
+  background: rgba(255, 20, 147, 0.2);
+}
+.mini-player--pop .mini-player__btn:hover {
+  background: rgba(255, 20, 147, 0.38);
+}
+.mini-player--pop .mini-player__label {
+  color: rgb(255, 20, 147);
+  text-shadow: 0 2px 5px rgba(255, 20, 147, 0.5);
+}
+.mini-player--pop .mini-player__slider::-webkit-slider-thumb {
+  background: rgb(255, 20, 147);
+  box-shadow: 0 0 6px rgba(255, 20, 147, 0.5);
+}
+.mini-player--pop .mini-player__slider::-moz-range-thumb {
+  background: rgb(255, 20, 147);
+}
 
 /* Lo-Fi — purple */
 .mini-player--lofi {
   border-color: rgba(88, 61, 184, 0.7);
 }
-.mini-player--lofi .mini-player__btn        { background: rgba(88, 61, 184, 0.25); }
-.mini-player--lofi .mini-player__btn:hover  { background: rgba(88, 61, 184, 0.45); }
-.mini-player--lofi .mini-player__label      { color: rgb(88, 61, 184); text-shadow: 0 2px 5px rgba(88,61,184,0.5); }
-.mini-player--lofi .mini-player__slider::-webkit-slider-thumb { background: rgb(88, 61, 184); box-shadow: 0 0 6px rgba(88,61,184,0.5); }
-.mini-player--lofi .mini-player__slider::-moz-range-thumb     { background: rgb(88, 61, 184); }
+.mini-player--lofi .mini-player__btn {
+  background: rgba(88, 61, 184, 0.25);
+}
+.mini-player--lofi .mini-player__btn:hover {
+  background: rgba(88, 61, 184, 0.45);
+}
+.mini-player--lofi .mini-player__label {
+  color: rgb(88, 61, 184);
+  text-shadow: 0 2px 5px rgba(88, 61, 184, 0.5);
+}
+.mini-player--lofi .mini-player__slider::-webkit-slider-thumb {
+  background: rgb(88, 61, 184);
+  box-shadow: 0 0 6px rgba(88, 61, 184, 0.5);
+}
+.mini-player--lofi .mini-player__slider::-moz-range-thumb {
+  background: rgb(88, 61, 184);
+}
 
 /* Rap — green */
 .mini-player--rap {
   border-color: rgba(61, 235, 26, 0.7);
 }
-.mini-player--rap .mini-player__btn        { background: rgba(42, 161, 18, 0.22); }
-.mini-player--rap .mini-player__btn:hover  { background: rgba(42, 161, 18, 0.4); }
-.mini-player--rap .mini-player__label      { color: rgb(42, 161, 18); text-shadow: 0 2px 5px rgba(42,161,18,0.5); }
-.mini-player--rap .mini-player__slider::-webkit-slider-thumb { background: rgb(42, 161, 18); box-shadow: 0 0 6px rgba(42,161,18,0.5); }
-.mini-player--rap .mini-player__slider::-moz-range-thumb     { background: rgb(42, 161, 18); }
+.mini-player--rap .mini-player__btn {
+  background: rgba(42, 161, 18, 0.22);
+}
+.mini-player--rap .mini-player__btn:hover {
+  background: rgba(42, 161, 18, 0.4);
+}
+.mini-player--rap .mini-player__label {
+  color: rgb(42, 161, 18);
+  text-shadow: 0 2px 5px rgba(42, 161, 18, 0.5);
+}
+.mini-player--rap .mini-player__slider::-webkit-slider-thumb {
+  background: rgb(42, 161, 18);
+  box-shadow: 0 0 6px rgba(42, 161, 18, 0.5);
+}
+.mini-player--rap .mini-player__slider::-moz-range-thumb {
+  background: rgb(42, 161, 18);
+}
 
 /* Country — warm tan */
 .mini-player--country {
   border-color: rgba(153, 115, 61, 0.7);
 }
-.mini-player--country .mini-player__btn        { background: rgba(153, 115, 61, 0.25); }
-.mini-player--country .mini-player__btn:hover  { background: rgba(153, 115, 61, 0.45); }
-.mini-player--country .mini-player__label      { color: rgb(153, 115, 61); text-shadow: 0 2px 5px rgba(153,115,61,0.5); }
-.mini-player--country .mini-player__slider::-webkit-slider-thumb { background: rgb(153, 115, 61); box-shadow: 0 0 6px rgba(153,115,61,0.5); }
-.mini-player--country .mini-player__slider::-moz-range-thumb     { background: rgb(153, 115, 61); }
+.mini-player--country .mini-player__btn {
+  background: rgba(153, 115, 61, 0.25);
+}
+.mini-player--country .mini-player__btn:hover {
+  background: rgba(153, 115, 61, 0.45);
+}
+.mini-player--country .mini-player__label {
+  color: rgb(153, 115, 61);
+  text-shadow: 0 2px 5px rgba(153, 115, 61, 0.5);
+}
+.mini-player--country .mini-player__slider::-webkit-slider-thumb {
+  background: rgb(153, 115, 61);
+  box-shadow: 0 0 6px rgba(153, 115, 61, 0.5);
+}
+.mini-player--country .mini-player__slider::-moz-range-thumb {
+  background: rgb(153, 115, 61);
+}
 
 /* Mobile */
 @media (max-width: 480px) {

@@ -1,26 +1,52 @@
-/* src/components/About.css */
+/* src/assets/styles/about.css */
+
+/* ── Page container ────────────────────────────────────────── */
+
+.about-page {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── Hero wrapper ──────────────────────────────────────────── */
 
 .about-wrapper {
   width: 100vw;
-  height: fit-content;
   margin: auto;
-  /* The Glassmorphism Effect */
-  background: rgba(12, 12, 12, 0.8);
+
+  /* Background image controlled via inline style in About.jsx */
+  background-color: rgba(12, 12, 12, 0.8);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+
   border-bottom: 2px solid rgba(166, 185, 187, 0.274);
   border-bottom-left-radius: 20%;
   border-bottom-right-radius: 20%;
   border-top: 0;
   box-shadow: 0 15px 40px 8px rgba(0, 0, 0, 0.9);
   overflow: hidden;
-  /* Inner Layout */
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
+}
+
+/* Dark tint over background image for readability */
+.about-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 12, 0.62);
+  z-index: 0;
+  pointer-events: none;
 }
 
 .wrapper-rock {
@@ -42,8 +68,11 @@
   border-bottom: 2px solid rgba(153, 115, 61, 0.7);
 }
 
-/* Content Styling */
+/* ── Hero content ──────────────────────────────────────────── */
+
 .about-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,24 +84,37 @@
   animation: fadeIn 0.8s ease-out forwards;
 }
 
-/* ── Background Image ──────────────────────────────────────── */
+/* ── Sections below the hero ───────────────────────────────── */
 
-.about-background {
-  position: absolute;
-  top: 0;
-  left: 0;
+.about-section {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: blur(5px);
-  /* Scale up slightly so blur doesn't leave transparent edges */
-  transform: scale(1.05);
-  opacity: 0.4;
-  z-index: -1;
+  position: relative;
+  overflow: hidden;
+
+  padding: 3rem 0;
 }
 
-/* ── Profile Image ─────────────────────────────────────────── */
+/* Theme border accents on sections */
+.about-section--rock {
+  border-bottom-color: rgba(255, 0, 0, 0.4);
+}
+.about-section--jazz {
+  border-bottom-color: rgba(136, 117, 109, 0.4);
+}
+.about-section--pop {
+  border-bottom-color: rgba(255, 20, 147, 0.4);
+}
+.about-section--lofi {
+  border-bottom-color: rgba(88, 61, 184, 0.4);
+}
+.about-section--rap {
+  border-bottom-color: rgba(61, 235, 26, 0.4);
+}
+.about-section--country {
+  border-bottom-color: rgba(153, 115, 61, 0.4);
+}
+
+/* ── Profile image ─────────────────────────────────────────── */
 
 .profile-image-container {
   width: 250px;
@@ -82,14 +124,13 @@
   margin: 0 auto;
   margin-bottom: -20px;
   margin-top: -80px;
-  border: 3px solid rgba(7, 129, 138, 0.8); /* default teal */
+  border: 3px solid rgba(7, 129, 138, 0.8);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   transition:
     border-color 0.4s ease,
     box-shadow 0.4s ease;
 }
 
-/* Theme overrides — profile border */
 .wrapper-rock .profile-image-container {
   border-color: rgba(255, 0, 0, 0.8);
   box-shadow: 0 10px 30px rgba(255, 0, 0, 0.25);
@@ -136,7 +177,6 @@
   letter-spacing: 0.06em;
   text-transform: uppercase;
   text-decoration: none;
-
   color: rgba(255, 255, 255, 0.6);
   border: 1px solid rgba(7, 129, 138, 0.5);
   background: rgba(15, 15, 15, 0.705);
@@ -152,7 +192,6 @@
   background: rgba(7, 129, 138, 0.08);
 }
 
-/* Theme overrides — link border + hover color */
 .wrapper-rock .link {
   border-color: rgba(255, 0, 0, 0.5);
 }
@@ -207,7 +246,7 @@
   background: rgba(153, 115, 61, 0.08);
 }
 
-/* ── Title styles ──────────────────────────────────────────── */
+/* ── Titles ────────────────────────────────────────────────── */
 
 .about-title {
   font-size: 2.3rem;
@@ -216,7 +255,6 @@
   text-transform: uppercase;
   text-shadow: 0 4px 10px var(--theme-accent, #e6deded3);
   margin: 0 auto;
-  transform: rotate(0deg);
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -306,8 +344,9 @@
   }
   .about-wrapper {
     width: 100vw;
-    height: fit-content;
     padding-top: 20px;
   }
-  /* about-background handled by base styles — no mobile override needed */
+  .about-section {
+    padding: 2rem 0;
+  }
 }
