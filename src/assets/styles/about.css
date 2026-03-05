@@ -89,29 +89,53 @@
 .about-section {
   width: 100%;
   position: relative;
-  overflow: hidden;
+
+  /* No backdrop-filter — that would blur the video behind the whole page.
+     Instead use a dark transparent background so content is readable
+     while the video still shows through the gaps. */
+  background: transparent;
 
   padding: 3rem 0;
 }
 
-/* Theme border accents on sections */
-.about-section--rock {
-  border-bottom-color: rgba(255, 0, 0, 0.4);
+/* The actual glass card sits inside, not full-width */
+.about-section__inner {
+  width: 90%;
+  max-width: 780px;
+  margin: 0 auto;
+  background: rgba(12, 12, 12, 0.6);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(166, 185, 187, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
-.about-section--jazz {
-  border-bottom-color: rgba(136, 117, 109, 0.4);
+
+/* Theme border accents on the inner glass card */
+.about-section--rock .about-section__inner {
+  border-color: rgba(255, 0, 0, 0.9);
+  box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5);
 }
-.about-section--pop {
-  border-bottom-color: rgba(255, 20, 147, 0.4);
+.about-section--jazz .about-section__inner {
+  border-color: rgba(136, 117, 109, 0.9);
+  box-shadow: 0 8px 32px rgba(136, 117, 109, 0.5);
 }
-.about-section--lofi {
-  border-bottom-color: rgba(88, 61, 184, 0.4);
+.about-section--pop .about-section__inner {
+  border-color: rgba(255, 20, 147, 0.9);
+  box-shadow: 0 8px 32px rgba(255, 20, 147, 0.5);
 }
-.about-section--rap {
-  border-bottom-color: rgba(61, 235, 26, 0.4);
+.about-section--lofi .about-section__inner {
+  border-color: rgba(88, 61, 184, 0.9);
+  box-shadow: 0 8px 32px rgba(88, 61, 184, 0.5);
 }
-.about-section--country {
-  border-bottom-color: rgba(153, 115, 61, 0.4);
+.about-section--rap .about-section__inner {
+  border-color: rgba(42, 161, 18, 0.9);
+  box-shadow: 0 8px 32px rgba(42, 161, 18, 0.5);
+}
+.about-section--country .about-section__inner {
+  border-color: rgba(153, 115, 61, 0.9);
+  box-shadow: 0 8px 32px rgba(153, 115, 61, 0.5);
 }
 
 /* ── Profile image ─────────────────────────────────────────── */
@@ -133,27 +157,27 @@
 
 .wrapper-rock .profile-image-container {
   border-color: rgba(255, 0, 0, 0.8);
-  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.25);
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
 }
 .wrapper-jazz .profile-image-container {
   border-color: rgba(136, 117, 109, 0.8);
-  box-shadow: 0 10px 30px rgba(136, 117, 109, 0.25);
+  box-shadow: 0 10px 30px rgba(136, 117, 109, 0.4);
 }
 .wrapper-pop .profile-image-container {
   border-color: rgba(255, 20, 147, 0.8);
-  box-shadow: 0 10px 30px rgba(255, 20, 147, 0.25);
+  box-shadow: 0 10px 30px rgba(255, 20, 147, 0.4);
 }
 .wrapper-lofi .profile-image-container {
   border-color: rgba(88, 61, 184, 0.8);
-  box-shadow: 0 10px 30px rgba(88, 61, 184, 0.25);
+  box-shadow: 0 10px 30px rgba(88, 61, 184, 0.4);
 }
 .wrapper-rap .profile-image-container {
   border-color: rgba(42, 161, 18, 0.8);
-  box-shadow: 0 10px 30px rgba(42, 161, 18, 0.25);
+  box-shadow: 0 10px 30px rgba(42, 161, 18, 0.4);
 }
 .wrapper-country .profile-image-container {
   border-color: rgba(153, 115, 61, 0.8);
-  box-shadow: 0 10px 30px rgba(153, 115, 61, 0.25);
+  box-shadow: 0 10px 30px rgba(153, 115, 61, 0.4);
 }
 
 .profile-image {
@@ -347,6 +371,10 @@
     padding-top: 20px;
   }
   .about-section {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
+  }
+  .about-section__inner {
+    width: 92%;
+    padding: 1.5rem;
   }
 }

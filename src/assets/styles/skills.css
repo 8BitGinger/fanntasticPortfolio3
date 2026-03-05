@@ -3,31 +3,19 @@
    ============================================ */
 
 .skills-section {
-  width: 90%;
-  max-width: 680px;
-  margin: 50px auto;
-  
-
-  padding: 2rem;
-    background: rgba(0, 0, 0, 0.315 );
-  backdrop-filter: blur(16px) saturate(1.6);
-  -webkit-backdrop-filter: blur(16px) saturate(1.6);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 /* Section heading — reuses the same title classes from about.css */
 .skills-heading {
   font-size: 1.4rem;
   font-weight: 800;
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 0.2rem 0.5rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin: 0 0 1.5rem;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.4);
-  border-radius: 4px;
 }
 
 /* Each skill row fades + slides in */
@@ -57,9 +45,9 @@
 
 .skill-name {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.03em;
-  color: rgba(255, 255, 255, 0.911);
+  color: rgba(255, 255, 255, 0.822);
   /* color comes from the shared theme title classes in about.css */
 }
 
@@ -68,7 +56,7 @@
   font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.7);
   font-family: 'Space Grotesk', sans-serif;
 }
 
@@ -110,9 +98,15 @@
 }
 
 @keyframes shineSweep {
-  0%   { left: -40%; }
-  60%  { left: 110%; }
-  100% { left: 110%; }
+  0% {
+    left: -40%;
+  }
+  60% {
+    left: 110%;
+  }
+  100% {
+    left: 110%;
+  }
 }
 
 /* ============================================
@@ -120,70 +114,66 @@
    Matches the exact accents from about.css
    ============================================ */
 
-   .skills-section--rock {
-
-    border: 1px double rgba(255, 0, 0, 0.6);
-   }
-
-    .skills-section--jazz {
-  
-      border: 1px double rgba(136, 117, 109, 0.6);
-    }
-
-    .skills-section--pop {
-  
-      border: 1px double rgba(255, 20, 147, 0.6);
-    }
-
-    .skills-section--lofi {
-  
-      border: 1px double rgba(88, 61, 184, 0.6);
-    }
-
-    .skills-section--rap {
-  
-      border: 1px double rgba(42, 161, 18, 0.6);
-    }
-
-    .skills-section--country {
-  
-      border: 1px double rgba(153, 115, 61, 0.6);
-    }
-
-
-
 .skill-fill--default {
-  background: linear-gradient(90deg, rgba(7, 129, 138, 0.9), rgba(8, 213, 228, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(7, 129, 138, 0.9),
+    rgba(8, 213, 228, 0.85)
+  );
   box-shadow: 0 0 8px rgba(8, 213, 228, 0.4);
 }
 
 .skill-fill--rock {
-  background: linear-gradient(90deg, rgba(180, 0, 0, 0.9), rgba(255, 0, 0, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(180, 0, 0, 0.9),
+    rgba(255, 0, 0, 0.85)
+  );
   box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
 }
 
 .skill-fill--jazz {
-  background: linear-gradient(90deg, rgba(100, 85, 79, 0.9), rgba(136, 117, 109, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(100, 85, 79, 0.9),
+    rgba(136, 117, 109, 0.85)
+  );
   box-shadow: 0 0 8px rgba(136, 117, 109, 0.4);
 }
 
 .skill-fill--pop {
-  background: linear-gradient(90deg, rgba(200, 10, 110, 0.9), rgba(255, 20, 147, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(200, 10, 110, 0.9),
+    rgba(255, 20, 147, 0.85)
+  );
   box-shadow: 0 0 8px rgba(255, 20, 147, 0.4);
 }
 
 .skill-fill--lofi {
-  background: linear-gradient(90deg, rgba(60, 40, 140, 0.9), rgba(88, 61, 184, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(60, 40, 140, 0.9),
+    rgba(88, 61, 184, 0.85)
+  );
   box-shadow: 0 0 8px rgba(88, 61, 184, 0.4);
 }
 
 .skill-fill--rap {
-  background: linear-gradient(90deg, rgba(30, 120, 12, 0.9), rgba(42, 161, 18, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(30, 120, 12, 0.9),
+    rgba(42, 161, 18, 0.85)
+  );
   box-shadow: 0 0 8px rgba(42, 161, 18, 0.4);
 }
 
 .skill-fill--country {
-  background: linear-gradient(90deg, rgba(110, 82, 40, 0.9), rgba(153, 115, 61, 0.85));
+  background: linear-gradient(
+    90deg,
+    rgba(110, 82, 40, 0.9),
+    rgba(153, 115, 61, 0.85)
+  );
   box-shadow: 0 0 8px rgba(153, 115, 61, 0.4);
 }
 

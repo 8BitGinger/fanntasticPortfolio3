@@ -87,9 +87,11 @@ export default function About({ theme }) {
         </div>
       </div>
 
-      {/* ── Skills — outside the hero, own blurred section ── */}
+      {/* ── Skills — outside the hero, own glass card ── */}
       <div className={`about-section about-section--${theme}`}>
-        <SkillBars theme={theme} />
+        <div className="about-section__inner">
+          <SkillBars theme={theme} />
+        </div>
       </div>
     </motion.div>
   );
