@@ -78,7 +78,7 @@ export default function About({ theme }) {
           </div>
 
           <h1 className={`about-title ${theme}`}>{content.title}</h1>
-          <p className="subtitle">{content.subtitle}</p>
+          {/* <p className="subtitle">{content.subtitle}</p> */}
           <p className="about-paragraph">{content.text}</p>
 
           <Link to="/" className="link">

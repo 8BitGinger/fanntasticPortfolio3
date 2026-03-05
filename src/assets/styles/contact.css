@@ -8,8 +8,7 @@
   margin: auto;
   padding: 40px;
   padding-top: 130px;
-
-  background: rgba(20, 20, 20, 0.281);
+  background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(16px) saturate(1.8);
   -webkit-backdrop-filter: blur(16px) saturate(1.8);
   border: 1px solid turquoise;

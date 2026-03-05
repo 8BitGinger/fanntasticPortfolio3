@@ -49,6 +49,7 @@
   font-weight: 400;
   letter-spacing: 0.03em;
   color: rgba(255, 255, 255, 0.822);
+  font-family: 'Space Grotesk', sans-serif;
   /* color comes from the shared theme title classes in about.css */
 }
 
