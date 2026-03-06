@@ -90,9 +90,11 @@ body {
   height: 100vh;
   object-fit: cover;
   z-index: -2;
+  background-color: #09090b;
+  opacity: 0.5;
 }
 
-.video-overlay {
+/* .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -101,7 +103,7 @@ body {
   background: rgba(0, 0, 0, 0.5); 
   
   z-index: -1;
-}
+} */
 
 /* =========================================
    4. Cassette Selector Page
@@ -165,8 +167,8 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 12px 14px rgba(11, 88, 230, 0.877));
-  -webkit-text-stroke: 1px rgba(23, 24, 24, 0.301);
+  text-shadow: 0 10px 14px rgb(233, 240, 235);
+  -webkit-text-stroke: 1px double rgb(23, 24, 24);
   transition: all 0.3s ease;
 }
 

@@ -8,11 +8,11 @@ const NavPageButtons = ({ theme, btn1Link, btn2Link }) => {
     <aside className={`weblinks-container float-btn-box weblinks-container--${theme}`}>
         <div className="btnBox">        
             <Link to={btn1Link} className={`link link--${theme}`}><FaFastBackward /></Link>
-       <span className="small-text">Rewind</span>
+       <span className="small-text"> Rewind Page </span>
        </div>
         <div className="btnBox">
             <Link to={btn2Link} className={`link link--${theme}`}><FaFastForward /></Link>
-       <span className="small-text">Fast Forward</span>
+       <span className="small-text">Fast Forward Page</span>
         </div>
     </aside>
   )

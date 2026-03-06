@@ -16,7 +16,7 @@
   margin: auto;
 
   /* Background image controlled via inline style in About.jsx */
-  background-color: rgba(12, 12, 12, 0.6);
+  
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
@@ -88,6 +88,9 @@
   padding-bottom: 30px;
   gap: 1.5rem;
   animation: fadeIn 0.8s ease-out forwards;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
 /* ── Sections below the hero ───────────────────────────────── */
