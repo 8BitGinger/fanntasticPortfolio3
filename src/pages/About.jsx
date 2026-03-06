@@ -4,6 +4,11 @@ import '../assets/styles/skills.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SkillBars from '../components/SkillBars';
+import WebLinks from '../components/WebLinks';
+
+import { FaFastBackward } from "react-icons/fa";
+import { FaFastForward } from "react-icons/fa";
+
 
 const themeData = {
   rock: {
@@ -30,7 +35,7 @@ const themeData = {
   rap: {
     title: '8Bit-Flow-Master',
     subtitle: "Ryan '8BitGinger' Fann",
-    text: "In development, just like on the mic, it's all about the hustle and the flow. I engineer custom OBS tools, dynamic web apps, and raw TTRPG experiences that never skip a beat. Whether I'm dropping high-performance code, building out a fresh campaign, or optimizing a stream's setup, I bring relentless energy and street-level authenticity to every project I touch.",
+    text: "In development, just like on the mic, it's all about the hustle and the flow. I engineer custom OBS tools, dynamic web apps, and raw Game experiences that never skip a beat. Whether I'm dropping bars of code, slinging a fresh campaign, or optimizing a stream's setup, I bring relentless energy and street-level authenticity to every project I touch.",
     image: '/images/profile-rap.webp',
     background: '/images/rap-background.webp',
   },
@@ -44,7 +49,7 @@ const themeData = {
   lofi: {
     title: '8Bit-Vibe-Coder',
     subtitle: "Ryan '8BitGinger' Fann",
-    text: 'There is a certain kind of magic that happens at 2 AM with a hot coffee and a steady, ambient beat. I specialize in deep-focus development, quietly crafting visual story-based websites, seamless OBS tools and vast TTRPG worlds while the rest of the world sleeps. My approach is all about creating a relaxed, intuitive user experience—building software.',
+    text: 'There is a certain kind of magic that happens at 2 AM with a hot coffee and a steady, ambient beat. I specialize in deep-focus development, quietly crafting visual story-based websites, seamless OBS tools and vast TTRPG worlds while the rest of the world sleeps. My approach is all about creating a relaxed, intuitive user experience.',
     image: '/images/profile-lofi.webp',
     background: '/images/lofi-background.webp',
   },
@@ -79,19 +84,37 @@ export default function About({ theme }) {
 
           <h1 className={`about-title ${theme}`}>{content.title}</h1>
           {/* <p className="subtitle">{content.subtitle}</p> */}
+
           <p className="about-paragraph">{content.text}</p>
 
-          <Link to="/" className="link">
+          <div className="weblinks-container">
+            <WebLinks theme={theme} />
+               <Link to="/" className="link">
             Switch Tapes?
           </Link>
+          </div>
+
+       
         </div>
       </div>
+
+      
 
       {/* ── Skills — outside the hero, own glass card ── */}
       <div className={`about-section about-section--${theme}`}>
         <div className="about-section__inner">
           <SkillBars theme={theme} />
         </div>
+      </div>
+
+      <div className='weblinks-container'>
+
+      <Link to="/" className={`link link--${theme}`}>
+        <span className={`icon2 icon2--${theme}`}><FaFastBackward /></span> Rewind
+      </Link>
+      <Link to="/projects" className={`link link--${theme}`}>
+        Fast Forward <span className={`icon2 icon2--${theme}`}><FaFastForward /></span>
+      </Link>
       </div>
     </motion.div>
   );

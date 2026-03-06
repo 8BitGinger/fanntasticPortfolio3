@@ -5,11 +5,11 @@ import { FaLinkedin } from "react-icons/fa6";
 import '../assets/styles/weblinks.css'
 
 
-const WebLinks = () => {
+const WebLinks = ({ theme }) => {
   return (
-    <aside className="web-links">
+    <aside className={`web-links web-links--${theme}`}>
       
-      <ul className="web-links-list">
+      <ul className={`web-links-list web-links-list--${theme}`}>
                 <li>
           <a href="https://x.com/the8BitGinger" target="_blank" rel="noopener noreferrer">
             <BsTwitterX size={28} />

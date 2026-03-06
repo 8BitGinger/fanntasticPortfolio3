@@ -268,7 +268,7 @@ body {
     text-shadow:
       0 0 5px rgba(8, 213, 228, 0.5),
       0 0 10px rgba(8, 213, 228, 0.4),
-      0 0 20px rgba(8, 213, 228, 0.5);
+      0 0 20px rgba(8, 213, 228, 0.7);
 
     -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   }

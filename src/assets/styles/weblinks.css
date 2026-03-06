@@ -1,12 +1,6 @@
 .web-links {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  padding: 2rem 0;
-  
+  margin: 5px auto;
   width: fit-content;
-  margin: 0 auto;
- 
 }
 
 .web-links-list {
@@ -17,7 +11,8 @@
     list-style: none;
    
     flex-direction: row;
-    background-color: rgba(0, 0, 0, 0.5);
+      background: rgba(15, 15, 15, 0.705);
+
     padding: 1rem 1rem;
     border-radius: 36px;
      backdrop-filter: blur(8px) saturate(1.6);
@@ -28,13 +23,108 @@
 
 .web-links-list li {
   scale: 1;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
   margin-top: 5px;
 }
 
 .web-links-list li:hover {
   scale: 1.3;
   color: turquoise;
+}
+
+.weblinks-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+
+.web-links-list--pop {
+  border: 1px solid rgba(255, 20, 147, 0.5);
+
+  gap: 1rem;
+  padding: 0.6rem 0.7rem;
+  margin: 0;
+
+}
+
+
+
+.web-links-list--pop li:hover {
+  color: rgb(255, 20, 147);
+  scale: 1.2;
+}
+
+.web-links-list--rap {
+  border: 1px solid rgba(42, 161, 18, 0.5);
+  gap: 1rem;
+   padding: 0.6rem 0.7rem;
+   margin: 0;
+}
+
+
+
+.web-links-list--rap li:hover {
+  color: rgb(42, 161, 18);
+  scale: 1.2;
+}
+
+
+.web-links-list--rock {
+    border-color: rgba(255, 0, 0, 0.5);
+  gap: 1rem;
+   padding: 0.6rem 0.7rem;
+   margin: 0;
+} 
+
+
+
+.web-links-list--rock li:hover {
+  color: red;
+  scale: 1.2;
+}
+
+.web-links-list--jazz {
+    border-color: rgba(136, 117, 109, 0.5);
+  gap: 1rem;
+   padding: 0.6rem 0.7rem;
+   margin: 0;
+}
+
+
+
+.web-links-list--jazz li:hover {
+  color: rgb(136, 117, 109);
+  scale: 1.2;
+}
+
+.web-links-list--lofi {
+    border-color: rgba(88, 61, 184, 0.5);
+  gap: 1rem;
+   padding: 0.6rem 0.7rem;
+   margin: 0;
+}
+
+
+
+.web-links-list--lofi li:hover {
+  color: rgb(88, 61, 184);
+  scale: 1.2;
+}
+
+.web-links-list--country {
+    border-color: rgba(153, 115, 61, 0.5);
+  gap: 1rem;
+   padding: 0.6rem 0.7rem;
+   margin: 0;
+}
+
+.web-links-list--country li:hover {
+  color: rgb(153, 115, 61);
+  scale: 1.2;
 }
 
 
