@@ -4,7 +4,7 @@ import '../assets/styles/projects.css';
 import { getCategoryIcon } from '../data/projectList';
 import NavPageButtons from '../components/NavPageButtons';
 
-export default function Projects() {
+export default function Projects({ theme }) {
   // Triple the list to ensure it's long enough to never show a gap
   const displayProjects = [...projectList, ...projectList, ...projectList];
 
@@ -51,7 +51,8 @@ export default function Projects() {
           ))}
         </div>
       </div>
-      <NavPageButtons theme="jazz" btn1Link="/" btn2Link="/about" />
+      
+      <NavPageButtons theme={theme} btn1Link="/about" btn2Link="/contact" />
     </div>
   );
 }
