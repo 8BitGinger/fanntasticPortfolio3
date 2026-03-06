@@ -71,41 +71,13 @@ body {
 .navbar,
 
 .projects-wrapper {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px); /* Safari support */
-  transform: translateZ(0);
-  will-change: backdrop-filter;
+  
+
 }
 
-
-/* .link {
-  color: white;
-  background-color: rgba(0, 0, 0, 0.575);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 255, 255, 0.623);
-  text-decoration: none;
-  font-weight: bold;
-  cursor: pointer;
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-  font-size: 1.3rem;
-  box-shadow: 0 4px 15px rgba(23, 24, 24, 0.767);
-}
-
-.link:hover {
-  color: var(--accent-cyan);
-  background-color: rgba(0, 0, 0, 0.7);
-  transform: translateY(-3px);
-  border: 1px dotted rgba(0, 255, 255, 0.623);
-}
-
-.link:active {
-  transform: scale(0.9);
-  border: 1px solid rgba(0, 255, 255, 0.623);
-} */
 
 /* =========================================
    3. Background Video & Overlay
@@ -126,7 +98,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.4); /* Adjust for text readability */
+  background: rgba(0, 0, 0, 0.6); 
   z-index: -1;
 }
 

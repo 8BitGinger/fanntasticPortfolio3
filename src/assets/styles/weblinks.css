@@ -128,3 +128,71 @@
 }
 
 
+.btnBox {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+ 
+  flex-direction: column;
+
+  margin-top: 1rem;
+  margin: auto 0;
+
+  width: fit-content;
+}
+
+.small-text {
+  font-size: 0.8rem;
+  margin: auto;
+  margin-top: 2px;
+  color: #ccc;
+  text-align: center;
+  text-shadow: 0 0 5px rgba(26, 25, 25, 0.61);
+}
+
+.float-btn-box {
+  width: 100%;
+  
+  
+}
+
+@media (max-width: 768px) {
+
+  .btnBox {
+    display: flex;
+    flex-direction: column;
+  }
+  .float-btn-box {
+    padding: 2px;
+    padding-bottom: 8px;
+
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2px;
+
+    gap: 1rem;
+
+  }
+
+  .btnBox .link {
+    padding: 9px 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    border-radius: 36px;
+    margin: auto; 
+    
+  }
+
+  .small-text {
+    font-size: 0.7rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 1px;
+    
+  }
+
+}
+

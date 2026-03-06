@@ -2,6 +2,7 @@ import React from 'react';
 import projectList from '../data/projectList';
 import '../assets/styles/projects.css';
 import { getCategoryIcon } from '../data/projectList';
+import NavPageButtons from '../components/NavPageButtons';
 
 export default function Projects() {
   // Triple the list to ensure it's long enough to never show a gap
@@ -50,6 +51,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <NavPageButtons theme="jazz" btn1Link="/" btn2Link="/about" />
     </div>
   );
 }

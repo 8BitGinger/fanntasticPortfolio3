@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SkillBars from '../components/SkillBars';
 import WebLinks from '../components/WebLinks';
+import NavPageButtons from '../components/NavPageButtons';
 
 import { FaFastBackward } from "react-icons/fa";
 import { FaFastForward } from "react-icons/fa";
@@ -59,16 +60,17 @@ export default function About({ theme }) {
   const content = themeData[theme] || themeData['jazz'];
 
   return (
-    <motion.div
+    <div
       className="about-page"
-      initial={{ opacity: 0 }}
+     
+    >
+      {/* ── Hero wrapper ── */}
+      <motion.div
+        className={`about-wrapper wrapper-${theme}`}
+         initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-    >
-      {/* ── Hero wrapper ── */}
-      <div
-        className={`about-wrapper wrapper-${theme}`}
         style={{ backgroundImage: `url(${content.background})` }}
       >
         <div className="about-content">
@@ -96,9 +98,9 @@ export default function About({ theme }) {
 
        
         </div>
-      </div>
+      </motion.div>
 
-      
+
 
       {/* ── Skills — outside the hero, own glass card ── */}
       <div className={`about-section about-section--${theme}`}>
@@ -106,16 +108,11 @@ export default function About({ theme }) {
           <SkillBars theme={theme} />
         </div>
       </div>
+      
+          <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
 
-      <div className='weblinks-container'>
 
-      <Link to="/" className={`link link--${theme}`}>
-        <span className={`icon2 icon2--${theme}`}><FaFastBackward /></span> Rewind
-      </Link>
-      <Link to="/projects" className={`link link--${theme}`}>
-        Fast Forward <span className={`icon2 icon2--${theme}`}><FaFastForward /></span>
-      </Link>
-      </div>
-    </motion.div>
+
+    </div>
   );
 }
