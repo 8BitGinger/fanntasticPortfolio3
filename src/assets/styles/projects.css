@@ -5,7 +5,7 @@
   max-height: 100vh; /* Height minus navbar */
   /* Offset for fixed navbar */
   padding: 10px 0;
-  
+  background: transparent;
 
   /* Universal Glass Effects */
 
@@ -57,8 +57,8 @@
   font-size: 2rem;
   color: white;
   margin: 0;
-  margin-top: 30px;
-  margin-bottom: -30px;
+  margin-top: 70px;
+  margin-bottom: -50px;
   text-align: center;
 
   letter-spacing: 0.2rem;
@@ -73,11 +73,14 @@
 /* 🎡 MARQUEE CONTAINER */
 .marquee-container {
   width: 100%;
-  padding: 40px 0;
+  padding: 40px;
   overflow: hidden;
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin: auto;
+  
 }
 
 .project-card {

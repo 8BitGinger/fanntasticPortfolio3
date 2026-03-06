@@ -90,7 +90,7 @@ export default function CassetteSelector() {
 
       <div className="content-wrapper">
         <img src={profilePic} alt="Logo" className="logo" />
-        <h1 className="title">Select Your Vibe</h1>
+        <h1 className="title neon-flicker">Select Your Vibe</h1>
 
         <div className="ghost-wrapper vertical-fan">
           {genres.map((g, index) => {

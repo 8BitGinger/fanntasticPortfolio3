@@ -33,7 +33,7 @@ function App() {
   return (
     <div className="app-container">
       <video autoPlay loop muted playsInline className="video-bg">
-        <source src="/videos/retro-bg.mp4" type="video/mp4" />
+        <source src="/videos/retro-bgEdit.mp4" type="video/mp4" />
       </video>
       <div className="video-overlay"></div>
 

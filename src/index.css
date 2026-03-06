@@ -91,7 +91,7 @@ body {
   object-fit: cover;
   z-index: -2;
   background-color: #09090b;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 /* .video-overlay {
@@ -144,17 +144,18 @@ body {
 
   -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
-  animation: glow 2s ease-in-out infinite;
+  animation: glow 3s ease-in-out infinite;
   transition: all 0.3s ease;
   /* 🚀 THE FIX: Promotes the element to the GPU for faster painting */
   will-change: transform, opacity, filter;
 
   /* Ensure it starts visible so there is no "pop-in" */
-  opacity: 1 !important;
+  opacity: 1;
 
   /* Use backface-visibility to prevent flickering during the float animation */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  
 }
 
 .title2 {
@@ -163,14 +164,24 @@ body {
   opacity: 0.9;
   margin-top: 4rem;
   margin-bottom: -4rem;
-  background: linear-gradient(to right, dodgerblue, turquoise, dodgerblue);
+  /* background: linear-gradient(105deg, rgb(255, 255, 255), rgb(1, 217, 255), rgb(5, 124, 243));
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 10px 14px rgb(233, 240, 235);
-  -webkit-text-stroke: 1px double rgb(23, 24, 24);
+  -webkit-text-fill-color: transparent; */
+
+  -webkit-text-stroke: 5px solid rgb(23, 24, 24);
   transition: all 0.3s ease;
+  color: rgb(255, 255, 255);
+
+
+   
+   
 }
+
+.neon-flicker {
+  animation: flicker 3.5s infinite alternate;
+}
+
 
 /* Logo / Profile Pic */
 .logo {
@@ -181,7 +192,7 @@ body {
   width: 180px;
   height: 180px;
   border-radius: 50%;
-  border: 2px solid rgba(7, 129, 138, 0.8); /* default teal */
+  border: 2px solid turquoise;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
   object-fit: cover;
   z-index: 0;
@@ -286,6 +297,25 @@ body {
   }
 }
 
+@keyframes flicker {
+  18%, 22%, 25%, 53%, 100% {
+    text-shadow:
+      
+     
+      0 0 19px #fff,
+      0 0 40px rgb(255, 0, 234),
+      0 0 80px rgb(255, 0, 212),
+      0 0 90px #0fa,
+      0 0 100px #0fa,
+      0 0 150px #0fa;
+  }
+  0%, 20%, 24%, 65% {        
+    text-shadow: none; /* The "off" state */
+  }
+}
+
+
+
 /* =========================================
    7. Desktop Responsive Sizing
    ========================================= */
@@ -293,16 +323,7 @@ body {
   .title {
     font-size: 2.8rem;
     margin-bottom: 3rem;
-    will-change: transform, opacity, filter;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 
-    /* Use fixed opacity to prevent FOUC (Flash of Unstyled Content) */
-    opacity: 1 !important;
-
-    -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
-    transform: rotate(-13deg);
-    animation: glow 4s ease-in-out infinite;
   }
 
   .logo {

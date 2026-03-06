@@ -142,14 +142,17 @@
   font-size: 0.8rem;
   margin: auto;
   margin-top: 2px;
+  
   color: #ccc;
   text-align: center;
   text-shadow: 0 0 5px rgba(26, 25, 25, 0.61);
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
 }
 
 .float-btn-box {
   width: 100%;
-  
+ 
   
 }
 
@@ -158,6 +161,9 @@
   .btnBox {
     display: flex;
     flex-direction: column;
+   width: 90px;
+   
+    gap: 0;
   }
   
   .float-btn-box {
