@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import profilePic from '../assets/pictures/profile-standard.webp';
-import { vibeManager } from '../Utils/VibeManager'; // Adjust path accordingly
+import { vibeManager } from '../Utils/VibeManager'; 
 
 const genres = [
   {
@@ -86,10 +86,7 @@ export default function CassetteSelector() {
 
   return (
     <div className="selector-page">
-      <video autoPlay loop muted playsInline className="video-bg">
-        <source src="/videos/retro-bg.mp4" type="video/mp4" />
-      </video>
-      <div className="video-overlay"></div>
+
 
       <div className="content-wrapper">
         <img src={profilePic} alt="Logo" className="logo" />

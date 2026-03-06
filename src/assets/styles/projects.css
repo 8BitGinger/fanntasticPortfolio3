@@ -190,7 +190,7 @@
   display: flex;
   width: max-content;
   /* Adjust the 40s to change the overall speed */
-  animation: scrollMarquee 40s linear infinite;
+  animation: scrollMarquee 30s linear infinite;
 }
 
 /* 🛑 THE FIX: This pauses the animation in place without resetting it */

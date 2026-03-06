@@ -78,14 +78,14 @@ const projectList = [
     category: 'fullstack',
   },
 
-  {
-    img: img7,
-    title: 'Silver Knight RPG',
-    subtitle: 'Node.js, Inquirer',
-    link: 'https://8bitginger.github.io/silverKnightRPG/',
-    git: 'https://github.com/8BitGinger/silverKnightRPG',
-    category: 'game',
-  },
+  // {
+  //   img: img7,
+  //   title: 'Silver Knight RPG',
+  //   subtitle: 'Node.js, Inquirer',
+  //   link: 'https://8bitginger.github.io/silverKnightRPG/',
+  //   git: 'https://github.com/8BitGinger/silverKnightRPG',
+  //   category: 'game',
+  // },
 
   {
     img: img9,
@@ -96,14 +96,14 @@ const projectList = [
     category: 'web',
   },
 
-  {
-    img: img12,
-    title: 'Readme Maker',
-    subtitle: 'Node.js, Inquirer',
-    link: 'https://8bitginger.github.io/readmeMaker/',
-    git: 'https://github.com/8BitGinger/readmeMaker',
-    category: 'script',
-  },
+  // {
+  //   img: img12,
+  //   title: 'Readme Maker',
+  //   subtitle: 'Node.js, Inquirer',
+  //   link: 'https://8bitginger.github.io/readmeMaker/',
+  //   git: 'https://github.com/8BitGinger/readmeMaker',
+  //   category: 'script',
+  // },
 
   {
     img: img6,
@@ -132,23 +132,23 @@ const projectList = [
     category: 'game',
   },
 
-  {
-    img: img10,
-    title: 'Desktop Cleaner',
-    subtitle: 'Python',
-    link: '',
-    git: 'https://github.com/8BitGinger/desktopCleaner',
-    category: 'script',
-  },
+  // {
+  //   img: img10,
+  //   title: 'Desktop Cleaner',
+  //   subtitle: 'Python',
+  //   link: '',
+  //   git: 'https://github.com/8BitGinger/desktopCleaner',
+  //   category: 'script',
+  // },
 
-  {
-    img: img16,
-    title: 'Quizzed',
-    subtitle: 'Vanilla JS',
-    link: 'https://8bitginger.github.io/quizzed/',
-    git: 'https://github.com/8BitGinger/quizzed',
-    category: 'web',
-  },
+  // {
+  //   img: img16,
+  //   title: 'Quizzed',
+  //   subtitle: 'Vanilla JS',
+  //   link: 'https://8bitginger.github.io/quizzed/',
+  //   git: 'https://github.com/8BitGinger/quizzed',
+  //   category: 'web',
+  // },
 ];
 
 const getCategoryIcon = (category) => {
