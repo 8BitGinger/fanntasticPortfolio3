@@ -62,25 +62,22 @@ body {
 /* 2. Firefox (Standard) */
 * {
   scrollbar-width: thin;          /* "auto" or "thin" */
-  scrollbar-color: rgba(64, 224, 208, 0.849) #222222;  /* thumb color | track color */
+  scrollbar-color: rgba(25, 231, 238, 0.8) #222222;  /* thumb color | track color */
 }
 
 /* =========================================
    2. Shared UI Elements (Glassmorphism)
    ========================================= */
 .navbar,
-.contact-wrapper,
+
 .projects-wrapper {
-  background: rgba(70, 69, 69, 0.192);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px); /* Safari support */
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px); /* Safari support */
   transform: translateZ(0);
   will-change: backdrop-filter;
 }
 
-.projects-wrapper {
-  backdrop-filter: none;
-}
 
 /* .link {
   color: white;

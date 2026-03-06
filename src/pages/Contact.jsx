@@ -2,11 +2,13 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import '../assets/styles/contact.css';
+import WebLinks from '../components/WebLinks';
 
 const Contact = (theme) => {
   const [state, handleSubmit] = useForm('mjvnrreq');
 
   return (
+    <>
     <div className="contact-wrapper">
       <AnimatePresence mode="wait">
         {state.succeeded ? (
@@ -107,7 +109,11 @@ const Contact = (theme) => {
           </motion.div>
         )}
       </AnimatePresence>
+      
     </div>
+
+    <WebLinks />
+    </>
   );
 };
 

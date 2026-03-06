@@ -268,13 +268,33 @@
 @media (max-width: 480px) {
   .mini-player {
     bottom: 16px;
-    right: 16px;
-    left: 16px;
-    border-radius: 16px;
+    right: 3px;
+    padding: none;
+    margin: auto;
+    border: none;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     justify-content: space-between;
   }
 
-  .mini-player__slider {
-    width: 80px;
+  .mini-player__volume {
+    display: none;
+  }
+
+  .mini-player__label {
+    display: none;
+  }
+
+  .mini-player__btn {
+    width: 40px;
+    height: 40px;
+    border: 3px double rgba(247, 241, 241, 0.9);
+    box-shadow: 0 0 8px rgba(10, 10, 10, 0.9);
+    color: #fff;
+    transition:
+      background 0.2s ease,
+      transform 0.15s ease;
   }
 }
