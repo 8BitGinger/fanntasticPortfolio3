@@ -1,7 +1,7 @@
 import React from 'react'
-import { BsTwitterX } from "react-icons/bs";
+import { RiTwitterXFill } from "react-icons/ri";
 import { VscGithub } from "react-icons/vsc";
-import { FaLinkedin } from "react-icons/fa6";
+import { AiOutlineLinkedin } from "react-icons/ai";
 import '../assets/styles/weblinks.css'
 
 
@@ -12,7 +12,7 @@ const WebLinks = ({ theme }) => {
       <ul className={`web-links-list web-links-list--${theme}`}>
                 <li>
           <a href="https://x.com/the8BitGinger" target="_blank" rel="noopener noreferrer">
-            <BsTwitterX size={26} />
+            <RiTwitterXFill size={28} />
           </a>
         </li>
         <li>
@@ -22,7 +22,7 @@ const WebLinks = ({ theme }) => {
         </li>
         <li>
           <a href="https://www.linkedin.com/in/ryanfanntastic/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={30} />
+            <AiOutlineLinkedin size={28} />
           </a>
         </li>
 
