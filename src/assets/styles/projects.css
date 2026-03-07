@@ -95,22 +95,23 @@
  
   flex-direction: column; /* Stack image on top of text for large cards */
   overflow: hidden;
-  justify-content:space-between;
+  justify-content:center;
+  
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .project-card:hover {
   transform: scale(1.02) translateY(-10px);
-  background: rgba(0, 0, 0, 0.91);
+  background: rgba(0, 0, 0, 0.85);
   box-shadow: 0 2px 20px var(--theme-accent);
   border: 3px solid var(--theme-accent);
 }
 
 .card-image-wrapper {
   width: 100%;
-  height: 50%; /* Allocated space for the image */
-  min-height: 250px;
-  background: rgba(255, 255, 255, 0.1);
+  
+  height: 50%;
+  background: rgba(7, 7, 7, 0.9);
   flex-shrink: 0;
   overflow: hidden;
 }
@@ -133,7 +134,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-height: 180px;
+  flex-grow: 1;
   position: relative;
 }
 

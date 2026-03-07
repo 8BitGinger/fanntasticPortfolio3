@@ -20,6 +20,7 @@ import img9 from '../assets/pictures/project-pics/weeklyMoodalProject.webp';
 import img13 from '../assets/pictures/project-pics/casinoSlotProject.webp';
 import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
 import img18 from '../assets/pictures/project-pics/citrusProject.webp';
+import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 
 const projectList = [
   {
@@ -78,7 +79,7 @@ const projectList = [
   {
     img: img9,
     title: 'Weekly Moodal',
-    subtitle: 'React, Express.js',
+    subtitle: 'APIs, Dynamic Date',
     link: 'https://jameslwilson364.github.io/weeklyMoodal/',
     git: 'https://github.com/jameslwilson364/weeklyMoodal',
     category: 'web',
@@ -114,10 +115,10 @@ const projectList = [
   },
 
     {
-    img: img14,
+    img: img15,
     title:"Ryan's Gemini",
     subtitle: 'Gemini API',
-    link: 'https://ryansgemini.onrender.com/',
+    link: 'https://gemini-ryan.netlify.app/',
     git: 'https://github.com/8BitGinger/ryansGemini',
     category: 'ai',
     

@@ -226,9 +226,7 @@ body {
   will-change: opacity, transform;
 }
 
-.tape-container.vertical:hover {
-  opacity: 0.9;
-}
+
 
 .tape-image {
   width: 100%;
@@ -357,7 +355,7 @@ body {
   }
 
   .title2 {
-    font-size: 4.5rem !important;
+    font-size: 4.3rem !important;
     position: fixed;
     bottom: 12%;
     left: 50%;

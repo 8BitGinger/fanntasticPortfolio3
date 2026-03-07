@@ -12,7 +12,7 @@ const WebLinks = ({ theme }) => {
       <ul className={`web-links-list web-links-list--${theme}`}>
                 <li>
           <a href="https://x.com/the8BitGinger" target="_blank" rel="noopener noreferrer">
-            <BsTwitterX size={28} />
+            <BsTwitterX size={26} />
           </a>
         </li>
         <li>
@@ -22,7 +22,7 @@ const WebLinks = ({ theme }) => {
         </li>
         <li>
           <a href="https://www.linkedin.com/in/ryanfanntastic/" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin size={28} />
+            <FaLinkedin size={30} />
           </a>
         </li>
 
