@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { vibeManager } from '../Utils/VibeManager';
-import profilePic from '../../public/images/profile-standard.webp'; 
+import profilePic from '/images/profile-standard.webp'; 
 
 
 /**
