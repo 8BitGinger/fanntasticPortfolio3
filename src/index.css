@@ -144,13 +144,10 @@ body {
 
   -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   transform: rotate(-13deg);
-  animation: glow 3s ease-in-out infinite;
   transition: all 0.3s ease;
   /* 🚀 THE FIX: Promotes the element to the GPU for faster painting */
   will-change: transform, opacity, filter;
 
-  /* Ensure it starts visible so there is no "pop-in" */
-  opacity: 1;
 
   /* Use backface-visibility to prevent flickering during the float animation */
   backface-visibility: hidden;
@@ -178,9 +175,6 @@ body {
    
 }
 
-.neon-flicker {
-  animation: flicker 3.5s infinite alternate;
-}
 
 
 /* Logo / Profile Pic */
@@ -213,12 +207,13 @@ body {
 }
 .ghost-wrapper.vertical-fan {
   position: relative;
-  width: 100%;
+  width: 90%;
   max-width: 500px;
   height: 180px; /* Base height for mobile */
   display: flex;
   justify-content: center;
   margin-top: 2rem;
+
   overflow: visible; /* CRITICAL: Allows tapes to fan out past the container */
 }
 
@@ -228,10 +223,11 @@ body {
   position: relative;
   filter: drop-shadow(0 8px 15px rgba(0, 0, 0, 0.5));
   transition: filter 0.3s ease;
+  will-change: opacity, transform;
 }
 
 .tape-container.vertical:hover {
-  filter: drop-shadow(0 5px 10px rgba(51, 235, 241, 0.8));
+  opacity: 0.9;
 }
 
 .tape-image {
@@ -240,6 +236,34 @@ body {
   object-fit: cover;
   border-radius: 4px;
 }
+
+.neon-wrapper {
+  position: relative;
+  color: rgba(255, 0, 234, 0.3); /* The "Off" color */
+  
+  text-shadow: none;
+}
+
+.neon-wrapper::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  /* Keep your 6 shadows here, but they aren't changing every frame! */
+  text-shadow:
+    0 0 19px #fff,
+    0 0 40px rgb(255, 0, 234),
+    0 0 80px #0fa,
+    0 0 90px #0fa,
+    0 0 100px #0fa;
+
+  
+  /* Animate opacity instead of the shadow itself */
+  animation: smooth-flicker 3s infinite;
+}
+
+
 
 /* =========================================
    6. Animations
@@ -258,6 +282,11 @@ body {
 
     -webkit-text-stroke: 1px rgba(10, 216, 231, 0.3);
   }
+}
+
+@keyframes smooth-flicker {
+  0%, 18%, 22%, 25%, 53%, 100% { opacity: 1; }
+  20%, 24%, 55% { opacity: 0; }
 }
 
 @keyframes spin {
@@ -297,22 +326,6 @@ body {
   }
 }
 
-@keyframes flicker {
-  18%, 22%, 25%, 53%, 100% {
-    text-shadow:
-      
-     
-      0 0 19px #fff,
-      0 0 40px rgb(255, 0, 234),
-      0 0 80px rgb(255, 0, 212),
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-  }
-  0%, 20%, 24%, 65% {        
-    text-shadow: none; /* The "off" state */
-  }
-}
 
 
 
