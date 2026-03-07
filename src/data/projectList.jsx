@@ -112,6 +112,17 @@ const projectList = [
     git: 'https://github.com/8BitGinger/casinoSlot',
     category: 'game',
   },
+
+    {
+    img: img14,
+    title:"Ryan's Gemini",
+    subtitle: 'Gemini API',
+    link: 'https://ryansgemini.onrender.com/',
+    git: 'https://github.com/8BitGinger/ryansGemini',
+    category: 'ai',
+    
+
+    },
 ];
 
 
