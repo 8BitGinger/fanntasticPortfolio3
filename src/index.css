@@ -4,6 +4,14 @@
   --bg-dark: #09090b; /* Zinc 950 */
   --accent-cyan: #08d5e4;
   --accent-blue: #1c67c9;
+
+  --theme-font: 'Space Grotesk', sans-serif;
+  --rock-font: 'Rock Salt', cursive;
+  --jazz-font: 'Limelight', display;
+  --pop-font: 'Bungee Shade', cursive;
+  --lofi-font: 'Changa One', cursive;
+  --country-font: 'Special Elite', cursive;
+  --rap-font: 'Permanent Marker', cursive;
 }
 
 /* =========================================

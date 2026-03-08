@@ -23,9 +23,42 @@
   z-index: 10;
 }
 
+.contact-wrapper--rock {
+ 
+    border-color: rgba(255, 0, 0, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(255, 0, 0, 0.5);
+
+}
+
+.contact-wrapper--jazz {
+    border-color: rgba(136, 117, 109, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(136, 117, 109, 0.5);
+}
+
+.contact-wrapper--pop {
+  border-color: rgba(255, 20, 147, 0.5);
+    box-shadow: 0 25px 50px -12px rgba(255, 20, 147, 0.5);
+}
+
+.contact-wrapper--lofi {
+    border-color: rgba(88, 61, 184, 0.8);
+    box-shadow: 0 25px 50px -12px rgba(88, 61, 184, 0.7);
+}
+
+.contact-wrapper--rap {
+    border-color: rgba(42, 161, 18, 0.7);
+    box-shadow: 0 25px 50px -12px rgba(42, 161, 18, 0.5);
+}
+
+.contact-wrapper--country {
+  border-color: rgba(153, 115, 61, 0.7);
+    box-shadow: 0 25px 50px -12px rgba(153, 115, 61, 0.5);
+}
+
+
 .theme-styled-title {
   font-family: 'Oswald', sans-serif; /* A pixelated font for that retro vibe */
-
+  
   color: var(--theme-accent);
   font-weight: bold;
   text-transform: uppercase;
@@ -35,8 +68,76 @@
     0 0 5px rgb(53, 220, 241),
     0 0 10px rgb(163, 238, 243),
     0 0 20px rgb(5, 218, 233);
-  -webkit-text-stroke: 2px rgba(19, 42, 48, 0.6);
+  -webkit-text-stroke: 1px rgba(19, 42, 48, 0.6);
 }
+
+.title-s-rock {
+  font-family: var(--rock-font);
+  font-size: 2rem;
+  color: rgb(243, 6, 6);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.568);
+  text-shadow:
+    0 0 5px rgb(0, 0, 0),
+    0 0 10px rgb(161, 24, 24),
+    0 0 20px rgb(252, 3, 3);
+}
+
+.title-s-jazz {
+  font-family: var(--jazz-font);
+  font-size: 2rem;
+  color: rgb(136, 117, 109);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.6);
+  text-shadow:
+    0 0 5px rgb(0, 0, 0),
+    0 0 10px rgb(136, 117, 109),
+    0 0 20px rgb(136, 117, 109);
+}
+
+.title-s-pop {
+  font-family: var(--pop-font);
+  font-size: 2rem;
+  color: rgb(255, 20, 147);
+  -webkit-text-stroke: 1px rgb(255, 255, 255);
+  text-shadow:
+    0 0 5px rgb(255, 20, 147),
+    0 0 10px rgb(255, 20, 147),
+    0 0 20px rgb(255, 20, 147);
+}
+
+.title-s-lofi {
+  font-family: var(--lofi-font);
+  font-size: 2.5rem;
+  color: rgb(88, 61, 184);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.9);
+  text-shadow:
+    0 0 5px rgb(88, 61, 184),
+    0 0 10px rgb(88, 61, 184),
+    0 0 20px rgb(88, 61, 184);
+}
+
+.title-s-rap {
+  font-family: var(--rap-font);
+  -webkit-text-stroke: 1px rgb(255, 255, 255, 0.6);
+  font-size: 2rem;
+  color: rgb(42, 161, 18);
+  text-shadow:
+    0 0 5px rgb(42, 161, 18),
+    0 0 10px rgb(42, 161, 18),
+    0 0 20px rgb(42, 161, 18);
+}
+
+.title-s-country {
+  font-family: var(--country-font);
+  font-size: 2rem;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.664);
+  color: rgb(153, 115, 61);
+  text-shadow:
+    0 0 5px rgb(153, 115, 61),
+    0 0 10px rgb(153, 115, 61),
+    0 0 20px rgb(153, 115, 61);
+}
+
+
 
 .icon {
   font-size: 25px;
@@ -105,6 +206,55 @@
   filter: brightness(1.2);
   transform: translateY(-2px);
   color: turquoise;
+}
+
+.btn-rock {
+  border: 1px solid rgb(247, 6, 6);
+
+}
+
+.btn-rock:hover {
+  color: rgb(247, 6, 6);
+}
+
+.btn-pop {
+  border: 1px solid rgb(255, 20, 147);
+}
+
+.btn-pop:hover {
+  color: rgb(255, 20, 147);
+}
+
+.btn-jazz {
+  border: 1px solid rgb(136, 117, 109);
+}
+
+.btn-jazz:hover {
+  color: rgb(136, 117, 109);
+}
+
+.btn-lofi {
+  border: 1px solid rgb(88, 61, 184);
+}
+
+.btn-lofi:hover {
+  color: rgb(88, 61, 184);
+}
+
+.btn-rap {
+  border: 1px solid rgb(42, 161, 18);
+}
+
+.btn-rap:hover {
+  color: rgb(42, 161, 18);
+}
+
+.btn-country {
+  border: 1px solid rgb(153, 115, 61);
+}
+
+.btn-country:hover {
+  color: rgb(153, 115, 61);
 }
 
 .contact-btn:disabled {

@@ -4,12 +4,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import '../assets/styles/contact.css';
 import WebLinks from '../components/WebLinks';
 
-const Contact = (theme) => {
+const Contact = ({theme}) => {
   const [state, handleSubmit] = useForm('mjvnrreq');
 
   return (
     <>
-    <div className="contact-wrapper">
+    <div className={`contact-wrapper contact-wrapper--${theme}`}>
       <AnimatePresence mode="wait">
         {state.succeeded ? (
           // SUCCESS STATE
@@ -21,13 +21,13 @@ const Contact = (theme) => {
             transition={{ duration: 0.6 }}
             className="contact-success"
           >
-            <h2 className="theme-styled-title">Success!</h2>
+            <h2 className={`theme-styled-title title--${theme}`}>Success!</h2>
             <p>
               Thanks for reaching out. I'll get back to you faster than a
               critical hit!
             </p>
             <button
-              className="contact-btn"
+              className={`contact-btn btn-${theme}`}
               onClick={() => window.location.reload()}
             >
               Send Another?
@@ -43,7 +43,7 @@ const Contact = (theme) => {
             transition={{ duration: 0.6 }}
             className="contact-content"
           >
-            <h2 className="contact-page-title theme-styled-title">
+            <h2 className={`contact-page-title theme-styled-title title-s-${theme}`}>
               Get In Touch
             </h2>
             <p className="contact-subtitle">
@@ -100,7 +100,7 @@ const Contact = (theme) => {
 
               <button
                 type="submit"
-                className="contact-btn"
+                className={`contact-btn btn-${theme}`}
                 disabled={state.submitting}
               >
                 {state.submitting ? 'Sending...' : 'Send Message'}
@@ -112,7 +112,7 @@ const Contact = (theme) => {
       
     </div>
 
-    <WebLinks />
+    <WebLinks theme={theme} />
     </>
   );
 };

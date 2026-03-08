@@ -232,7 +232,7 @@
 
  .link--rock {
   border-color: rgba(255, 0, 0, 0.5);
-  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.719);
+  
 }
 
 .link--rock:hover{
@@ -250,6 +250,7 @@
   color: red;
   border-color: rgba(255, 0, 0, 0.9);
   background: rgba(255, 0, 0, 0.08);
+  box-shadow: 0 4px 10px rgba(255, 0, 0, 0.5);
 }
 
 .link--jazz {
@@ -260,10 +261,13 @@
   color: rgb(136, 117, 109);
   border-color: rgba(136, 117, 109, 0.9);
   background: rgba(136, 117, 109, 0.08);
+    box-shadow: 0 4px 10px rgba(136, 117, 109, 0.5);
+
 }
 
 .wrapper-jazz .link {
   border-color: rgba(136, 117, 109, 0.5);
+  
 }
 .wrapper-jazz .link:hover {
   color: rgb(136, 117, 109);
@@ -279,6 +283,8 @@
   color: rgb(255, 20, 147);
   border-color: rgba(255, 20, 147, 0.9);
   background: rgba(255, 20, 147, 0.08);
+    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.5);
+
 }
 
 .wrapper-pop .link {
@@ -298,6 +304,9 @@
   color: rgb(88, 61, 184);
   border-color: rgba(88, 61, 184, 0.9);
   background: rgba(88, 61, 184, 0.08);
+    box-shadow: 0 4px 10px rgba(88, 61, 184, 0.5);
+
+  
 }
 
 .wrapper-lofi .link {
@@ -316,6 +325,8 @@
   color: rgb(42, 161, 18);
   border-color: rgba(42, 161, 18, 0.9);
   background: rgba(42, 161, 18, 0.08);
+    box-shadow: 0 4px 10px rgba(42, 161, 18, 0.5);
+
 }
 
 .wrapper-rap .link {
@@ -336,6 +347,8 @@
   color: rgb(153, 115, 61);
   border-color: rgba(153, 115, 61, 0.9);
   background: rgba(153, 115, 61, 0.08);
+    box-shadow: 0 4px 10px rgba(153, 115, 61, 0.5);
+
 }
 
 .wrapper-country .link {
