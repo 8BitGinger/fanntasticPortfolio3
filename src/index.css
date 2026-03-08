@@ -251,10 +251,10 @@ body {
   /* Keep your 6 shadows here, but they aren't changing every frame! */
   text-shadow:
     0 0 19px #ffffffe5,
-    0 0 40px rgba(255, 0, 234, 0.87),
-    0 0 60px #0fa,
-    0 0 70px rgba(0, 255, 170, 0.89),
-    0 0 80px rgba(0, 255, 170, 0.781);
+    0 0 20px rgba(255, 0, 234, 0.87),
+    0 0 40px #0fa,
+    0 0 50px rgba(0, 255, 170, 0.89),
+    0 0 60px rgba(0, 255, 170, 0.781);
 
   
   /* Animate opacity instead of the shadow itself */
