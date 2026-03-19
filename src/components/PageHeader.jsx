@@ -1,8 +1,10 @@
 import React from 'react'
 
-const PageHeader = () => {
+const PageHeader = ({ theme, title,  }) => {
   return (
-    <div>PageHeader</div>
+    <div className={`page-header wrapper-${theme} ${theme}`}>
+      <h1>{title}</h1>
+    </div>
   )
 }
 

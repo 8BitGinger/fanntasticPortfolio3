@@ -100,6 +100,7 @@ body {
   z-index: -2;
   background-color: #09090b;
   opacity: 0.3;
+  overflow: hidden;
 }
 
 /* .video-overlay {
@@ -250,24 +251,23 @@ body {
   text-shadow: none;
 }
 
-.neon-wrapper::after {
-  content: attr(data-text);
+
+
+  .neon-wrapper::after {
+      content: attr(data-text);
   position: absolute;
   left: 0;
   top: 0;
-  color: #fff;
-  /* Keep your 6 shadows here, but they aren't changing every frame! */
-  text-shadow:
-    0 0 19px #ffffffe5,
-    0 0 20px rgba(255, 0, 234, 0.87),
-    0 0 40px #0fa,
-    0 0 50px rgba(0, 255, 170, 0.89),
-    0 0 60px rgba(0, 255, 170, 0.781);
-
-  
-  /* Animate opacity instead of the shadow itself */
-  animation: smooth-flicker 3s infinite;
-}
+    text-shadow:
+      0 0 9px #ffffffe5,
+      0 0 10px rgba(255, 0, 234, 0.87),
+      0 0 20px #0fa,
+      0 0 25px rgba(0, 255, 170, 0.89),
+      0 0 30px rgba(0, 255, 170, 0.3);
+    animation: smooth-flicker 3s infinite;
+    color: rgba(255, 255, 255, 0.836);
+    
+  }
 
 
 
@@ -344,6 +344,25 @@ body {
     margin-bottom: 3rem;
 
   }
+.neon-wrapper::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #fff;
+  /* Keep your 6 shadows here, but they aren't changing every frame! */
+  text-shadow:
+    0 0 19px #ffffffe5,
+    0 0 20px rgba(255, 0, 234, 0.87),
+    0 0 40px #0fa,
+    0 0 50px rgba(0, 255, 170, 0.89),
+    0 0 60px rgba(0, 255, 170, 0.781);
+
+  
+  /* Animate opacity instead of the shadow itself */
+  animation: smooth-flicker 3s infinite;
+}
+
 
   .logo {
     width: 280px;
