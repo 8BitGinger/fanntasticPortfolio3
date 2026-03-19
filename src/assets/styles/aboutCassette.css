@@ -1,0 +1,233 @@
+/* Container Styles */
+        .portfolio-container {
+          width: 90%;
+          max-width: 800px;
+          margin:  auto;
+          margin-top: 50px;
+          padding: 1.5rem;
+          
+          transition: all 0.7s ease;
+          box-sizing: border-box;
+          
+          font-family: var(--theme-font);
+        }
+
+        .theme-side-a {
+          color: rgb(255, 255, 255);
+          border:rgb(255, 255, 255)solid #e2e8f0;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-side-b {
+          color: #f4f4f5;
+        }
+
+        @media (min-width: 640px) {
+          .portfolio-container { padding: 2.5rem; }
+        }
+
+        .inner-flex {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        /* 3D Cassette Engine */
+        .perspective-container { perspective: 1000px; }
+        
+        .cassette-tape {
+          width: 100%; height: 100%; position: relative;
+          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d; cursor: pointer;
+        }
+        
+        .cassette-tape.is-flipped { transform: rotateY(180deg); }
+        
+        .side {
+          position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden;
+          border-radius: 0.75rem; padding: 1rem; display: flex; flex-direction: column;
+          box-shadow: inset 0 0 15px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.2);
+          box-sizing: border-box;
+          max-height: fit-content;
+        }
+        
+        .side-a { background-color: #969393c0; border: 5px solid #535a63; }
+        .side-b { background-color: #18181bcb; border: 5px solid #27272a; transform: rotateY(180deg); }
+        
+        .label-container { padding:10px; width: 100%; height: 50%; border-radius: 0.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 2px solid; }
+        .label-a { background-color: rgba(255, 255, 255, 0.527); border-color: #cbd5e1c7; }
+        .label-b { background-color: #27272a; border-color: #3f3f46; }
+
+        .label-a p {
+          color: #125eeb !important;
+          opacity: 1;
+        }
+
+        .label-text-a { color: black}
+        
+        .strip { position: absolute; top: 0; left: 0; width: 100%; height: 4px; }
+        .strip-a { background-color: #125eeb; }
+        .strip-b { background-color: #d946ef; box-shadow: 0 0 10px #f0f; }
+        
+        .reels-container { display: flex; justify-content: space-around; align-items: center; margin-top: 1.25rem; }
+        .reel-icon { animation: spin 8s linear infinite; }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        
+        .hub { width: 1.5rem; height: 1.5rem; border-radius: 50%; border-width: 2px; border-style: solid; }
+        .side-a .hub { border-color: #636364; }
+        .side-b .hub { border-color: #3f3f46; background-color: #27272a; }
+
+        .tape-info {
+          margin-top: 10px;
+          display: flex;
+          justify-content: space-between;
+          font-size: 9px;
+          font-family: monospace;
+          color: #bbc5d3;
+        }
+
+        .side-b .tape-info { color: #d946ef;  }
+
+        /* Controls */
+        .controls { display: flex; gap: 1rem; margin-top: 1.5rem; justify-content: center; }
+        
+        .flip-button {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1.5rem;
+          border-radius: 9999px;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 10px;
+          letter-spacing: 0.1em;
+          transition: all 0.3s;
+          border: none;
+          cursor: pointer;
+        }
+
+        .btn-theme-a { background-color: #0a0c0ebb; color: white; border: 1px double rgba(255, 255, 255, 0.774); }
+        .btn-theme-a:hover { background-color: #4a4a4d; }
+        
+        .btn-theme-b { background-color: turquoise; color: rgb(0, 0, 0); box-shadow: 0 0 15px rgb(16, 209, 216); border: 1px double rgba(12, 12, 12, 0.774);  }
+        .btn-theme-b:hover { background-color: turquoise; filter: brightness(1.2); }
+
+        /* Typography */
+        .header-section { text-align: center; width: 100%; margin-top: 2rem; }
+        
+        .main-title {
+          font-size: 2rem;
+          font-weight: 900;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          font-style: italic;
+          transition: color 0.5s;
+          font-family: 'Rock Salt', cursive;
+          color: rgba(255, 255, 255, 0.404);
+        }
+
+        @media (min-width: 640px) {
+          .main-title { font-size: 3rem; }
+        }
+
+        .subtitle {
+          font-size: 1rem;
+          font-family: 'Oswald', sans-serif;
+          margin-bottom: 1.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5em;
+          transition: color 0.5s;
+        }
+
+        .theme-side-a .subtitle { color: #125eeb; background-color: white; width: fit-content; margin: 10px auto; padding: 0.25rem 1rem; border-radius: 9999px; }
+        .theme-side-b .subtitle { color: turquoise; background-color: rgb(0, 0, 0); width: fit-content; margin: 10px auto; padding: 0.25rem 1rem; border-radius: 9999px; }
+
+        .bio-text {
+          font-size: 1rem;
+          line-height: 1.6;
+          opacity: 0.9;
+          margin-bottom: 2.5rem;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+   
+        }
+
+        @media (min-width: 640px) {
+          .bio-text { font-size: 1.125rem; }
+        }
+
+        /* Tracklist Grid */
+        .track-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 0.5rem;
+          text-align: left;
+          width: 90%;
+          margin: auto;
+         
+        }
+
+        @media (min-width: 640px) {
+          .track-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .track-card {
+          padding: 1rem;
+          border-radius: 0.75rem;
+          border: 1px solid;
+          transition: all 0.3s;
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+          cursor:help;
+          position: relative;
+          width: 80%;
+          opacity: 0.8;
+        }
+
+        .card-theme-a { width: 70%; background-color: rgba(63, 62, 62, 0.459);  }
+        .card-theme-a:hover { opacity: 1; transform: translateX(4px); }
+
+        .card-theme-b { background-color: #18181bd8;  opacity: 0.8; }
+        .card-theme-b:hover {  box-shadow: 0 1px 3px rgba(0,0,0,0.1); transform: translateX(4px); opacity: 1; }
+
+        .icon-box {
+          margin-top: 0.25rem;
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+        }
+
+        .icon-theme-a { background-color: #19191a; color: #125eeb; }
+        .icon-theme-b { background-color: #27272a; color: turquoise; }
+
+        .track-info-container { overflow: hidden; }
+
+        .track-meta { display: flex; align-items: center; gap: 0.5rem; }
+        .track-id { font-size: 10px; font-family: monospace; opacity: 0.3; }
+        .track-name { font-weight: bold; text-transform: uppercase; font-size: 12px; letter-spacing: 0.025em; margin: 0; }
+        .track-desc { font-size: 11px; opacity: 0.5; margin-top: 0.125rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+        .play-icon {
+          margin-left: auto;
+          opacity: 0;
+          transition: opacity 0.3s;
+        }
+
+        .track-card:hover .play-icon { opacity: 1; }
+        .track-card:hover {width: 100%;}
+        .track-card:hover .track-name { color: #ddeb12; }
+        .track-card:hover .card-theme-b:hover .track-name { color: turquoise; }
+
+        @media (min-width: 640px) {
+          .track-name { font-size: 14px; }
+          .track-desc { font-size: 12px; }
+          .label-container { padding:35px; }
+          .track-grid { margin: 0; padding: 0;  gap: 1rem; max-width: 800px; }
+          .tape-info {margin-top: 40px; }
+          .track-card { width: 90%; margin: auto; margin-left: 25px; }
+          .flip-button { padding: 0.75rem 2rem; font-size: 12px; margin-top: 20px; }
+          .card-theme-a {
+            margin-left: 0;
+          }
+        }

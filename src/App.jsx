@@ -5,8 +5,9 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
-import MiniPlayer from './components/MiniPlayer'; // ← add this
-import './assets/styles/mini-player.css';          // ← adjust path to match your styles folder
+import MiniPlayer from './components/MiniPlayer';
+import './assets/styles/mini-player.css'; 
+import './App.css';
 
 function App() {
   const [theme, setTheme] = useState('default');

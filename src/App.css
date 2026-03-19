@@ -1,0 +1,169 @@
+.page-header {
+    margin: 40px 0;
+    padding: 10px;
+    background-color: rgba(20, 20, 20, 0.829);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: fit-content;
+    padding-left: 20px;
+    padding-right: 50px;
+    
+}
+
+.page-header h1 {
+    
+    font-size: 1.5em;
+}
+
+.card {
+   background-color: rgba(20, 20, 20, 0.829);
+    border: 1px solid #ffffff8a;
+    border-radius: 18px;
+    padding: 25px;
+    margin: auto 20px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.content-card {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto 20px;
+    width: 90%;
+}
+
+.content-card p {
+    text-align: center;
+    
+    color: #ffffffc9;
+}
+
+.img-block {
+    width: 100%;
+    border-radius: 10px;
+    height: 250px;
+    overflow: hidden;
+    border: 2px solid #595a5a73;
+    position: relative;
+    
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.photo-card {
+  width: 90%;
+  max-width: 780px;
+  margin: 20px auto;
+  background: rgba(12, 12, 12, 0.6);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  
+  border: 1px solid rgba(166, 185, 187, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Theme border accents on the inner glass card */
+.card--rock  {
+  border-color: rgba(255, 0, 0, 0.9);
+  box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5);
+}
+.card--jazz {
+  border-color: rgba(136, 117, 109, 0.9);
+  box-shadow: 0 8px 32px rgba(136, 117, 109, 0.5);
+}
+.card--pop  {
+  border-color: rgba(255, 20, 147, 0.9);
+  box-shadow: 0 8px 32px rgba(255, 20, 147, 0.5);
+}
+.card--lofi  {
+  border-color: rgba(88, 61, 184, 0.9);
+  box-shadow: 0 8px 32px rgba(96, 59, 228, 0.7);
+  
+}
+.card--rap  {
+  border-color: rgba(42, 161, 18, 0.9);
+  box-shadow: 0 8px 32px rgba(42, 161, 18, 0.5);
+}
+.card--country  {
+  border-color: rgba(153, 115, 61, 0.9);
+  box-shadow: 0 8px 32px rgba(153, 115, 61, 0.5);
+}
+
+.title-rap {
+    color: rgba(42, 161, 18, 0.9);
+}
+
+.title-rock {
+    color: rgba(255, 0, 0, 0.9);
+}
+
+.title-jazz {
+    color: rgba(136, 117, 109, 0.9);
+}
+
+.title-pop {
+    color: rgba(255, 20, 147, 0.9);
+}
+
+.title-lofi {
+    color: rgba(88, 61, 184, 0.9);
+}
+
+.title-country {
+    color: rgba(153, 115, 61, 0.9);
+}
+.title3 {
+    font-size: 1.8em;
+    margin: auto;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .card {
+        flex-direction: row;
+        gap: 20px;
+        margin: 20px auto;
+    }
+
+    .title3 {
+        font-size: 2em;
+    }
+
+
+    
+    .content-card {
+        width: 50%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+    
+    .img-block {
+        width: 300px;
+        height: 300px;
+       
+    }
+
+    .card img {
+ 
+
+        width: 100%;
+        height: 100%;
+
+
+    }
+}

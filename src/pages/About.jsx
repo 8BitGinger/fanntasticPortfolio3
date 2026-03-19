@@ -6,9 +6,14 @@ import { motion } from 'framer-motion';
 import SkillBars from '../components/SkillBars';
 import WebLinks from '../components/WebLinks';
 import NavPageButtons from '../components/NavPageButtons';
+import CassetteAbout from '../components/CassetteAbout';
+import PageHeader from '../components/PageHeader';
+import Cards from '../components/Cards';
 
-import { FaFastBackward } from "react-icons/fa";
-import { FaFastForward } from "react-icons/fa";
+
+import obsImg from '../assets/pictures/obsPic.png';
+import ttrpgImg from '../assets/pictures/ttrpgPic.png';
+import devImg from '../assets/pictures/devPic.png';
 
 
 const themeData = {
@@ -79,7 +84,7 @@ export default function About({ theme }) {
               src={content.image}
               alt={`8BitGinger - ${content.title}`}
               className="profile-image"
-              fetchpriority="high"
+              fetchPriority="high"
               onError={(e) => (e.target.src = 'https://placehold.co/600x400')}
             />
           </div>
@@ -100,7 +105,26 @@ export default function About({ theme }) {
         </div>
       </motion.div>
 
+      <PageHeader theme={theme} title='My Soundtrack' />
 
+      <CassetteAbout theme={theme} />
+
+
+
+
+
+
+
+        
+
+      <PageHeader theme={theme} title='Specs' />
+
+              <Cards.PhotoCardRight
+          img={devImg}
+          title="Fullstack Developer"
+          content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
+          theme={theme}
+        />
 
       {/* ── Skills — outside the hero, own glass card ── */}
       <div className={`about-section about-section--${theme}`}>
@@ -108,6 +132,20 @@ export default function About({ theme }) {
           <SkillBars theme={theme} />
         </div>
       </div>
+
+              <Cards.PhotoCardLeft
+          img={ttrpgImg}
+          title="TTRPG Campaigns"
+          content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
+          theme={theme}
+        />
+
+                <Cards.PhotoCardRight
+          img={obsImg}
+          title="Custom OBS Tools"
+          content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
+          theme={theme}
+        />
       
           <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
 
