@@ -4,10 +4,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const PhotoCardLeft = ({ img, content, title, theme }) => {
   return (
+
     <motion.div className={`card photo-card card--${theme}`}
                  initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+     
       transition={{ duration: 0.9 }}
     >
         <div className='img-block'>
@@ -26,7 +27,7 @@ const PhotoCardRight = ({ img, content, title, theme }) => {
     <motion.div className={`card photo-card card--${theme}`}
                 initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      
       transition={{ duration: 0.9 }}
     >
         
@@ -41,6 +42,20 @@ const PhotoCardRight = ({ img, content, title, theme }) => {
   )
 }
 
-const Cards = { PhotoCardLeft, PhotoCardRight }
+const ChildCard = ({ children, theme }) => {
+  return (
+    <motion.div className={`card child-card card--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+      <div className='flexRow'>
+        {children}
+      </div>
+    </motion.div>
+  )
+}
+
+const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard }
 
 export default Cards;

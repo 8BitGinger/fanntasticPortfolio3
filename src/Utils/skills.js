@@ -35,6 +35,11 @@ const skills = [
     value: 50,
   },
   {
+    name: 'Websockets',
+    level: 'Intermediate',
+    value: 75,
+  },
+  {
     name: 'APIs',
     level: 'Advanced',
     value: 100,
@@ -60,6 +65,17 @@ const skills = [
     value: 75,
   },
 
+  {
+    name: 'Framer Motion',
+    level: 'Intermediate',
+    value: 75,
+  },
+
+  {
+    name: 'PowerShell Scripting',
+    level: 'Experienced',
+    value: 50,
+  },
   {
     name: 'Bootstrap',
     level: 'Beginner',

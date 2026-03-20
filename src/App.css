@@ -30,14 +30,42 @@
     -webkit-backdrop-filter: blur(5px);
 }
 
+.child-card {
+   width: 90%;
+    max-width: 335.5px;
+     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+     margin: 20px auto;
+     overflow: hidden;
+     height: auto;
+     z-index: 1;
+     
+}
+
+.child-card iframe, .child-card video {
+  
+    border: none;
+    padding: 0;
+     margin: 0;
+    width: 335.5px;
+    height: 200px;   
+    z-index: -1;
+     object-fit: cover;
+     object-position: center;
+}
+
 .content-card {
-    padding: 10px;
+    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: auto 20px;
-    width: 90%;
+        width: 100%;
 }
 
 .content-card p {
@@ -47,21 +75,51 @@
 }
 
 .img-block {
-    width: 100%;
+    width: fit-content;
+    height: fit-content;
     border-radius: 10px;
-    height: 250px;
+    
     overflow: hidden;
-    border: 2px solid #595a5a73;
-    position: relative;
+  
+    
+    
+    padding: 0;
+     margin: auto;
     
 }
 
 .card img {
     width: 100%;
     height: 100%;
+    max-width: 300px;
+    min-height: 250px;
     object-fit: cover;
     object-position: center;
 }
+
+.child-card a {
+    text-decoration: none;
+    color: inherit;
+    z-index: 5;
+    width: 100%;
+    background-color: black;
+    height: 100%;
+   
+}
+
+.page-break {
+    margin: 40px 0;
+    padding: 0;
+    background-color: rgba(122, 121, 121, 0.852);
+    border-radius: 10px;
+   
+    min-width: 70%;
+    height: 5px;
+    padding-left: 20px;
+    padding-right: 50px;
+    margin: 40px auto;
+}
+
 
 .photo-card {
   width: 90%;
@@ -129,8 +187,18 @@
 .title3 {
     font-size: 1.8em;
     margin: auto;
+    margin-bottom: 5px;
     text-align: center;
 }
+
+.flexRow {
+    display: flex;
+    flex-direction: column;
+
+    margin: auto;
+}
+
+
 
 @media (min-width: 768px) {
     .card {
@@ -143,7 +211,17 @@
         font-size: 2em;
     }
 
+    .flexRow {
+        display: flex;
+        margin: auto;
 
+        flex-direction: row;
+        
+    }
+
+    .flexRow video, .flexRow iframe {
+        margin: auto;
+    }
     
     .content-card {
         width: 50%;
@@ -155,7 +233,7 @@
     .img-block {
         width: 300px;
         height: 300px;
-       
+        min-height: 250px;
     }
 
     .card img {
@@ -165,5 +243,26 @@
         height: 100%;
 
 
+    }
+
+    .page-break {
+            min-width:50vw;
+        height: 5px;
+    }
+
+    .child-card {
+        max-width: 90%;
+        width: fit-content;
+        height: 100%;
+        margin: auto;
+    }
+
+    .child-card iframe, .child-card video {
+        object-fit: cover;
+       
+        min-width: 50%;
+        height: 100%;
+        min-height: 190px;
+        left: 50%;
     }
 }

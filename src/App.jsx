@@ -1,12 +1,13 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { AnimatePresence } from 'framer-motion'; // ← add this
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import MiniPlayer from './components/MiniPlayer';
-import './assets/styles/mini-player.css'; 
+import './assets/styles/mini-player.css';
 import './App.css';
 
 function App() {
@@ -41,15 +42,21 @@ function App() {
       <Navbar />
 
       <div className="page-content">
-        <Routes>
-          <Route path="/" element={<CassetteSelector />} />
-          <Route path="/about" element={<About theme={theme} />} />
-          <Route path="/projects" element={<Projects theme={theme} />} />
-          <Route path="/contact" element={<Contact theme={theme} />} />
-        </Routes>
+        {/* 
+          AnimatePresence needs:
+          - location.key as the key so it detects route changes
+          - mode="wait" so the exit animation finishes before the next page enters
+        */}
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.key}>
+            <Route path="/" element={<CassetteSelector />} />
+            <Route path="/about" element={<About theme={theme} />} />
+            <Route path="/projects" element={<Projects theme={theme} />} />
+            <Route path="/contact" element={<Contact theme={theme} />} />
+          </Routes>
+        </AnimatePresence>
       </div>
 
-      {/* Floats above all pages, hidden until a track is selected */}
       <MiniPlayer theme={theme} />
     </div>
   );

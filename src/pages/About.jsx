@@ -14,6 +14,8 @@ import Cards from '../components/Cards';
 import obsImg from '../assets/pictures/obsPic.png';
 import ttrpgImg from '../assets/pictures/ttrpgPic.png';
 import devImg from '../assets/pictures/devPic.png';
+import gumshoeVid from '../assets/video/gumshoeVid.mp4';
+import PageBreak from '../components/PageBreak';
 
 
 const themeData = {
@@ -74,7 +76,7 @@ export default function About({ theme }) {
         className={`about-wrapper wrapper-${theme}`}
          initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      
       transition={{ duration: 0.4 }}
         style={{ backgroundImage: `url(${content.background})` }}
       >
@@ -85,7 +87,7 @@ export default function About({ theme }) {
               alt={`8BitGinger - ${content.title}`}
               className="profile-image"
               fetchPriority="high"
-              onError={(e) => (e.target.src = 'https://placehold.co/600x400')}
+              onError={(e) => (e.target.src = 'https://placehold.co/600x400/EEE/31343C')}
             />
           </div>
 
@@ -119,34 +121,75 @@ export default function About({ theme }) {
 
       <PageHeader theme={theme} title='Specs' />
 
-              <Cards.PhotoCardRight
+        <Cards.PhotoCardRight
           img={devImg}
           title="Fullstack Developer"
           content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
           theme={theme}
         />
 
-      {/* ── Skills — outside the hero, own glass card ── */}
-      <div className={`about-section about-section--${theme}`}>
-        <div className="about-section__inner">
-          <SkillBars theme={theme} />
+        <div className={`about-section about-section--${theme}`}>
+          <div className="about-section__inner">
+            <SkillBars theme={theme} />
+          </div>
         </div>
-      </div>
 
-              <Cards.PhotoCardLeft
+        <PageBreak/>
+
+        <Cards.PhotoCardLeft
           img={ttrpgImg}
-          title="TTRPG Campaigns"
+          title="Content & Game Creator"
           content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
           theme={theme}
         />
 
-                <Cards.PhotoCardRight
+        
+
+        <Cards.ChildCard theme={theme}>
+          <Link to="/projects" className="video-link">
+           
+          
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/zJsF0cp-hpI?si=G7nENH9AsfMgIEbF&autoplay=1&mute=1&loop=1&playlist=zJsF0cp-hpI&controls=0" 
+            title="YouTube video player" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            controls="0"
+            loading='lazy'
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen>
+          </iframe>
+          
+       
+     
+          <video 
+            width="560" 
+            height="315" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            loading='lazy'
+          >
+            <source src={gumshoeVid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+               </Link>
+        </Cards.ChildCard>
+
+        <PageBreak/>
+
+        <Cards.PhotoCardRight
           img={obsImg}
           title="Custom OBS Tools"
           content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
           theme={theme}
         />
-      
+
+
+
           <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
 
 
