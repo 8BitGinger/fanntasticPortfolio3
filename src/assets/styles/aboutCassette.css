@@ -51,8 +51,8 @@
           max-height: fit-content;
         }
         
-        .side-a { background-color: #969393c0; border: 5px solid #535a63; }
-        .side-b { background-color: #18181bcb; border: 5px solid #27272a; transform: rotateY(180deg); }
+        .side-a { background-color: #5f5d5dc0; border: 5px solid #535a63; }
+        .side-b { background-color: #18181abe; border: 5px solid #27272a; transform: rotateY(180deg); }
         
         .label-container { padding:10px; width: 100%; height: 50%; min-height: 75px; border-radius: 0.25rem; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; border: 2px solid; }
         .label-a { background-color: rgba(255, 255, 255, 0.527); border-color: #cbd5e1c7; }
@@ -69,8 +69,27 @@
         .strip-a { background-color: #125eeb; }
         .strip-b { background-color: #d946ef; box-shadow: 0 0 10px #f0f; }
         
-        .reels-container { display: flex; justify-content: space-around; align-items: center; margin-top: 1.25rem; }
-        .reel-icon { animation: spin 8s linear infinite; }
+        .reels-container { display: flex; justify-content: space-around; align-items: center; margin-top: 1.25rem; 
+  
+
+      }
+   
+        .reel-icon {
+              display: inline-block;
+              font-size: 3rem; /* Ensure it's large enough to see */
+              
+              /* The Gradient Magic */
+              background-image: linear-gradient(90deg, #000000, #808080);
+              -webkit-background-clip: text;
+              background-clip: text;
+              
+              /* The Transparency */
+              -webkit-text-fill-color: transparent; /* Use this for better mobile support */
+              color: transparent;
+
+              animation: spin 4s linear infinite;
+          }
+
         @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
         
         .hub { width: 1.5rem; height: 1.5rem; border-radius: 50%; border-width: 2px; border-style: solid; }

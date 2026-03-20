@@ -81,6 +81,7 @@ const skills = [
     level: 'Beginner',
     value: 25,
   },
+
 ];
 
 export default skills;

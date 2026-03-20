@@ -56,6 +56,30 @@ const ChildCard = ({ children, theme }) => {
   )
 }
 
-const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard }
+const PhotoCardWide = ({ img, imgSmall, theme }) => {
+  return (
+    <>
+   
+    <motion.div className={`card photo-card-wide hide-small card--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+            <img loading='lazy' src={img} alt={`${theme} Theme Photo`} />
+
+    </motion.div>
+
+    <motion.div className={`card photo-card-wide hide-large card--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+            <img loading='lazy' src={imgSmall} alt={`${theme} Theme Photo`} />
+    </motion.div>
+     </>
+  )
+}
+
+const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, PhotoCardWide }
 
 export default Cards;

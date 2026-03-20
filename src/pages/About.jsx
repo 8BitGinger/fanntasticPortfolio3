@@ -15,7 +15,13 @@ import obsImg from '../assets/pictures/obsPic.png';
 import ttrpgImg from '../assets/pictures/ttrpgPic.png';
 import devImg from '../assets/pictures/devPic.png';
 import gumshoeVid from '../assets/video/gumshoeVid.mp4';
+import cindervoidVid from '../assets/video/cindervoidVid.mp4';
 import PageBreak from '../components/PageBreak';
+import fxWizardImg from '../assets/pictures/project-pics/fxWizardProject.webp';
+import obsShowTimerImg from '../assets/pictures/project-pics/obsShowTimerProject.png';
+import profilePic from '../assets/pictures/profilePic.png';
+import twinJobsImg from '../assets/pictures/twinJobs.png';
+import twinJobsSmallImg from '../assets/pictures/twinJobsSmall.png';
 
 
 const themeData = {
@@ -121,6 +127,21 @@ export default function About({ theme }) {
 
       <PageHeader theme={theme} title='Specs' />
 
+        <Cards.PhotoCardLeft
+          img={profilePic}
+          title="Current Role"
+          content="I currently work as an IT Admin and Engineer for KAMC and KLBK TV stations.  In this role, I manage and maintain the stations' IT infrastructure, ensuring seamless operations and optimal performance. I was responsible for building and implementing a professional Podcast studio. I also develop custom OBS tools that enhance our streaming capabilities and create engaging content for our viewers. My work involves troubleshooting technical issues, optimizing workflows, and collaborating with various teams to support the stations' broadcasting needs."
+          theme={theme}
+        />
+
+        <Cards.PhotoCardWide
+          img={twinJobsImg}
+          imgSmall={twinJobsSmallImg}
+          theme={theme}
+        />
+
+        <PageBreak/>
+
         <Cards.PhotoCardRight
           img={devImg}
           title="Fullstack Developer"
@@ -149,7 +170,7 @@ export default function About({ theme }) {
           <Link to="/projects" className="video-link">
            
           
-          <iframe 
+          {/* <iframe 
             width="560" 
             height="315" 
             src="https://www.youtube.com/embed/zJsF0cp-hpI?si=G7nENH9AsfMgIEbF&autoplay=1&mute=1&loop=1&playlist=zJsF0cp-hpI&controls=0" 
@@ -160,8 +181,19 @@ export default function About({ theme }) {
             loading='lazy'
             referrerPolicy="strict-origin-when-cross-origin" 
             allowFullScreen>
-          </iframe>
-          
+          </iframe> */}
+                    <video 
+            width="560" 
+            height="315" 
+            autoPlay 
+            loop 
+            muted 
+            playsInline
+            loading='lazy'
+          >
+            <source src={cindervoidVid} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
        
      
           <video 
@@ -187,6 +219,14 @@ export default function About({ theme }) {
           content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
           theme={theme}
         />
+
+        <Cards.ChildCard theme={theme}>
+          <Link to="/projects" >
+            <img src={fxWizardImg} alt="FX Wizard Logo" className="obs-preview" loading='lazy' />
+            <img src={obsShowTimerImg} alt="Custom OBS Tools" className="obs-preview" loading='lazy' />
+          </Link>
+        
+        </Cards.ChildCard>
 
 
 

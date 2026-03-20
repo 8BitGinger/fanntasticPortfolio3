@@ -59,12 +59,22 @@ const CassetteAbout = ({theme}) => {
                 <p style={{fontSize: '9px', color: '#94a3b8', fontFamily: 'monospace', marginTop: '4px', textTransform: 'uppercase'}}>Master Recording // Lubbock TX</p>
               </div>
               <div className="reels-container">
-                <Disc className="reel-icon" style={{color: '#94a3b8'}} size={40} />
+                <Disc className="reel-icon"  size={50} stroke="url(#reel-gradient)" >
+                  <linearGradient id="reel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="black" />
+                    <stop offset="100%" stopColor="gray" />
+                  </linearGradient>
+                </Disc>
                 <div className="hub-flex" style={{display: 'flex', gap: '8px'}}><div className="hub"></div><div className="hub"></div></div>
-                <Disc className="reel-icon" style={{color: '#94a3b8'}} size={40} />
+                <Disc className="reel-icon"  size={50} stroke="url(#reel-gradient)" >
+                  <linearGradient id="reel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="black" />
+                    <stop offset="100%" stopColor="gray" />
+                  </linearGradient>
+                </Disc> 
               </div>
               <div className="tape-info">
-                <span>90 MIN</span>
+                <span>86 MIN</span>
                 <span style={{fontWeight: 'bold'}}>SIDE A</span>
               </div>
             </div>
@@ -77,12 +87,22 @@ const CassetteAbout = ({theme}) => {
                 <p style={{fontSize: '9px', color: '#71717a', fontFamily: 'monospace', marginTop: '4px', textTransform: 'uppercase', letterSpacing: '0.1em'}}>Experimental Remix // Creator</p>
               </div>
               <div className="reels-container">
-                <Disc className="reel-icon" style={{color: '#701a75'}} size={40} />
+                <Disc className="reel-icon" stroke="url(#reel-gradient)" size={50} >
+                  <linearGradient id="reel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="black" />
+                    <stop offset="100%" stopColor="gray" />
+                  </linearGradient>
+                </Disc>
                 <div className="hub-flex" style={{display: 'flex', gap: '8px'}}><div className="hub"></div><div className="hub"></div></div>
-                <Disc className="reel-icon" style={{color: '#701a75'}} size={40} />
+                <Disc className="reel-icon"  size={50} stroke="url(#reel-gradient)" >
+                  <linearGradient id="reel-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="black" />
+                    <stop offset="100%" stopColor="gray" />
+                  </linearGradient>
+                </Disc>
               </div>
               <div className="tape-info">
-                <span>HI-BIAS</span>
+                <span>HI-FIDELITY</span>
                 <span style={{fontWeight: 'bold', color: '#d946ef'}}>SIDE B</span>
               </div>
             </div>

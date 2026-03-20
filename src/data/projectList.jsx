@@ -21,6 +21,7 @@ import img13 from '../assets/pictures/project-pics/casinoSlotProject.webp';
 import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
 import img18 from '../assets/pictures/project-pics/citrusProject.webp';
 import img15 from '../assets/pictures/project-pics/geminiProject.webp';
+import img7 from '../assets/pictures/project-pics/obsShowTimerProject.png';
 
 const projectList = [
   {
@@ -55,6 +56,15 @@ const projectList = [
     link: 'https://www.cindervoid.fun',
     git: 'https://github.com/8BitGinger/cindervoidrpg',
     category: 'game',
+  },
+
+  {
+    img: img7,
+    title: 'OBS Show Timer',
+    subtitle: 'OBS, Websockets',
+    link: '',
+    git: 'https://github.com/8BitGinger/obsDisplayTimer',
+    category: 'obs',
   },
 
   {
