@@ -48,7 +48,8 @@
           border-radius: 0.75rem; padding: 1rem; display: flex; flex-direction: column;
           box-shadow: inset 0 0 15px rgba(0,0,0,0.1), 0 10px 20px rgba(0,0,0,0.2);
           box-sizing: border-box;
-          max-height: fit-content;
+          height: fit-content;
+          max-height: 260px;
         }
         
         .side-a { background-color: #5f5d5dc0; border: 5px solid #535a63; }
@@ -97,7 +98,7 @@
         .side-b .hub { border-color: #3f3f46; background-color: #27272a; }
 
         .tape-info {
-          margin-top: 10px;
+          margin-top: 0px;
           display: flex;
           justify-content: space-between;
           font-size: 9px;
@@ -244,7 +245,7 @@
           .track-desc { font-size: 12px; }
           .label-container { padding:35px; }
           .track-grid { margin: auto; padding: 0;  gap: 1rem; max-width: 800px; display: flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: center; }
-          .tape-info {margin-top: 40px; }
+          .tape-info {margin-top: 30px; }
           .track-card { width: 50%; margin: auto; }
           .flip-button { padding: 0.75rem 2rem; font-size: 12px; margin-top: 20px; }
 

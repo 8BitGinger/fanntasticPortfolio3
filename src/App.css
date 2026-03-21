@@ -31,7 +31,7 @@
 }
 
 .child-card {
-   width: 90%;
+   width: 70%;
     max-width: 335.5px;
      
     display: flex;
@@ -51,7 +51,7 @@
     border: none;
     padding: 0;
      margin: 0;
-    width: 335.5px;
+    width: 265.5px;
     height: 200px;   
     z-index: -1;
      object-fit: cover;
@@ -205,9 +205,11 @@
 }
 
 .photo-card-wide {
-    width: 90%;
-    max-width: 800px;
-   
+    width: 70%;
+    max-width: 700px;
+    border-radius: 10px;
+    margin: auto;
+   padding: 0;
 }
 
 .photo-card-wide img {
@@ -224,6 +226,25 @@
 
 .hide-small {
     display: none;
+}
+
+.resume-btn {
+    margin: 20px auto;
+   
+   
+
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.list-card {
+    width: 70%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -272,12 +293,9 @@
     }
 
     .card img {
- 
 
         width: 100%;
         height: 100%;
-
-
     }
 
     .page-break {
@@ -286,7 +304,7 @@
     }
 
     .child-card {
-        max-width: 90%;
+        max-width: 70%;
         width: fit-content;
         height: 100%;
         margin: auto;
@@ -297,11 +315,12 @@
        
         min-width: 50%;
         height: 100%;
+        min-width: 355.5px;
         min-height: 190px;
         left: 50%;
     }
 
     .child-card img {
-        max-width: 335.5px;
+        width: 335.5px;
     }
 }

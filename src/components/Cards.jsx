@@ -80,6 +80,24 @@ const PhotoCardWide = ({ img, imgSmall, theme }) => {
   )
 }
 
-const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, PhotoCardWide }
+const ListCard = ({ title, content, theme }) => {
+  return (
+    <motion.div className={`card list-card card--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+      <h2 className={`title3 title-${theme}`}>{title}</h2>
+      <ul>
+        {content.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+    </motion.div>
+  )
+}
+
+
+const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, ListCard, PhotoCardWide }
 
 export default Cards;

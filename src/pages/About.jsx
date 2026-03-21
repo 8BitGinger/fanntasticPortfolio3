@@ -140,6 +140,20 @@ export default function About({ theme }) {
           theme={theme}
         />
 
+        <Cards.ListCard theme={theme} title="The A-Side" content={[
+          "Station Engineering: Keeping the KAMC/KLBK broadcast signal on the reels", 
+          "The Podcast Lab: Built from scratch for that professional-grade warmth", 
+          "Digital Modding: Writing custom code to overclock our streaming potential", 
+          "Signal Repair: Fixing the glitches and smoothing out the production curve", 
+        ]} />
+
+        <button className={`link resume-btn web-links-list--${theme}`}>
+          <Link to="../downloads/Resume2025.pdf" target="_blank" rel="noopener noreferrer">
+            View PDF Resume
+          </Link>
+        </button>
+
+
         <PageBreak/>
 
         <Cards.PhotoCardRight
@@ -227,6 +241,10 @@ export default function About({ theme }) {
           </Link>
         
         </Cards.ChildCard>
+
+        <PageBreak/>
+
+      
 
 
 
