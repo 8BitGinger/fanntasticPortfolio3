@@ -143,9 +143,17 @@ export default function About({ theme }) {
         <Cards.ListCard theme={theme} title="The A-Side" content={[
           "Station Engineering: Keeping the KAMC/KLBK broadcast signal on the reels", 
           "The Podcast Lab: Built from scratch for that professional-grade warmth", 
-          "Digital Modding: Writing custom code to overclock our streaming potential", 
+          "Digital Modding: Writing custom code to overclock our streaming potential and optimize workflows", 
           "Signal Repair: Fixing the glitches and smoothing out the production curve", 
         ]} />
+
+        <Cards.ListCardReverse theme={theme} title="The B-Side" content={[
+          "Fullstack Development: Building seamless web apps and custom OBS tools", 
+          "Game Design: Crafting immersive Games that captivate players", 
+          "Content Creation: Producing engaging media that resonates with communities", 
+          "Continuous Learning: Always leveling up my skills and knowledge", 
+        ]} /> 
+
 
         <button className={`link resume-btn web-links-list--${theme}`}>
           <Link to="../downloads/Resume2025.pdf" target="_blank" rel="noopener noreferrer">

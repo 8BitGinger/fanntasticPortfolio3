@@ -31,9 +31,11 @@
 }
 
 .child-card {
-   width: 70%;
-    max-width: 335.5px;
-     
+   
+   width: fit-content;
+        
+        max-width: 355.5px;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,9 +52,9 @@
   
     border: none;
     padding: 0;
-     margin: 0;
-    width: 265.5px;
-    height: 200px;   
+     margin: auto;
+    width: 355.5px;
+    height: 190px;   
     z-index: -1;
      object-fit: cover;
      object-position: center;
@@ -205,7 +207,7 @@
 }
 
 .photo-card-wide {
-    width: 70%;
+    width: 90%;
     max-width: 700px;
     border-radius: 10px;
     margin: auto;
@@ -239,13 +241,29 @@
 }
 
 .list-card {
-    width: 70%;
-    max-width: 700px;
+    width: 90%;
+    max-width: 800px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin: 15px auto;
 }
+
+.list-card ul {
+    list-style-type:none;
+    padding: 0;
+    padding-left: 10px;
+    color: #ffffffc9;
+}
+
+.list-card li {
+    margin: 10px 0;
+    font-size: 1.1em;
+    text-indent: -10px;
+}
+
+
 
 
 @media (min-width: 768px) {
@@ -306,6 +324,7 @@
     .child-card {
         max-width: 70%;
         width: fit-content;
+        max-width: fit-content;
         height: 100%;
         margin: auto;
     }

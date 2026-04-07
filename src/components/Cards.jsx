@@ -97,7 +97,25 @@ const ListCard = ({ title, content, theme }) => {
   )
 }
 
+const ListCardReverse = ({ title, content, theme }) => {
+  return (
+    <motion.div className={`card list-card card--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+      <ul>    
+        {content.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+      </ul>
+            <h2 className={`title3 title-${theme}`}>{title}</h2>
 
-const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, ListCard, PhotoCardWide }
+    </motion.div>
+  )
+}
+
+
+const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, ListCard, ListCardReverse, PhotoCardWide }
 
 export default Cards;
