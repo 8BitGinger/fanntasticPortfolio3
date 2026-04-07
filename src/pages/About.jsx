@@ -130,22 +130,26 @@ export default function About({ theme }) {
         <Cards.PhotoCardLeft
           img={profilePic}
           title="Current Role"
-          content="I currently work as an IT Admin and Engineer for KAMC and KLBK TV stations.  In this role, I manage and maintain the stations' IT infrastructure, ensuring seamless operations and optimal performance. I was responsible for building and implementing a professional Podcast studio. I also develop custom OBS tools that enhance our streaming capabilities and create engaging content for our viewers. My work involves troubleshooting technical issues, optimizing workflows, and collaborating with various teams to support the stations' broadcasting needs."
+          content={"Part of a tight-knit engineering trio, I serve as an IT Engineer ensuring KAMC and KLBKs infrastructure never misses a beat. Working alongside our Chief and my fellow engineer to maintain 24/7 stability, I specialize in the 'New Game+' builds—architecting the station’s professional podcast studio from scratch and scripting custom OBS tools to level up our digital broadcasts."}
           theme={theme}
         />
 
-        <Cards.PhotoCardWide
+        <Cards.QuoteCard theme={theme} quote={"When I’m not in the server room or behind the scenes of a broadcast, you can find me collaborating with our news production teams, sports departments, and on-air talent to ensure our tech is as seamless as our storytelling."}  /> 
+
+
+
+        <Cards.ListCard theme={theme} title="The A-Side" content={[
+          "Station Engineering: Servers, Networks, Broadcast Systems, and all the tech that keeps the signal strong", 
+          "The Podcast Lab: Building a state-of-the-art podcast studio from the ground up to support the launch of EL+", 
+          "Digital Modding: Custom OBS Tools, Streamlined Workflows, and all the little mods that make a BIG difference", 
+          "Collaboration: Working closely with News Production, Sports Teams, Anchors/Reports, and our Chief Engineer to ensure seamless operations across the board",
+        ]} />
+
+                <Cards.PhotoCardWide
           img={twinJobsImg}
           imgSmall={twinJobsSmallImg}
           theme={theme}
         />
-
-        <Cards.ListCard theme={theme} title="The A-Side" content={[
-          "Station Engineering: Keeping the KAMC/KLBK broadcast signal on the reels", 
-          "The Podcast Lab: Built from scratch for that professional-grade warmth", 
-          "Digital Modding: Writing custom code to overclock our streaming potential and optimize workflows", 
-          "Signal Repair: Fixing the glitches and smoothing out the production curve", 
-        ]} />
 
         <Cards.ListCardReverse theme={theme} title="The B-Side" content={[
           "Fullstack Development: Building seamless web apps and custom OBS tools", 

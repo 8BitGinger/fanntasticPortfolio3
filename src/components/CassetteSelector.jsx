@@ -14,6 +14,7 @@ const genres = [
   { id: 'country', label: 'Country', track: '/music/country.mp3', rotate: 0, xFactor: 0, y: 0, color: '#ffcc00' },
   { id: 'lofi', label: 'Lo-Fi', track: '/music/lofi.mp3', rotate: 22, xFactor: 0.7, y: 5, color: '#9d00ff' },
   { id: 'rock', label: 'Rock', track: '/music/rock.mp3', rotate: 45, xFactor: 1.2, y: 18, color: '#ff3c00' },
+  
 ];
 
 /**

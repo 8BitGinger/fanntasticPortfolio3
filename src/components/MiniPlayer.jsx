@@ -16,7 +16,7 @@ const TRACK_LABELS = {
   '/music/country.mp3': 'Country Roads',
   '/music/lofi.mp3':    'Lo-Fi Chill',
   '/music/rock.mp3':    'Rock Out',
-  '/music/jazz.mp3':    'Jazz Mode',
+  '/music/jazz.mp3':    'Speak-Easy Jazz',
 };
 
 // Module-level singletons — survive re-renders and theme switches

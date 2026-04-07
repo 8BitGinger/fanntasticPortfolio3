@@ -115,7 +115,19 @@ const ListCardReverse = ({ title, content, theme }) => {
   )
 }
 
+const QuoteCard = ({quote, theme}) => {
+  return (
+    <motion.div className={`quote-card quote--${theme}`}
+                initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.9 }}
+    >
+      <p>{quote}</p>
+    </motion.div>
+  )
+}
 
-const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, ListCard, ListCardReverse, PhotoCardWide }
+
+const Cards = { PhotoCardLeft, PhotoCardRight, ChildCard, ListCard, ListCardReverse, PhotoCardWide, QuoteCard };
 
 export default Cards;

@@ -249,7 +249,7 @@
           .track-card { width: 50%; margin: auto; }
           .flip-button { padding: 0.75rem 2rem; font-size: 12px; margin-top: 20px; }
 
-          .card-theme-a:hover { scale: 0.95; max-width: fit-content; }
-          .card-theme-b:hover { scale: 0.95; max-width: fit-content; }
+          .card-theme-a:hover { scale: 1.1; opacity: 1; z-index: 10; }
+          .card-theme-b:hover { scale: 1.1; opacity: 1; z-index: 10; }
        
         }
