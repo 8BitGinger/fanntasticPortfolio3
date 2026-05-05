@@ -22,6 +22,7 @@ import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
 import img18 from '../assets/pictures/project-pics/citrusProject.webp';
 import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 import img7 from '../assets/pictures/project-pics/obsShowTimerProject.png';
+import img19 from '../assets/pictures/project-pics/ryfiProject.png';
 
 const projectList = [
   {
@@ -39,6 +40,15 @@ const projectList = [
     link: 'https://gumshoerpg.com/',
     git: 'https://github.com/8BitGinger/GumshoeReact',
     category: 'game',
+  },
+
+  {
+    img: img19,
+    title: 'RyFi - Music',
+    subtitle: 'React, Lucide-React, Framer',
+    link: 'https://www.ryfimusic.com/',
+    git: 'https://github.com/8BitGinger/ryfiMusic',
+    category: 'ai',
   },
   {
     img: img3,
@@ -85,7 +95,6 @@ const projectList = [
     category: 'fullstack',
   },
 
-
   {
     img: img9,
     title: 'Weekly Moodal',
@@ -94,8 +103,6 @@ const projectList = [
     git: 'https://github.com/jameslwilson364/weeklyMoodal',
     category: 'web',
   },
-
-
 
   {
     img: img6,
@@ -124,18 +131,15 @@ const projectList = [
     category: 'game',
   },
 
-    {
+  {
     img: img15,
-    title:"Ryan's Gemini",
+    title: "Ryan's Gemini",
     subtitle: 'Gemini API',
     link: 'https://gemini-ryan.netlify.app/',
     git: 'https://github.com/8BitGinger/ryansGemini',
     category: 'ai',
-    
-
-    },
+  },
 ];
-
 
 const getCategoryIcon = (category) => {
   switch (category?.toLowerCase()) {
