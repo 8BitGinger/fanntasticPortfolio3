@@ -6,9 +6,10 @@ import { motion } from 'framer-motion';
 import SkillBars from '../components/SkillBars';
 import WebLinks from '../components/WebLinks';
 import NavPageButtons from '../components/NavPageButtons';
-import CassetteAbout from '../components/CassetteAbout';
 import PageHeader from '../components/PageHeader';
 import Cards from '../components/Cards';
+import AboutTabs from '../components/AboutTabs';
+import { Code2, Music2, Mic2, Gamepad2 } from 'lucide-react';
 
 import obsImg from '../assets/pictures/obsPic.png';
 import ttrpgImg from '../assets/pictures/ttrpgPic.png';
@@ -169,156 +170,169 @@ export default function About({ theme }) {
 
       <PageBreak theme={theme} />
 
-      <PageHeader theme={theme} title="Coding" />
+      <PageHeader theme={theme} title="Explore the Work" />
 
-      <Cards.PhotoCardRight
-        img={devImg}
-        title="Fullstack Developer"
-        content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
+      <AboutTabs
         theme={theme}
+        tabs={[
+          {
+            id: 'coding',
+            label: 'Coding',
+            icon: <Code2 size={16} />,
+            content: (
+              <>
+                <Cards.PhotoCardRight
+                  img={devImg}
+                  title="Fullstack Developer"
+                  content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
+                  theme={theme}
+                />
+                <div className={`about-section about-section--${theme}`}>
+                  <div className="about-section__inner">
+                    <SkillBars theme={theme} />
+                  </div>
+                </div>
+              </>
+            ),
+          },
+          {
+            id: 'music',
+            label: 'Music Production',
+            icon: <Music2 size={16} />,
+            content: (
+              <>
+                <Cards.PhotoCardLeft
+                  img={musicPic}
+                  title="Digital Music Producer"
+                  content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
+                  theme={theme}
+                />
+                <Cards.ChildCard theme={theme}>
+                  <Link
+                    to="https://music.apple.com/us/artist/auraveil/6776076042"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={auraveilAlbumCover}
+                      alt="Auraveil Album Cover"
+                      className="music-preview"
+                      loading="lazy"
+                    />
+                  </Link>
+
+                  <Link
+                    to="https://music.apple.com/us/artist/vndal/6775072343"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={vNDALAlbumCover}
+                      alt="VNDAL Album Cover"
+                      className="music-preview"
+                      loading="lazy"
+                    />
+                  </Link>
+
+                  <Link
+                    to="https://music.apple.com/us/artist/cash-harlan/6779032164"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <img
+                      src={cashHarlanAlbumCover}
+                      alt="Cash Harlan Album Cover"
+                      className="music-preview"
+                      loading="lazy"
+                    />
+                  </Link>
+                </Cards.ChildCard>
+                <h3 className="music-credit">
+                  <SiApplemusic className={`icon2 icon2--${theme}`} />
+                  All Artists available on Apple Music, Spotify, and YouTube
+                </h3>
+              </>
+            ),
+          },
+          {
+            id: 'podcast',
+            label: 'Podcast Engineering',
+            icon: <Mic2 size={16} />,
+            content: (
+              <>
+                <Cards.PhotoCardRight
+                  img={obsImg}
+                  title="Custom OBS Tools"
+                  content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
+                  theme={theme}
+                />
+
+                <Cards.ChildCard theme={theme}>
+                  <Link to="/projects">
+                    <img
+                      src={fxWizardImg}
+                      alt="FX Wizard Logo"
+                      className="obs-preview"
+                      loading="lazy"
+                    />
+                    <img
+                      src={obsShowTimerImg}
+                      alt="Custom OBS Tools"
+                      className="obs-preview"
+                      loading="lazy"
+                    />
+                  </Link>
+                </Cards.ChildCard>
+              </>
+            ),
+          },
+          {
+            id: 'game',
+            label: 'Game Creation',
+            icon: <Gamepad2 size={16} />,
+            content: (
+              <>
+                <Cards.PhotoCardLeft
+                  img={ttrpgImg}
+                  title="Content & Game Creator"
+                  content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
+                  theme={theme}
+                />
+
+                <Cards.ChildCard theme={theme}>
+                  <Link to="/projects" className="video-link">
+                    <video
+                      width="560"
+                      height="315"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      loading="lazy"
+                    >
+                      <source src={cindervoidVid} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+
+                    <video
+                      width="560"
+                      height="315"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      loading="lazy"
+                    >
+                      <source src={gumshoeVid} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </Link>
+                </Cards.ChildCard>
+              </>
+            ),
+          },
+        ]}
       />
-
-      <div className={`about-section about-section--${theme}`}>
-        <div className="about-section__inner">
-          <SkillBars theme={theme} />
-        </div>
-      </div>
-
-      <PageBreak theme={theme} />
-
-      <PageHeader theme={theme} title="Music Production" />
-
-      <Cards.PhotoCardLeft
-        img={musicPic}
-        title="Digital Music Producer"
-        content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
-        theme={theme}
-      />
-      <Cards.ChildCard theme={theme}>
-        <Link
-          to="https://music.apple.com/us/artist/auraveil/6776076042"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={auraveilAlbumCover}
-            alt="Auraveil Album Cover"
-            className="music-preview"
-            loading="lazy"
-          />
-        </Link>
-
-        <Link
-          to="https://music.apple.com/us/artist/vndal/6775072343"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={vNDALAlbumCover}
-            alt="VNDAL Album Cover"
-            className="music-preview"
-            loading="lazy"
-          />
-        </Link>
-
-        <Link
-          to="https://music.apple.com/us/artist/cash-harlan/6779032164"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src={cashHarlanAlbumCover}
-            alt="Cash Harlan Album Cover"
-            className="music-preview"
-            loading="lazy"
-          />
-        </Link>
-      </Cards.ChildCard>
-      <h3 className="music-credit">
-        <SiApplemusic className={`icon2 icon2--${theme}`} />
-        All Artists available on Apple Music, Spotify, and YouTube
-      </h3>
-
-      <PageBreak theme={theme} />
-
-      <PageHeader theme={theme} title="Podcast Engineering" />
-
-      <Cards.PhotoCardRight
-        img={obsImg}
-        title="Custom OBS Tools"
-        content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
-        theme={theme}
-      />
-
-      <Cards.ChildCard theme={theme}>
-        <Link to="/projects">
-          <img
-            src={fxWizardImg}
-            alt="FX Wizard Logo"
-            className="obs-preview"
-            loading="lazy"
-          />
-          <img
-            src={obsShowTimerImg}
-            alt="Custom OBS Tools"
-            className="obs-preview"
-            loading="lazy"
-          />
-        </Link>
-      </Cards.ChildCard>
-
-      <PageBreak theme={theme} />
-
-      <PageHeader theme={theme} title="Game Creation" />
-
-      <Cards.PhotoCardLeft
-        img={ttrpgImg}
-        title="Content & Game Creator"
-        content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
-        theme={theme}
-      />
-
-      <Cards.ChildCard theme={theme}>
-        <Link to="/projects" className="video-link">
-          {/* <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/zJsF0cp-hpI?si=G7nENH9AsfMgIEbF&autoplay=1&mute=1&loop=1&playlist=zJsF0cp-hpI&controls=0" 
-            title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            controls="0"
-            loading='lazy'
-            referrerPolicy="strict-origin-when-cross-origin" 
-            allowFullScreen>
-          </iframe> */}
-          <video
-            width="560"
-            height="315"
-            autoPlay
-            loop
-            muted
-            playsInline
-            loading="lazy"
-          >
-            <source src={cindervoidVid} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-
-          <video
-            width="560"
-            height="315"
-            autoPlay
-            loop
-            muted
-            playsInline
-            loading="lazy"
-          >
-            <source src={gumshoeVid} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </Link>
-      </Cards.ChildCard>
 
       <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
     </div>
