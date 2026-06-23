@@ -196,6 +196,10 @@
   transition: transform 0.3s ease-in-out;
 }
 
+.profile-image-container:hover .profile-image {
+  transform: scale(1.08);
+}
+
 /* ── Link ──────────────────────────────────────────────────── */
 
 .link {
@@ -364,13 +368,29 @@
 /* ── Titles ────────────────────────────────────────────────── */
 
 .about-title {
+  position: relative;
   font-size: 2.3rem;
   font-weight: 800;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   text-shadow: 0 4px 10px var(--theme-accent, #a09f9f9a);
   margin: 0 auto;
+  padding-bottom: 16px;
   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+}
+
+.about-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 3px;
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 12px currentColor;
+  opacity: 0.85;
 }
 
 .about-paragraph {
@@ -426,9 +446,36 @@
   font-size: 1rem;
   font-weight: 300;
   color: #08d5e4a8;
+  margin-top: -1rem;
   margin-bottom: 0;
   text-shadow: 0 2px 5px rgba(8, 213, 228, 0.5);
   font-style: italic;
+  letter-spacing: 0.04em;
+}
+
+.subtitle-rock {
+  color: rgba(255, 110, 110, 0.9);
+  text-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
+}
+.subtitle-jazz {
+  color: rgba(190, 172, 164, 0.9);
+  text-shadow: 0 2px 5px rgba(136, 117, 109, 0.5);
+}
+.subtitle-pop {
+  color: rgba(255, 130, 195, 0.9);
+  text-shadow: 0 2px 5px rgba(255, 20, 147, 0.5);
+}
+.subtitle-lofi {
+  color: rgba(160, 135, 230, 0.9);
+  text-shadow: 0 2px 5px rgba(88, 61, 184, 0.5);
+}
+.subtitle-rap {
+  color: rgba(120, 210, 100, 0.9);
+  text-shadow: 0 2px 5px rgba(42, 161, 18, 0.5);
+}
+.subtitle-country {
+  color: rgba(200, 165, 115, 0.9);
+  text-shadow: 0 2px 5px rgba(153, 115, 61, 0.5);
 }
 
 .icon2 {
@@ -460,6 +507,23 @@
 
 .icon2--lofi {
   color: rgb(88, 61, 184);
+}
+
+/* ── Music credit line ────────────────────────────────────── */
+
+.music-credit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.5rem auto 0;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.music-credit .icon2 {
+  font-size: 1.4rem;
 }
 
 /* ── Animations ────────────────────────────────────────────── */

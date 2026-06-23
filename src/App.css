@@ -145,16 +145,43 @@
 }
 
 .page-break {
-    margin: 40px 0;
     padding: 0;
-    background-color: rgba(122, 121, 121, 0.852);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(122, 121, 121, 0.85),
+        transparent
+    );
+    box-shadow: 0 0 10px rgba(122, 121, 121, 0.4);
     border-radius: 10px;
-   
     min-width: 70%;
-    height: 5px;
-    padding-left: 20px;
-    padding-right: 50px;
+    height: 4px;
     margin: 40px auto;
+}
+
+.page-break--rock {
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+}
+.page-break--jazz {
+    background: linear-gradient(90deg, transparent, rgba(136, 117, 109, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(136, 117, 109, 0.5);
+}
+.page-break--pop {
+    background: linear-gradient(90deg, transparent, rgba(255, 20, 147, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.5);
+}
+.page-break--lofi {
+    background: linear-gradient(90deg, transparent, rgba(88, 61, 184, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(88, 61, 184, 0.5);
+}
+.page-break--rap {
+    background: linear-gradient(90deg, transparent, rgba(42, 161, 18, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(42, 161, 18, 0.5);
+}
+.page-break--country {
+    background: linear-gradient(90deg, transparent, rgba(153, 115, 61, 0.85), transparent);
+    box-shadow: 0 0 10px rgba(153, 115, 61, 0.5);
 }
 
 
@@ -260,10 +287,9 @@
 }
 
 .resume-btn {
+    display: block;
+    width: fit-content;
     margin: 20px auto;
-   
-   
-
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;

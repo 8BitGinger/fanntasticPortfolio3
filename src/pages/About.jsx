@@ -10,7 +10,6 @@ import CassetteAbout from '../components/CassetteAbout';
 import PageHeader from '../components/PageHeader';
 import Cards from '../components/Cards';
 
-
 import obsImg from '../assets/pictures/obsPic.png';
 import ttrpgImg from '../assets/pictures/ttrpgPic.png';
 import devImg from '../assets/pictures/devPic.png';
@@ -21,8 +20,12 @@ import fxWizardImg from '../assets/pictures/project-pics/fxWizardProject.webp';
 import obsShowTimerImg from '../assets/pictures/project-pics/obsShowTimerProject.png';
 import profilePic from '../assets/pictures/profilePic.png';
 import twinJobsImg from '../assets/pictures/twinJobs.png';
+import musicPic from '../assets/pictures/musicPic.png';
 import twinJobsSmallImg from '../assets/pictures/twinJobsSmall.png';
-
+import { SiApplemusic } from 'react-icons/si';
+import vNDALAlbumCover from '../assets/pictures/VNDAL.png';
+import auraveilAlbumCover from '../assets/pictures/auraveil.png';
+import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.png';
 
 const themeData = {
   rock: {
@@ -73,17 +76,13 @@ export default function About({ theme }) {
   const content = themeData[theme] || themeData['jazz'];
 
   return (
-    <div
-      className="about-page"
-     
-    >
+    <div className="about-page">
       {/* ── Hero wrapper ── */}
       <motion.div
         className={`about-wrapper wrapper-${theme}`}
-         initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      
-      transition={{ duration: 0.4 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4 }}
         style={{ backgroundImage: `url(${content.background})` }}
       >
         <div className="about-content">
@@ -93,109 +92,194 @@ export default function About({ theme }) {
               alt={`8BitGinger - ${content.title}`}
               className="profile-image"
               fetchPriority="high"
-              onError={(e) => (e.target.src = 'https://placehold.co/600x400/EEE/31343C')}
+              onError={(e) =>
+                (e.target.src = 'https://placehold.co/600x400/EEE/31343C')
+              }
             />
           </div>
 
           <h1 className={`about-title ${theme}`}>{content.title}</h1>
-          {/* <p className="subtitle">{content.subtitle}</p> */}
+          <p className={`subtitle subtitle-${theme}`}>{content.subtitle}</p>
 
           <p className="about-paragraph">{content.text}</p>
 
           <div className="weblinks-container">
             <WebLinks theme={theme} />
-               <Link to="/" className="link">
-            Switch Tapes?
-          </Link>
+            <Link to="/" className="link">
+              Switch Tapes?
+            </Link>
           </div>
-
-       
         </div>
       </motion.div>
 
-      <PageHeader theme={theme} title='My Soundtrack' />
+      <PageHeader theme={theme} title="Specs" />
 
-      <CassetteAbout theme={theme} />
+      <Cards.PhotoCardLeft
+        img={profilePic}
+        title="Current Role"
+        content={
+          "Part of a tight-knit engineering trio, I serve as an IT Engineer ensuring KAMC and KLBKs infrastructure never misses a beat. Working alongside our Chief and my fellow engineer to maintain 24/7 stability, I specialize in the 'New Game+' builds—architecting the station’s professional podcast studio from scratch and scripting custom OBS tools to level up our digital broadcasts."
+        }
+        theme={theme}
+      />
 
+      <Cards.QuoteCard
+        theme={theme}
+        quote={
+          'When I’m not in the server room or behind the scenes of a broadcast, you can find me collaborating with our news production teams, sports departments, and on-air talent to ensure our tech is as seamless as our storytelling.'
+        }
+      />
 
+      <Cards.ListCard
+        theme={theme}
+        title="The A-Side"
+        content={[
+          'Station Engineering: Servers, Networks, Broadcast Systems, and all the tech that keeps the signal strong',
+          'The Podcast Lab: Building a state-of-the-art podcast studio from the ground up to support the launch of EL+',
+          'Digital Modding: Custom OBS Tools, Streamlined Workflows, and all the little mods that make a BIG difference',
+          'Collaboration: Working closely with News Production, Sports Teams, Anchors/Reports, and our Chief Engineer to ensure seamless operations across the board',
+        ]}
+      />
 
+      <Cards.PhotoCardWide
+        img={twinJobsImg}
+        imgSmall={twinJobsSmallImg}
+        theme={theme}
+      />
 
+      <Cards.ListCardReverse
+        theme={theme}
+        title="The B-Side"
+        content={[
+          'Fullstack Development: Building seamless web apps and custom OBS tools',
+          'Game Design: Crafting immersive Games that captivate players',
+          'Content Creation: Producing engaging media that resonates with communities',
+          'Continuous Learning: Always leveling up my skills and knowledge',
+        ]}
+      />
 
+      <Link
+        to="../downloads/Resume2025.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`link link--${theme} resume-btn`}
+      >
+        View PDF Resume
+      </Link>
 
+      <PageBreak theme={theme} />
 
-        
+      <PageHeader theme={theme} title="Coding" />
 
-      <PageHeader theme={theme} title='Specs' />
+      <Cards.PhotoCardRight
+        img={devImg}
+        title="Fullstack Developer"
+        content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
+        theme={theme}
+      />
 
-        <Cards.PhotoCardLeft
-          img={profilePic}
-          title="Current Role"
-          content={"Part of a tight-knit engineering trio, I serve as an IT Engineer ensuring KAMC and KLBKs infrastructure never misses a beat. Working alongside our Chief and my fellow engineer to maintain 24/7 stability, I specialize in the 'New Game+' builds—architecting the station’s professional podcast studio from scratch and scripting custom OBS tools to level up our digital broadcasts."}
-          theme={theme}
-        />
-
-        <Cards.QuoteCard theme={theme} quote={"When I’m not in the server room or behind the scenes of a broadcast, you can find me collaborating with our news production teams, sports departments, and on-air talent to ensure our tech is as seamless as our storytelling."}  /> 
-
-
-
-        <Cards.ListCard theme={theme} title="The A-Side" content={[
-          "Station Engineering: Servers, Networks, Broadcast Systems, and all the tech that keeps the signal strong", 
-          "The Podcast Lab: Building a state-of-the-art podcast studio from the ground up to support the launch of EL+", 
-          "Digital Modding: Custom OBS Tools, Streamlined Workflows, and all the little mods that make a BIG difference", 
-          "Collaboration: Working closely with News Production, Sports Teams, Anchors/Reports, and our Chief Engineer to ensure seamless operations across the board",
-        ]} />
-
-                <Cards.PhotoCardWide
-          img={twinJobsImg}
-          imgSmall={twinJobsSmallImg}
-          theme={theme}
-        />
-
-        <Cards.ListCardReverse theme={theme} title="The B-Side" content={[
-          "Fullstack Development: Building seamless web apps and custom OBS tools", 
-          "Game Design: Crafting immersive Games that captivate players", 
-          "Content Creation: Producing engaging media that resonates with communities", 
-          "Continuous Learning: Always leveling up my skills and knowledge", 
-        ]} /> 
-
-
-        <button className={`link resume-btn web-links-list--${theme}`}>
-          <Link to="../downloads/Resume2025.pdf" target="_blank" rel="noopener noreferrer">
-            View PDF Resume
-          </Link>
-        </button>
-
-
-        <PageBreak/>
-
-        <Cards.PhotoCardRight
-          img={devImg}
-          title="Fullstack Developer"
-          content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
-          theme={theme}
-        />
-
-        <div className={`about-section about-section--${theme}`}>
-          <div className="about-section__inner">
-            <SkillBars theme={theme} />
-          </div>
+      <div className={`about-section about-section--${theme}`}>
+        <div className="about-section__inner">
+          <SkillBars theme={theme} />
         </div>
+      </div>
 
-        <PageBreak/>
+      <PageBreak theme={theme} />
 
-        <Cards.PhotoCardLeft
-          img={ttrpgImg}
-          title="Content & Game Creator"
-          content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
-          theme={theme}
-        />
+      <PageHeader theme={theme} title="Music Production" />
 
-        
+      <Cards.PhotoCardLeft
+        img={musicPic}
+        title="Digital Music Producer"
+        content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
+        theme={theme}
+      />
+      <Cards.ChildCard theme={theme}>
+        <Link
+          to="https://music.apple.com/us/artist/auraveil/6776076042"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={auraveilAlbumCover}
+            alt="Auraveil Album Cover"
+            className="music-preview"
+            loading="lazy"
+          />
+        </Link>
 
-        <Cards.ChildCard theme={theme}>
-          <Link to="/projects" className="video-link">
-           
-          
+        <Link
+          to="https://music.apple.com/us/artist/vndal/6775072343"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={vNDALAlbumCover}
+            alt="VNDAL Album Cover"
+            className="music-preview"
+            loading="lazy"
+          />
+        </Link>
+
+        <Link
+          to="https://music.apple.com/us/artist/cash-harlan/6779032164"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src={cashHarlanAlbumCover}
+            alt="Cash Harlan Album Cover"
+            className="music-preview"
+            loading="lazy"
+          />
+        </Link>
+      </Cards.ChildCard>
+      <h3 className="music-credit">
+        <SiApplemusic className={`icon2 icon2--${theme}`} />
+        All Artists available on Apple Music, Spotify, and YouTube
+      </h3>
+
+      <PageBreak theme={theme} />
+
+      <PageHeader theme={theme} title="Podcast Engineering" />
+
+      <Cards.PhotoCardRight
+        img={obsImg}
+        title="Custom OBS Tools"
+        content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
+        theme={theme}
+      />
+
+      <Cards.ChildCard theme={theme}>
+        <Link to="/projects">
+          <img
+            src={fxWizardImg}
+            alt="FX Wizard Logo"
+            className="obs-preview"
+            loading="lazy"
+          />
+          <img
+            src={obsShowTimerImg}
+            alt="Custom OBS Tools"
+            className="obs-preview"
+            loading="lazy"
+          />
+        </Link>
+      </Cards.ChildCard>
+
+      <PageBreak theme={theme} />
+
+      <PageHeader theme={theme} title="Game Creation" />
+
+      <Cards.PhotoCardLeft
+        img={ttrpgImg}
+        title="Content & Game Creator"
+        content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
+        theme={theme}
+      />
+
+      <Cards.ChildCard theme={theme}>
+        <Link to="/projects" className="video-link">
           {/* <iframe 
             width="560" 
             height="315" 
@@ -208,62 +292,35 @@ export default function About({ theme }) {
             referrerPolicy="strict-origin-when-cross-origin" 
             allowFullScreen>
           </iframe> */}
-                    <video 
-            width="560" 
-            height="315" 
-            autoPlay 
-            loop 
-            muted 
+          <video
+            width="560"
+            height="315"
+            autoPlay
+            loop
+            muted
             playsInline
-            loading='lazy'
+            loading="lazy"
           >
             <source src={cindervoidVid} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-       
-     
-          <video 
-            width="560" 
-            height="315" 
-            autoPlay 
-            loop 
-            muted 
+
+          <video
+            width="560"
+            height="315"
+            autoPlay
+            loop
+            muted
             playsInline
-            loading='lazy'
+            loading="lazy"
           >
             <source src={gumshoeVid} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-               </Link>
-        </Cards.ChildCard>
+        </Link>
+      </Cards.ChildCard>
 
-        <PageBreak/>
-
-        <Cards.PhotoCardRight
-          img={obsImg}
-          title="Custom OBS Tools"
-          content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
-          theme={theme}
-        />
-
-        <Cards.ChildCard theme={theme}>
-          <Link to="/projects" >
-            <img src={fxWizardImg} alt="FX Wizard Logo" className="obs-preview" loading='lazy' />
-            <img src={obsShowTimerImg} alt="Custom OBS Tools" className="obs-preview" loading='lazy' />
-          </Link>
-        
-        </Cards.ChildCard>
-
-        <PageBreak/>
-
-      
-
-
-
-          <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
-
-
-
+      <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
     </div>
   );
 }

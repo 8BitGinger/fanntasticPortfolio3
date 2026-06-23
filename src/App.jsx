@@ -7,6 +7,7 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import MiniPlayer from './components/MiniPlayer';
+import { vibeManager } from './Utils/VibeManager';
 import './assets/styles/mini-player.css';
 import './App.css';
 
@@ -16,8 +17,12 @@ function App() {
 
   useEffect(() => {
     if (location.pathname !== '/' && !document.documentElement.dataset.theme) {
+      vibeManager.play('/music/jazz.mp3');
       setTheme('jazz');
       document.documentElement.dataset.theme = 'jazz';
+      window.dispatchEvent(
+        new CustomEvent('theme-switch', { detail: { theme: 'jazz' } })
+      );
     }
   }, [location.pathname]);
 
