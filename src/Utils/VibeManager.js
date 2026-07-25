@@ -29,8 +29,16 @@ class VibeManager {
     // 3. Global reference just for the "currentAudio" logic if needed elsewhere
     window['currentAudio'] = this.player;
 
-    this.player.play().catch(() => {
-      console.log("Waiting for user interaction to play audio...");
+    // Surface the real reason a track fails to load/decode (not just autoplay)
+    const MEDIA_ERR = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
+    this.player.addEventListener('error', () => {
+      const code = this.player?.error?.code;
+      console.error(`[VibeManager] media error on ${trackPath}: ${MEDIA_ERR[code] || code}`, this.player?.error);
+    });
+
+    this.player.play().catch((err) => {
+      // NotAllowedError = real autoplay block; anything else = load/decode/network failure
+      console.error(`[VibeManager] play() rejected for ${trackPath}: ${err.name} — ${err.message}`);
     });
   }
 
