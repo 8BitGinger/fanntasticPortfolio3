@@ -8,13 +8,17 @@ import profilePic from '/images/profile-standard.webp';
 /**
  * MOCK DATA & ASSETS
  */
+// Bump this whenever you replace an audio file so Netlify's CDN (and browsers)
+// fetch the new bytes instead of serving a stale copy cached under the same URL.
+const TRACK_VERSION = '2';
+
 const genres = [
-  { id: 'pop', label: 'Pop', track: '/music/pop.mp3', rotate: -45, xFactor: -1.2, y: 18, color: '#ff00ea' },
-  { id: 'rap', label: 'Rap', track: '/music/rap.mp3', rotate: -22, xFactor: -0.7, y: 5, color: '#00f2ff' },
-  { id: 'country', label: 'Country', track: '/music/country.mp3', rotate: 0, xFactor: 0, y: 0, color: '#ffcc00' },
-  { id: 'lofi', label: 'Lo-Fi', track: '/music/lofi.mp3', rotate: 22, xFactor: 0.7, y: 5, color: '#9d00ff' },
-  { id: 'rock', label: 'Rock', track: '/music/rock.mp3', rotate: 45, xFactor: 1.2, y: 18, color: '#ff3c00' },
-  
+  { id: 'pop', label: 'Pop', track: `/music/pop.mp3?v=${TRACK_VERSION}`, rotate: -45, xFactor: -1.2, y: 18, color: '#ff00ea' },
+  { id: 'rap', label: 'Rap', track: `/music/rap.mp3?v=${TRACK_VERSION}`, rotate: -22, xFactor: -0.7, y: 5, color: '#00f2ff' },
+  { id: 'country', label: 'Country', track: `/music/country.mp3?v=${TRACK_VERSION}`, rotate: 0, xFactor: 0, y: 0, color: '#ffcc00' },
+  { id: 'lofi', label: 'Lo-Fi', track: `/music/lofi.mp3?v=${TRACK_VERSION}`, rotate: 22, xFactor: 0.7, y: 5, color: '#9d00ff' },
+  { id: 'rock', label: 'Rock', track: `/music/rock.mp3?v=${TRACK_VERSION}`, rotate: 45, xFactor: 1.2, y: 18, color: '#ff3c00' },
+
 ];
 
 /**

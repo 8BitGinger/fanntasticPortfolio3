@@ -138,7 +138,7 @@ export default function MiniPlayer({ theme }) {
       setVisible(true);
       setIsPlaying(true);
       setTrackLabel(
-        TRACK_LABELS[audio.src.replace(window.location.origin, '')] || 'Now Playing'
+        TRACK_LABELS[audio.src.replace(window.location.origin, '').split('?')[0]] || 'Now Playing'
       );
       setVolume(audio.volume);
 
@@ -160,7 +160,7 @@ export default function MiniPlayer({ theme }) {
       setVisible(true);
       setIsPlaying(true);
       setTrackLabel(
-        TRACK_LABELS[audio.src.replace(window.location.origin, '')] || 'Now Playing'
+        TRACK_LABELS[audio.src.replace(window.location.origin, '').split('?')[0]] || 'Now Playing'
       );
       setVolume(audio.volume);
       setTimeout(() => startVisualizer(audio), 100);
