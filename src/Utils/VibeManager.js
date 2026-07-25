@@ -12,31 +12,46 @@ class VibeManager {
       return;
     }
 
-    // 1. Kill the old one definitively
+    // 1. Kill the old one definitively.
+    //    Detach our error handler FIRST — emptying src fires a spurious
+    //    SRC_NOT_SUPPORTED on the old element that isn't a real failure.
     if (this.player) {
+      this.player.onerror = null;
       this.player.pause();
-      this.player.src = "";
+      this.player.removeAttribute('src');
       this.player.load();
       this.player = null;
     }
 
     // 2. Start the new one
     this._currentTrack = trackPath;
-    this.player = new Audio(trackPath);
-    this.player.volume = 0.3;
-    this.player.loop = true;
+    const el = new Audio();
+    el.volume = 0.3;
+    el.loop = true;
+    el.preload = 'auto';
+    this.player = el;
 
     // 3. Global reference just for the "currentAudio" logic if needed elsewhere
-    window['currentAudio'] = this.player;
+    window['currentAudio'] = el;
 
-    // Surface the real reason a track fails to load/decode (not just autoplay)
+    // Surface the real reason a track fails to load/decode (not just autoplay).
+    // Guard on `el === this.player` so a torn-down element never logs.
     const MEDIA_ERR = { 1: 'ABORTED', 2: 'NETWORK', 3: 'DECODE', 4: 'SRC_NOT_SUPPORTED' };
-    this.player.addEventListener('error', () => {
-      const code = this.player?.error?.code;
-      console.error(`[VibeManager] media error on ${trackPath}: ${MEDIA_ERR[code] || code}`, this.player?.error);
-    });
+    el.onerror = () => {
+      if (el !== this.player) return; // stale element being replaced — ignore
+      const e = el.error;
+      console.error(
+        `[VibeManager] media error on ${trackPath}: ${MEDIA_ERR[e?.code] || e?.code}` +
+        ` (networkState=${el.networkState}, readyState=${el.readyState}, currentSrc=${el.currentSrc})`,
+        e
+      );
+    };
 
-    this.player.play().catch((err) => {
+    // Set src explicitly and load, then play. Keeps the request tied to the
+    // user gesture while giving us a clean, observable load lifecycle.
+    el.src = trackPath;
+    el.play().catch((err) => {
+      if (el !== this.player) return; // superseded by a newer selection — ignore
       // NotAllowedError = real autoplay block; anything else = load/decode/network failure
       console.error(`[VibeManager] play() rejected for ${trackPath}: ${err.name} — ${err.message}`);
     });

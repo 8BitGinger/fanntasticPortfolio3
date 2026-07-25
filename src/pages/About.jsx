@@ -1,5 +1,6 @@
 import React from 'react';
 import '../assets/styles/about.css';
+import '../assets/styles/aboutBento.css';
 import '../assets/styles/skills.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -27,6 +28,7 @@ import { SiApplemusic } from 'react-icons/si';
 import vNDALAlbumCover from '../assets/pictures/VNDAL.png';
 import auraveilAlbumCover from '../assets/pictures/auraveil.png';
 import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.png';
+import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.jpg';
 
 const themeData = {
   rock: {
@@ -115,58 +117,64 @@ export default function About({ theme }) {
 
       <PageHeader theme={theme} title="Specs" />
 
-      <Cards.PhotoCardLeft
-        img={profilePic}
-        title="Current Role"
-        content={
-          "Part of a tight-knit engineering trio, I serve as an IT Engineer ensuring KAMC and KLBKs infrastructure never misses a beat. Working alongside our Chief and my fellow engineer to maintain 24/7 stability, I specialize in the 'New Game+' builds—architecting the station’s professional podcast studio from scratch and scripting custom OBS tools to level up our digital broadcasts."
-        }
-        theme={theme}
-      />
+      <div className="bento">
+        <div className="bento-cell span-2">
+          <Cards.PhotoCardLeft
+            img={profilePic}
+            title="Current Role"
+            content={
+              "Part of a tight-knit engineering trio, I serve as an IT Engineer ensuring KAMC and KLBKs infrastructure never misses a beat. Working alongside our Chief and my fellow engineer to maintain 24/7 stability, I specialize in the 'New Game+' builds—architecting the station’s professional podcast studio from scratch and scripting custom OBS tools to level up our digital broadcasts."
+            }
+            theme={theme}
+          />
+        </div>
 
-      <Cards.QuoteCard
-        theme={theme}
-        quote={
-          'When I’m not in the server room or behind the scenes of a broadcast, you can find me collaborating with our news production teams, sports departments, and on-air talent to ensure our tech is as seamless as our storytelling.'
-        }
-      />
+      
 
-      <Cards.ListCard
-        theme={theme}
-        title="The A-Side"
-        content={[
-          'Station Engineering: Servers, Networks, Broadcast Systems, and all the tech that keeps the signal strong',
-          'The Podcast Lab: Building a state-of-the-art podcast studio from the ground up to support the launch of EL+',
-          'Digital Modding: Custom OBS Tools, Streamlined Workflows, and all the little mods that make a BIG difference',
-          'Collaboration: Working closely with News Production, Sports Teams, Anchors/Reports, and our Chief Engineer to ensure seamless operations across the board',
-        ]}
-      />
+        <div className="bento-cell quote">
+          <Cards.ListCard
+            theme={theme}
+            title="The A-Side"
+            content={[
+              'Station Engineering: Servers, Networks, Broadcast Systems, and all the tech that keeps the signal strong',
+              'The Podcast Lab: Building a state-of-the-art podcast studio from the ground up to support the launch of EL+',
+              'Digital Modding: Custom OBS Tools, Streamlined Workflows, and all the little mods that make a BIG difference',
+              'Collaboration: Working closely with News Production, Sports Teams, Anchors/Reports, and our Chief Engineer to ensure seamless operations across the board',
+            ]}
+          />
+        </div>
 
-      <Cards.PhotoCardWide
-        img={twinJobsImg}
-        imgSmall={twinJobsSmallImg}
-        theme={theme}
-      />
+        <div className={`bento-cell card card--${theme} card--span-2`}>
+            <img src={twinJobsSmallImg} alt="Twin Jobs" className="card__img" />
+        </div>
 
-      <Cards.ListCardReverse
-        theme={theme}
-        title="The B-Side"
-        content={[
-          'Fullstack Development: Building seamless web apps and custom OBS tools',
-          'Game Design: Crafting immersive Games that captivate players',
-          'Content Creation: Producing engaging media that resonates with communities',
-          'Continuous Learning: Always leveling up my skills and knowledge',
-        ]}
-      />
+        <div className="bento-cell span-1">
+          <Cards.ListCardReverse
+            theme={theme}
+            title="The B-Side"
+            content={[
+              'Fullstack Development: Building seamless web apps and custom OBS tools',
+              'Game Design: Crafting immersive Games that captivate players',
+              'Content Creation: Producing engaging media that resonates with communities',
+              'Continuous Learning: Always leveling up my skills and knowledge',
+            ]}
+          />
+        </div>
 
-      <Link
-        to="../downloads/Resume2025.pdf"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`link link--${theme} resume-btn`}
-      >
-        View PDF Resume
-      </Link>
+        <div className="bento-cell span-1">
+          <div className={`card card--${theme} resume-tile`}>
+            <span className="resume-tile__label">Want the full rundown?</span>
+            <Link
+              to="../downloads/Resume2025.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`link link--${theme} resume-btn`}
+            >
+              View PDF Resume
+            </Link>
+          </div>
+        </div>
+      </div>
 
       <PageBreak theme={theme} />
 
@@ -180,19 +188,23 @@ export default function About({ theme }) {
             label: 'Coding',
             icon: <Code2 size={16} />,
             content: (
-              <>
-                <Cards.PhotoCardRight
-                  img={devImg}
-                  title="Fullstack Developer"
-                  content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
-                  theme={theme}
-                />
-                <div className={`about-section about-section--${theme}`}>
-                  <div className="about-section__inner">
-                    <SkillBars theme={theme} />
+              <div className="bento">
+                <div className="bento-cell span-2">
+                  <Cards.PhotoCardRight
+                    img={devImg}
+                    title="Fullstack Developer"
+                    content="As a fullstack developer, I bring a versatile skill set that allows me to craft seamless web applications and custom OBS tools. From designing intuitive user interfaces to optimizing backend performance, I thrive on creating solutions that are both functional and engaging. Whether it's building a dynamic website or developing a tool to enhance streaming experiences, I am passionate about delivering high-quality, innovative projects that resonate with users and communities alike."
+                    theme={theme}
+                  />
+                </div>
+                <div className="bento-cell span-2">
+                  <div className={`about-section about-section--${theme}`}>
+                    <div className="about-section__inner">
+                      <SkillBars theme={theme} />
+                    </div>
                   </div>
                 </div>
-              </>
+              </div>
             ),
           },
           {
@@ -200,58 +212,75 @@ export default function About({ theme }) {
             label: 'Music Production',
             icon: <Music2 size={16} />,
             content: (
-              <>
-                <Cards.PhotoCardLeft
-                  img={musicPic}
-                  title="Digital Music Producer"
-                  content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
-                  theme={theme}
-                />
-                <Cards.ChildCard theme={theme}>
-                  <Link
-                    to="https://music.apple.com/us/artist/auraveil/6776076042"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={auraveilAlbumCover}
-                      alt="Auraveil Album Cover"
-                      className="music-preview"
-                      loading="lazy"
-                    />
-                  </Link>
+              <div className="bento">
+                <div className="bento-cell span-2">
+                  <Cards.PhotoCardLeft
+                    img={musicPic}
+                    title="Digital Music Producer"
+                    content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
+                    theme={theme}
+                  />
+                </div>
+                <div className="bento-cell span-2">
+                  <Cards.ChildCard theme={theme}>
+                    <Link
+                      to="https://music.apple.com/us/artist/auraveil/6776076042"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={auraveilAlbumCover}
+                        alt="Auraveil Album Cover"
+                        className="music-preview"
+                        loading="lazy"
+                      />
+                    </Link>
 
-                  <Link
-                    to="https://music.apple.com/us/artist/vndal/6775072343"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={vNDALAlbumCover}
-                      alt="VNDAL Album Cover"
-                      className="music-preview"
-                      loading="lazy"
-                    />
-                  </Link>
+                    <Link
+                      to="https://music.apple.com/us/artist/vndal/6775072343"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={vNDALAlbumCover}
+                        alt="VNDAL Album Cover"
+                        className="music-preview"
+                        loading="lazy"
+                      />
+                    </Link>
 
-                  <Link
-                    to="https://music.apple.com/us/artist/cash-harlan/6779032164"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={cashHarlanAlbumCover}
-                      alt="Cash Harlan Album Cover"
-                      className="music-preview"
-                      loading="lazy"
-                    />
-                  </Link>
-                </Cards.ChildCard>
-                <h3 className="music-credit">
+                    <Link
+                      to="https://music.apple.com/us/artist/blacklist-dahlia/6782773395"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={blacklistDahliaAlbumCover}
+                        alt="Blacklist Dahlia Album Cover"
+                        className="music-preview"
+                        loading="lazy"
+                      />
+                    </Link>
+
+                    <Link
+                      to="https://music.apple.com/us/artist/cash-harlan/6779032164"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={cashHarlanAlbumCover}
+                        alt="Cash Harlan Album Cover"
+                        className="music-preview"
+                        loading="lazy"
+                      />
+                    </Link>
+                  </Cards.ChildCard>
+                </div>
+                <h3 className="music-credit span-2">
                   <SiApplemusic className={`icon2 icon2--${theme}`} />
                   All Artists available on Apple Music, Spotify, and YouTube
                 </h3>
-              </>
+              </div>
             ),
           },
           {
@@ -259,31 +288,37 @@ export default function About({ theme }) {
             label: 'Podcast Engineering',
             icon: <Mic2 size={16} />,
             content: (
-              <>
-                <Cards.PhotoCardRight
-                  img={obsImg}
-                  title="Custom OBS Tools"
-                  content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
-                  theme={theme}
-                />
+              <div className="bento">
+                <div className="bento-cell span-2">
+                  <Cards.PhotoCardRight
+                    img={obsImg}
+                    title="Custom OBS Tools"
+                    content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
+                    theme={theme}
+                  />
+                </div>
 
-                <Cards.ChildCard theme={theme}>
-                  <Link to="/projects">
-                    <img
-                      src={fxWizardImg}
-                      alt="FX Wizard Logo"
-                      className="obs-preview"
-                      loading="lazy"
-                    />
-                    <img
-                      src={obsShowTimerImg}
-                      alt="Custom OBS Tools"
-                      className="obs-preview"
-                      loading="lazy"
-                    />
-                  </Link>
-                </Cards.ChildCard>
-              </>
+                <div className="bento-cell span-2">
+                  <Cards.ChildCard theme={theme}>
+                    <Link to="/projects">
+                      <img
+                        src={fxWizardImg}
+                        alt="FX Wizard Logo"
+                        className="obs-preview"
+                        loading="lazy"
+                      />
+                    </Link>
+                    <Link to="/projects">
+                      <img
+                        src={obsShowTimerImg}
+                        alt="Custom OBS Tools"
+                        className="obs-preview"
+                        loading="lazy"
+                      />
+                    </Link>
+                  </Cards.ChildCard>
+                </div>
+              </div>
             ),
           },
           {
@@ -291,44 +326,50 @@ export default function About({ theme }) {
             label: 'Game Creation',
             icon: <Gamepad2 size={16} />,
             content: (
-              <>
-                <Cards.PhotoCardLeft
-                  img={ttrpgImg}
-                  title="Content & Game Creator"
-                  content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
-                  theme={theme}
-                />
+              <div className="bento">
+                <div className="bento-cell span-2">
+                  <Cards.PhotoCardLeft
+                    img={ttrpgImg}
+                    title="Content & Game Creator"
+                    content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
+                    theme={theme}
+                  />
+                </div>
 
-                <Cards.ChildCard theme={theme}>
-                  <Link to="/projects" className="video-link">
-                    <video
-                      width="560"
-                      height="315"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      loading="lazy"
-                    >
-                      <source src={cindervoidVid} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
+                <div className="bento-cell span-2">
+                  <Cards.ChildCard theme={theme}>
+                    <Link to="/projects" className="video-link">
+                      <video
+                        width="560"
+                        height="315"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        loading="lazy"
+                      >
+                        <source src={cindervoidVid} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </Link>
 
-                    <video
-                      width="560"
-                      height="315"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      loading="lazy"
-                    >
-                      <source src={gumshoeVid} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                  </Link>
-                </Cards.ChildCard>
-              </>
+                    <Link to="/projects" className="video-link">
+                      <video
+                        width="560"
+                        height="315"
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        loading="lazy"
+                      >
+                        <source src={gumshoeVid} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </Link>
+                  </Cards.ChildCard>
+                </div>
+              </div>
             ),
           },
         ]}
