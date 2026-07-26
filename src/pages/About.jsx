@@ -30,7 +30,7 @@ import vNDALAlbumCover from '../assets/pictures/VNDAL.png';
 import auraveilAlbumCover from '../assets/pictures/auraveil.png';
 import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.png';
 import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.jpg';
-import bit8Pic from '../assets/pictures/8BitGingerArtistProfilePic.jpg';
+import bit8Pic from '../assets/pictures/ginger8Bit.jpg';
 
 const themeData = {
   rock: {
