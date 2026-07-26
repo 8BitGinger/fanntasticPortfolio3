@@ -11,6 +11,7 @@ import PageHeader from '../components/PageHeader';
 import Cards from '../components/Cards';
 import AboutTabs from '../components/AboutTabs';
 import { Code2, Music2, Mic2, Gamepad2 } from 'lucide-react';
+import ArtistInfo from '../components/ArtistInfo';
 
 import obsImg from '../assets/pictures/obsPic.png';
 import ttrpgImg from '../assets/pictures/ttrpgPic.png';
@@ -29,45 +30,46 @@ import vNDALAlbumCover from '../assets/pictures/VNDAL.png';
 import auraveilAlbumCover from '../assets/pictures/auraveil.png';
 import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.png';
 import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.jpg';
+import bit8Pic from '../assets/pictures/8BitGingerArtistProfilePic.jpg';
 
 const themeData = {
   rock: {
-    title: '8 Bit-Rebel',
+    title: '8Bit Rebel',
     subtitle: "Ryan '8BitGinger' Fann",
-    text: "I build things that break the mold. With a passion for heavy riffs and even heavier code, I specialize in creating custom OBS tools and web sites that punch through the noise to tell a story. When I'm not writing functions, I'm probably writing campaigns.",
+    text: "I build things that break the mold. With a passion for heavy riffs and even heavier code, I specialize in creating custom Web apps and Game systems that punch through the noise to tell a story. When I'm not writing functions, I'm probably setting up a podcast or creating my next game.",
     image: '/images/profile-rock.webp',
     background: '/images/rock-background.webp',
   },
   jazz: {
-    title: '8Bit-Architect',
+    title: '8Bit Improviser',
     subtitle: "Ryan '8BitGinger' Fann",
     text: 'Welcome to the late-night lounge. I approach coding like improvisation—finding the perfect rhythm and elegant solutions to complex problems. I specialize in creating seamless user experiences and intuitive interfaces.',
     image: '/images/profile-jazz.webp',
     background: '/images/jazz-background.webp',
   },
   pop: {
-    title: '8Bit-Visionary',
+    title: '8Bit Visionary',
     subtitle: "Ryan '8BitGinger' Fann",
     text: "I believe code should be as catchy as a top-40 hit and as polished as a neon skyline. I specialize in building vibrant OBS tools, engaging TTRPG experiences, and web sites that absolutely pop off the screen. For me, development isn't just about pure function—it's about creating joyful, frictionless experiences that your community will love.",
     image: '/images/profile-pop.webp',
     background: '/images/pop-background.webp',
   },
   rap: {
-    title: '8Bit-Flow-Master',
+    title: '8Bit Flow-Master',
     subtitle: "Ryan '8BitGinger' Fann",
     text: "In development, just like on the mic, it's all about the hustle and the flow. I engineer custom OBS tools, dynamic web apps, and raw Game experiences that never skip a beat. Whether I'm dropping bars of code, slinging a fresh campaign, or optimizing a stream's setup, I bring relentless energy and street-level authenticity to every project I touch.",
     image: '/images/profile-rap.webp',
     background: '/images/rap-background.webp',
   },
   country: {
-    title: '8Bit-Storyteller',
+    title: '8Bit Storyteller',
     subtitle: "Ryan '8BitGinger' Fann",
     text: 'Just like a classic country ballad, the best applications and tabletop games are built on honest, compelling storytelling. I handcraft solid websites, reliable OBS tools and weave rich TTRPG campaigns that bring people together around the virtual campfire. I believe in hard work, strong foundations, and writing code that stands the test of time.',
     image: '/images/profile-country.webp',
     background: '/images/country-background.webp',
   },
   lofi: {
-    title: '8Bit-Vibe-Coder',
+    title: '8Bit Vibe-Coder',
     subtitle: "Ryan '8BitGinger' Fann",
     text: 'There is a certain kind of magic that happens at 2 AM with a hot coffee and a steady, ambient beat. I specialize in deep-focus development, quietly crafting visual story-based websites, seamless OBS tools and vast TTRPG worlds while the rest of the world sleeps. My approach is all about creating a relaxed, intuitive user experience.',
     image: '/images/profile-lofi.webp',
@@ -115,6 +117,11 @@ export default function About({ theme }) {
         </div>
       </motion.div>
 
+      <PageHeader theme={theme} title="Music Info" />
+        <ArtistInfo theme={theme} />
+    
+
+
       <PageHeader theme={theme} title="Specs" />
 
       <div className="bento">
@@ -148,18 +155,7 @@ export default function About({ theme }) {
             <img src={twinJobsSmallImg} alt="Twin Jobs" className="card__img" />
         </div>
 
-        <div className="bento-cell span-1">
-          <Cards.ListCardReverse
-            theme={theme}
-            title="The B-Side"
-            content={[
-              'Fullstack Development: Building seamless web apps and custom OBS tools',
-              'Game Design: Crafting immersive Games that captivate players',
-              'Content Creation: Producing engaging media that resonates with communities',
-              'Continuous Learning: Always leveling up my skills and knowledge',
-            ]}
-          />
-        </div>
+
 
         <div className="bento-cell span-1">
           <div className={`card card--${theme} resume-tile`}>
@@ -173,6 +169,19 @@ export default function About({ theme }) {
               View PDF Resume
             </Link>
           </div>
+        </div>
+
+                <div className="bento-cell span-1">
+          <Cards.ListCardReverse
+            theme={theme}
+            title="The B-Side"
+            content={[
+              'Fullstack Development: Building seamless web apps and custom OBS tools',
+              'Game Design: Crafting immersive Games that captivate players',
+              'Content Creation: Producing engaging media that resonates with communities',
+              'Continuous Learning: Always leveling up my skills and knowledge',
+            ]}
+          />
         </div>
       </div>
 
@@ -221,8 +230,21 @@ export default function About({ theme }) {
                     theme={theme}
                   />
                 </div>
+                <h2> ➤ My Artists</h2>
                 <div className="bento-cell span-2">
                   <Cards.ChildCard theme={theme}>
+                                  <Link
+                      to="https://music.apple.com/us/artist/8bitginger/6790270313"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <img
+                        src={bit8Pic}
+                        alt="8Bit Ginger Album Cover"
+                        className="music-preview"
+                        loading="lazy"
+                      />
+                    </Link>
                     <Link
                       to="https://music.apple.com/us/artist/auraveil/6776076042"
                       target="_blank"
@@ -274,6 +296,7 @@ export default function About({ theme }) {
                         loading="lazy"
                       />
                     </Link>
+      
                   </Cards.ChildCard>
                 </div>
                 <h3 className="music-credit span-2">

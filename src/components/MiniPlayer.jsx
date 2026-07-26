@@ -11,12 +11,12 @@ const THEME_COLORS = {
 };
 
 const TRACK_LABELS = {
-  '/music/pop.mp3':     'Pop Vibes',
-  '/music/rap.mp3':     'Rap Flow',
-  '/music/country.mp3': 'Country Roads',
-  '/music/lofi.mp3':    'Lo-Fi Chill',
-  '/music/rock.mp3':    'Rock Out',
-  '/music/jazz.mp3':    'Speak-Easy Jazz',
+  '/music/pop.mp3':     'Only At Night',
+  '/music/rap.mp3':     'Run the Stack',
+  '/music/country.mp3': 'Built By Hand',
+  '/music/lofi.mp3':    'The Architect',
+  '/music/rock.mp3':    'The Fall',
+  '/music/jazz.mp3':    'Hidden Level',
 };
 
 // Module-level singletons — survive re-renders and theme switches

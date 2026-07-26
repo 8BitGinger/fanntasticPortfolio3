@@ -55,8 +55,8 @@
   box-shadow: 0 3px 30px 3px rgba(255, 0, 0, 0.3);
 }
 .wrapper-jazz {
-  border-bottom: 2px solid rgba(136, 117, 109, 0.7);
-  box-shadow: 0 3px 30px 3px rgba(136, 117, 109, 0.3);
+  border-bottom: 2px solid rgba(143, 142, 142, 0.7);
+  box-shadow: 0 3px 30px 3px rgba(78, 78, 78, 0.3);
 }
 .wrapper-pop {
   border-bottom: 2px solid rgba(255, 20, 147, 0.7);
@@ -125,8 +125,8 @@
   box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5);
 }
 .about-section--jazz .about-section__inner {
-  border-color: rgba(136, 117, 109, 0.9);
-  box-shadow: 0 8px 32px rgba(136, 117, 109, 0.5);
+  border-color: rgba(138, 136, 135, 0.9);
+  box-shadow: 0 8px 32px rgba(63, 62, 62, 0.5);
 }
 .about-section--pop .about-section__inner {
   border-color: rgba(255, 20, 147, 0.9);
@@ -168,8 +168,8 @@
   box-shadow: 0 10px 30px rgba(255, 0, 0, 0.4);
 }
 .wrapper-jazz .profile-image-container {
-  border-color: rgba(136, 117, 109, 0.8);
-  box-shadow: 0 10px 30px rgba(136, 117, 109, 0.4);
+  border-color: rgba(131, 130, 130, 0.8);
+  box-shadow: 0 10px 30px rgba(65, 64, 63, 0.4);
 }
 .wrapper-pop .profile-image-container {
   border-color: rgba(255, 20, 147, 0.8);
@@ -259,7 +259,7 @@
 }
 
 .link--jazz {
-  border-color: rgba(136, 117, 109, 0.5);
+  border-color: rgba(138, 136, 136, 0.5);
 }
 
 .link--jazz:hover {
@@ -412,9 +412,9 @@
 
 }
 .jazz {
-  color: rgb(136, 117, 109);
+  color: rgb(136, 135, 134);
   font-family: 'Limelight', display;
-    text-shadow: 0 4px 10px var(--theme-accent, #615650c0);
+    text-shadow: 0 4px 10px var(--theme-accent, #424242c0);
 
 }
 .pop {
@@ -442,6 +442,44 @@
 
 }
 
+.link-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.link-button {
+  display: flex;
+  margin: auto;
+  padding: 0.8rem 1.2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.link-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease-in-out;
+}
+
+.applemusic {
+  color:#ee2752;
+}
+
+.spotify {
+  color:#1ed75f;
+}
+
+.youtube {
+  color:#dd0808;
+}
+
+
+
 .subtitle {
   font-size: 1rem;
   font-weight: 300;
@@ -458,8 +496,8 @@
   text-shadow: 0 2px 5px rgba(255, 0, 0, 0.5);
 }
 .subtitle-jazz {
-  color: rgba(190, 172, 164, 0.9);
-  text-shadow: 0 2px 5px rgba(136, 117, 109, 0.5);
+  color: rgba(190, 185, 183, 0.9);
+  text-shadow: 0 2px 5px rgba(78, 77, 77, 0.5);
 }
 .subtitle-pop {
   color: rgba(255, 130, 195, 0.9);
@@ -490,7 +528,7 @@
 }
 
 .icon2--jazz {
-  color: rgb(136, 117, 109);
+  color: rgb(141, 139, 138);
 }
 
 .icon2--pop {

@@ -164,7 +164,7 @@
 }
 .page-break--jazz {
     background: linear-gradient(90deg, transparent, rgba(136, 117, 109, 0.85), transparent);
-    box-shadow: 0 0 10px rgba(136, 117, 109, 0.5);
+    box-shadow: 0 0 10px rgba(141, 139, 138, 0.5);
 }
 .page-break--pop {
     background: linear-gradient(90deg, transparent, rgba(255, 20, 147, 0.85), transparent);
@@ -203,8 +203,8 @@
   box-shadow: 0 8px 32px rgba(255, 0, 0, 0.5);
 }
 .card--jazz {
-  border-color: rgba(136, 117, 109, 0.9);
-  box-shadow: 0 8px 32px rgba(136, 117, 109, 0.5);
+  border-color: rgba(139, 138, 137, 0.9);
+  box-shadow: 0 8px 32px rgba(75, 74, 73, 0.5);
 }
 .card--pop  {
   border-color: rgba(255, 20, 147, 0.9);
@@ -233,7 +233,7 @@
 }
 
 .title-jazz {
-    color: rgba(136, 117, 109, 0.9);
+    color: rgba(134, 133, 132, 0.9);
 }
 
 .title-pop {

@@ -173,24 +173,24 @@
 
 /* Jazz — warm brown */
 .mini-player--jazz {
-  border-color: rgba(136, 117, 109, 0.7);
+  border-color: rgba(136, 134, 134, 0.7);
 }
 .mini-player--jazz .mini-player__btn {
-  background: rgba(136, 117, 109, 0.25);
+  background: rgba(134, 133, 132, 0.25);
 }
 .mini-player--jazz .mini-player__btn:hover {
-  background: rgba(136, 117, 109, 0.45);
+  background: rgba(136, 134, 133, 0.45);
 }
 .mini-player--jazz  {
-  color: rgb(136, 117, 109);
+  color: rgb(56, 56, 55);
   text-shadow: 0 2px 5px rgba(136, 117, 109, 0.5);
 }
 .mini-player--jazz .mini-player__slider::-webkit-slider-thumb {
-  background: rgb(136, 117, 109);
-  box-shadow: 0 0 6px rgba(136, 117, 109, 0.5);
+  background: rgb(138, 136, 135);
+  box-shadow: 0 0 6px rgba(63, 62, 61, 0.5);
 }
 .mini-player--jazz .mini-player__slider::-moz-range-thumb {
-  background: rgb(136, 117, 109);
+  background: rgb(133, 131, 130);
 }
 
 /* Pop — hot pink */

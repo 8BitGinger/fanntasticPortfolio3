@@ -57,10 +57,10 @@
 
 .about-tabs__btn--jazz.is-active,
 .about-tabs__btn--jazz:hover {
-  color: rgb(136, 117, 109);
-  border-color: rgba(136, 117, 109, 0.9);
+  color: rgb(134, 133, 132);
+  border-color: rgba(85, 83, 82, 0.9);
   background: rgba(136, 117, 109, 0.12);
-  box-shadow: 0 4px 14px rgba(136, 117, 109, 0.4);
+  box-shadow: 0 4px 14px rgba(43, 42, 42, 0.4);
 }
 
 .about-tabs__btn--pop.is-active,

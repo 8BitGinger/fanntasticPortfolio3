@@ -44,7 +44,7 @@ const projectList = [
 
   {
     img: img19,
-    title: 'RyFi - Music',
+    title: 'RyFi Records',
     subtitle: 'React, Lucide-React, Framer',
     link: 'https://www.ryfimusic.com/',
     git: 'https://github.com/8BitGinger/ryfiMusic',
