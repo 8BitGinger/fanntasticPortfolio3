@@ -12,7 +12,7 @@ import { MdOutlineDisabledByDefault } from 'react-icons/md';
 
 import img1 from '../assets/pictures/project-pics/gumshoeProject.webp';
 import img2 from '../assets/pictures/project-pics/socialEyesProject.webp';
-import img3 from '../assets/pictures/project-pics/socialUpProject.webp';
+import img3 from '../assets/pictures/project-pics/socialUpProject.png';
 import img4 from '../assets/pictures/project-pics/aiGenProject.webp';
 import img5 from '../assets/pictures/project-pics/cindervoidProject.webp';
 import img6 from '../assets/pictures/project-pics/workforceManagerProject.webp';
@@ -53,7 +53,7 @@ const projectList = [
   {
     img: img3,
     title: 'SocialUp↑',
-    subtitle: 'React, Gemini API',
+    subtitle: 'Typescript, Gemini API',
     link: 'https://social-up.vercel.app/',
     git: 'https://github.com/8BitGinger/socialUp',
     category: 'ai',
