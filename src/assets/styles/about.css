@@ -631,4 +631,15 @@
     padding: 1.3rem 1rem;
     font-size: 0.8rem;
   }
+
+  .link-button {
+    font-size: 1rem;
+    padding: 0.6rem 0.8rem;
+
+  }
+
+  .flexRow {
+    flex-direction: column;
+ 
+  }
 }
