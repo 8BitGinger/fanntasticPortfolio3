@@ -199,6 +199,18 @@
     
   }
 
+  .web-links-list {
+    padding: 0.5rem 0.5rem;
+    gap: 0.5rem;
+    border-radius: 36px;
+  }
+
+  .web-links-list li {
+    margin-top: 0px;
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+  }
+
 
 }
 
