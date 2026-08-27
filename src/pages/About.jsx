@@ -226,7 +226,7 @@ export default function About({ theme }) {
                   <Cards.PhotoCardLeft
                     img={musicPic}
                     title="Digital Music Producer"
-                    content="I produce digital music that blends various genres and styles to create unique soundscapes. My work as a music producer allows me to explore the intersection of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
+                    content="Genre-bending AI-assisted music producer crafting soundscapes that live at the intersection of human emotion and machine creativity. From dark trap to spiritual hip-hop, country to nu-metal — every track is an experiment in what music can feel like when the rules don't apply. My work as a music producer allows me to explore this fusion of technology and creativity, crafting tracks that resonate with listeners and enhance multimedia projects."
                     theme={theme}
                   />
                 </div>
@@ -321,7 +321,7 @@ export default function About({ theme }) {
                   <Cards.PhotoCardRight
                     img={obsImg}
                     title="Custom OBS Tools"
-                    content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities."
+                    content="I build custom OBS tools that help streamers create unique, engaging experiences for their audiences. From interactive overlays to dynamic scene management, my tools are designed to enhance the streaming experience and make it easier for creators to connect with their communities.  Whether you're a seasoned streamer or just starting out, my OBS tools are built to help you take your content from passive hobby to professional production."
                     theme={theme}
                   />
                 </div>
@@ -359,7 +359,7 @@ export default function About({ theme }) {
                   <Cards.PhotoCardLeft
                     img={ttrpgImg}
                     title="Content & Game Creator"
-                    content="I craft immersive TTRPG campaigns that transport players to fantastical worlds filled with rich storytelling and dynamic gameplay. Whether it's a high-stakes adventure or a character-driven narrative, my campaigns are designed to captivate and inspire players of all experience levels."
+                    content="I craft immersive TTRPG Game Systems.  I blend that with stories that transport players to fantastical worlds filled with rich scenes and dynamic gameplay powered by my unique open source dice or character systems. I also create custom web apps that enhance the TTRPG experience, from character sheets to interactive maps. My goal is to create games that are not only fun to play but also provide a deep and engaging experience for players of all levels."
                     theme={theme}
                   />
                 </div>
