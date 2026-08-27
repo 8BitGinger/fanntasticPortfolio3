@@ -230,6 +230,11 @@ export default function About({ theme }) {
                     theme={theme}
                   />
                 </div>
+
+                <div className="bento-cell bento-center span-2">
+               <iframe allow="autoplay; encrypted-media; fullscreen; clipboard-write" frameBorder="0" height="800" style={{width: '100%', maxWidth: '660px', margin: 'auto', height: '450px', overflow: 'hidden', borderRadius: '10px'}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/vibe/pl.u-JPAZDDPIXW4Wl9"></iframe>
+                </div>
+
                 <h2> ➤ My Artists</h2>
                 <div className="bento-cell span-2">
                   <Cards.ChildCard theme={theme}>

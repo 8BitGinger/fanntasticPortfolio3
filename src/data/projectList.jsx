@@ -19,7 +19,7 @@ import img6 from '../assets/pictures/project-pics/workforceManagerProject.webp';
 import img9 from '../assets/pictures/project-pics/weeklyMoodalProject.webp';
 import img13 from '../assets/pictures/project-pics/casinoSlotProject.webp';
 import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
-import img18 from '../assets/pictures/project-pics/citrusProject.webp';
+// import img18 from '../assets/pictures/project-pics/citrusProject.webp';
 import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 import img7 from '../assets/pictures/project-pics/obsShowTimerProject.png';
 import img19 from '../assets/pictures/project-pics/ryfiProject.png';
@@ -113,14 +113,14 @@ const projectList = [
     category: 'backend',
   },
 
-  {
-    img: img18,
-    title: 'Citrus Photo',
-    subtitle: 'Python',
-    link: '',
-    git: 'https://github.com/8BitGinger/citrus',
-    category: 'script',
-  },
+  // {
+  //   img: img18,
+  //   title: 'Citrus Photo',
+  //   subtitle: 'Python',
+  //   link: '',
+  //   git: 'https://github.com/8BitGinger/citrus',
+  //   category: 'script',
+  // },
 
   {
     img: img13,

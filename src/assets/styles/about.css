@@ -22,8 +22,7 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-blend-mode: darken;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+ 
 
   border-bottom: 2px solid rgba(166, 185, 187, 0.274);
   border-bottom-left-radius: 20%;
@@ -464,6 +463,11 @@
 .link-button:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
+}
+
+.container-player {
+  margin: auto;
+ 
 }
 
 .applemusic {
