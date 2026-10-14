@@ -45,10 +45,10 @@ const projectList = [
   {
     img: img19,
     title: 'RyFi Records',
-    subtitle: 'React, Lucide-React, Framer',
+    subtitle: 'React, Firebase, Framer',
     link: 'https://www.ryfimusic.com/',
     git: 'https://github.com/8BitGinger/ryfiMusic',
-    category: 'ai',
+    category: 'fullstack',
   },
   {
     img: img3,
