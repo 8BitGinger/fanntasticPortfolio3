@@ -133,7 +133,7 @@ const projectList = [
 
   {
     img: img15,
-    title: "Ryan's Gemini",
+    title: "8Bit's Gemini",
     subtitle: 'Gemini API',
     link: 'https://gemini-ryan.netlify.app/',
     git: 'https://github.com/8BitGinger/ryansGemini',
