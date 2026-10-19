@@ -6,31 +6,30 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SkillBars from '../components/SkillBars';
 import WebLinks from '../components/WebLinks';
-import NavPageButtons from '../components/NavPageButtons';
 import PageHeader from '../components/PageHeader';
 import Cards from '../components/Cards';
 import AboutTabs from '../components/AboutTabs';
 import { Code2, Music2, Mic2, Gamepad2 } from 'lucide-react';
 import ArtistInfo from '../components/ArtistInfo';
+import SEO from '../components/SEO';
 
-import obsImg from '../assets/pictures/obsPic.png';
-import ttrpgImg from '../assets/pictures/ttrpgPic.png';
-import devImg from '../assets/pictures/devPic.png';
+import obsImg from '../assets/pictures/obsPic.webp';
+import ttrpgImg from '../assets/pictures/ttrpgPic.webp';
+import devImg from '../assets/pictures/devPic.webp';
 import gumshoeVid from '../assets/video/gumshoeVid.mp4';
 import cindervoidVid from '../assets/video/cindervoidVid.mp4';
 import PageBreak from '../components/PageBreak';
 import fxWizardImg from '../assets/pictures/project-pics/fxWizardProject.webp';
-import obsShowTimerImg from '../assets/pictures/project-pics/obsShowTimerProject.png';
-import profilePic from '../assets/pictures/profilePic.png';
-import twinJobsImg from '../assets/pictures/twinJobs.png';
-import musicPic from '../assets/pictures/musicPic.png';
-import twinJobsSmallImg from '../assets/pictures/twinJobsSmall.png';
+import obsShowTimerImg from '../assets/pictures/project-pics/obsShowTimerProject.webp';
+import profilePic from '../assets/pictures/profilePic.webp';
+import musicPic from '../assets/pictures/musicPic.webp';
+import twinJobsSmallImg from '../assets/pictures/twinJobsSmall.webp';
 import { SiApplemusic } from 'react-icons/si';
-import vNDALAlbumCover from '../assets/pictures/VNDAL.png';
-import auraveilAlbumCover from '../assets/pictures/auraveil.png';
-import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.png';
-import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.jpg';
-import bit8Pic from '../assets/pictures/ginger8Bit.jpg';
+import vNDALAlbumCover from '../assets/pictures/VNDAL.webp';
+import auraveilAlbumCover from '../assets/pictures/auraveil.webp';
+import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.webp';
+import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.webp';
+import bit8Pic from '../assets/pictures/ginger8Bit.webp';
 
 const themeData = {
   rock: {
@@ -82,6 +81,11 @@ export default function About({ theme }) {
 
   return (
     <div className="about-page">
+      <SEO
+        title={`${content.title} | 8BitGinger - About Ryan Fann`}
+        description="Fullstack developer, OBS tool builder, TTRPG creator, and AI-assisted music producer. Learn about Ryan Fann's engineering background, skills, and creative work."
+        path="/about"
+      />
       {/* ── Hero wrapper ── */}
       <motion.div
         className={`about-wrapper wrapper-${theme}`}
@@ -161,12 +165,10 @@ export default function About({ theme }) {
           <div className={`card card--${theme} resume-tile`}>
             <span className="resume-tile__label">Want the full rundown?</span>
             <Link
-              to="../downloads/Resume2025.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              to="/contact?ref=resume"
               className={`link link--${theme} resume-btn`}
             >
-              View PDF Resume
+              Ask For My Resume
             </Link>
           </div>
         </div>
@@ -232,7 +234,22 @@ export default function About({ theme }) {
                 </div>
 
                 <div className="bento-cell bento-center span-2">
-               <iframe allow="autoplay; encrypted-media; fullscreen; clipboard-write" frameBorder="0" height="800" style={{width: '100%', maxWidth: '660px', margin: 'auto', height: '450px', overflow: 'hidden', borderRadius: '10px'}} sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/vibe/pl.u-JPAZDDPIXW4Wl9"></iframe>
+                  <iframe
+                    title="8BitGinger Apple Music Playlist"
+                    allow="autoplay; encrypted-media; fullscreen; clipboard-write"
+                    frameBorder="0"
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      maxWidth: '660px',
+                      margin: 'auto',
+                      height: '450px',
+                      overflow: 'hidden',
+                      borderRadius: '10px',
+                    }}
+                    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
+                    src="https://embed.music.apple.com/us/playlist/vibe/pl.u-JPAZDDPIXW4Wl9"
+                  ></iframe>
                 </div>
 
                 <h2> ➤ My Artists</h2>
@@ -403,7 +420,6 @@ export default function About({ theme }) {
         ]}
       />
 
-      <NavPageButtons theme={theme} btn1Link="/" btn2Link="/projects" />
     </div>
   );
 }

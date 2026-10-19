@@ -16,9 +16,11 @@
 
 - **The Vibe Engine:** A centralized state management system that swaps global CSS variables and data attributes in real-time to alter the entire UI/UX environment.
 - **Glassmorphism UI:** A premium, frosted-glass aesthetic utilizing advanced `backdrop-filter` techniques, optimized with `-webkit` prefixes for cross-browser high-fidelity rendering.
-- **Infinite Project Marquees:** Smooth, "pause-on-hover" horizontal scrolling rows powered by **Framer Motion**, categorizing TTRPG systems, OBS tools, and Web Applications.
+- **Cassette Rack Project Carousel:** A 3D coverflow-style project browser — drag, swipe, or use the arrow keys to flip through tapes filtered by category. Clicking the centered tape plays a "dropped into the deck" exit animation before the detail view springs open as a two-panel cassette case unfolding from its center hinge, revealing the project's description, tech stack, and Live/GitHub/YouTube links.
+- **Persistent Page Navigation:** Theme-colored rewind/fast-forward icons stay fixed at the bottom of every page (except the home selector), always one tap away from the previous/next section.
 - **Atmospheric Audio Sync:** Integrated audio hooks that sync background tracks with visual theme transitions for a multi-sensory user journey.
 - **Responsive Architecture:** Mobile-first design featuring a custom hamburger menu drawer and hardware-accelerated animations.
+- **SEO & Prerendering:** Per-route meta tags (title, description, canonical, Open Graph, Twitter Card), `robots.txt` and `sitemap.xml`, plus a build-time prerendering pass (Puppeteer) that snapshots static HTML for every route so search engines and link-preview bots see real content instead of an empty SPA shell.
 
 ---
 
@@ -28,8 +30,9 @@
 - **Build Tool:** [Vite](https://vitejs.dev/)
 - **Animation Library:** [Framer Motion](https://www.framer.com/motion/)
 - **Styling:** CSS3 (Custom Variables, CSS Grid, Flexbox)
-- **Icons:** [React Icons](https://react-icons.github.io/react-icons/)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/), [Lucide](https://lucide.dev/)
 - **Forms:** [Formspree](https://formspree.io/)
+- **Prerendering:** [Puppeteer](https://pptr.dev/) (build-time static HTML snapshots for SEO)
 - **Fonts:** [Google Fonts](https://fonts.google.com/)
 - **Images & Video:** [Gemini](https://gemini.google.com/app)
 - **Audio:** High-fidelity produced on Suno.ai [Suno](https://suno.ai/)
@@ -63,16 +66,21 @@ Build for production:
 npm run build
 ```
 
+This runs `vite build` followed by a `postbuild` step (`scripts/prerender.mjs`) that crawls the built site with a headless browser and writes a static HTML snapshot per route into `dist/`, so crawlers and link-preview bots get real content on first load. The prerender step is fail-safe — if it can't run (e.g. missing Chromium deps in a CI image), the build still succeeds with the base SPA output.
+
 🏗️ Project Structure
 
 ```Bash
 
 src/
 ├── assets/          # High-fidelity audio tracks, images, and global styles
-├── components/      # Reusable UI (Navbar, Gateway, Marquee, ContactForm)
+├── components/      # Reusable UI (Navbar, Gateway, ProjectModal, ContactForm)
 ├── data/            # Centralized project database and theme dictionaries
 ├── util/            # Theme handlers, sound controllers, and animation variants
 └── App.jsx          # Root routing and global theme state provider
+
+scripts/
+└── prerender.mjs    # Build-time static HTML snapshot generator (SEO)
 
 ```
 

@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import Cards from './Cards';
-import popPic from '../assets/pictures/onlyAtNightSmall.jpg';
-import rockPic from '../assets/pictures/theFallSmall.jpg';
-import jazzPic from '../assets/pictures/hiddenLevelSmall.jpg';
-import rapPic from '../assets/pictures/runTheStackSmall.jpg';
-import countryPic from '../assets/pictures/builtByHandSmall.jpg';
-import lofiPic from '../assets/pictures/theArchitectSmall.jpg';
+import popPic from '../assets/pictures/onlyAtNightSmall.webp';
+import rockPic from '../assets/pictures/theFallSmall.webp';
+import jazzPic from '../assets/pictures/hiddenLevelSmall.webp';
+import rapPic from '../assets/pictures/runTheStackSmall.webp';
+import countryPic from '../assets/pictures/builtByHandSmall.webp';
+import lofiPic from '../assets/pictures/theArchitectSmall.webp';
 import { SiApplemusic } from "react-icons/si";
 import { FaSpotify } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";

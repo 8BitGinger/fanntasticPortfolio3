@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion'; // ← add this
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
+import NavPageButtons from './components/NavPageButtons';
 import About from './pages/About';
 import Projects from './pages/Projects';
+import MiniApps from './pages/MiniApps';
 import Contact from './pages/Contact';
 import MiniPlayer from './components/MiniPlayer';
 import { vibeManager } from './Utils/VibeManager';
@@ -45,6 +48,7 @@ function App() {
       <div className="video-overlay"></div>
 
       <Navbar />
+      <ScrollToTop />
 
       <div className="page-content">
         {/* 
@@ -56,13 +60,15 @@ function App() {
           <Routes location={location} key={location.key}>
             <Route path="/" element={<CassetteSelector />} />
             <Route path="/about" element={<About theme={theme} />} />
-            <Route path="/projects" element={<Projects theme={theme} />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/mini-apps" element={<MiniApps theme={theme} />} />
             <Route path="/contact" element={<Contact theme={theme} />} />
           </Routes>
         </AnimatePresence>
       </div>
 
       <MiniPlayer theme={theme} />
+      <NavPageButtons theme={theme} />
     </div>
   );
 }

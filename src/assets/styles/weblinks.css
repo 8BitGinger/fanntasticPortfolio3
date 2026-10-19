@@ -129,76 +129,7 @@
 }
 
 
-.btnBox {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-  width: 120px;
-  flex-direction: column;
-
-
-}
-
-.small-text {
-  font-size: 0.8rem;
-  margin: auto;
-  margin-top: 6px;
-  
-  color: #ccc;
-  text-align: center;
-  text-shadow: 0 0 5px rgba(26, 25, 25, 0.61);
-  font-family: 'Oswald', sans-serif;
-  text-transform: uppercase;
-}
-
-.float-btn-box {
-  width: 100%;
- 
-  
-}
-
 @media (max-width: 768px) {
-
-  .btnBox {
-    display: flex;
-    flex-direction: column;
-   width: 90px;
-   
-    gap: 0;
-  }
-  
-  .float-btn-box {
-    padding: 2px;
-    padding-bottom: 8px;
-
-    width: 100%;
-    margin: auto 0;
-    margin-bottom: 2px;
-
-    gap: 1rem;
-
-  }
-
-  .btnBox .link {
-    padding: 9px 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.3rem;
-    border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 36px;
-    margin: auto 0;
-    
-  }
-
-  .small-text {
-    font-size: 0.7rem;
-    margin: auto 0;
-    text-align: center;
-    margin-top: 1px;
-    
-  }
-
   .web-links-list {
     padding: 0.5rem 0.5rem;
     gap: 0.4rem;

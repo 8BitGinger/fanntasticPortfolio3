@@ -1,0 +1,64 @@
+/* 🧰 MINI APPS PAGE */
+.mini-apps-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 90px 0 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  --theme-accent: #07818a;
+  --theme-font: 'Space Grotesk', sans-serif;
+}
+
+.mini-apps-wrapper--rock {
+  --theme-accent: rgba(255, 0, 0, 0.8);
+  --theme-font: 'Rock Salt', cursive;
+}
+.mini-apps-wrapper--jazz {
+  --theme-accent: rgba(136, 117, 109, 0.8);
+  --theme-font: 'Limelight', cursive;
+}
+.mini-apps-wrapper--pop {
+  --theme-accent: rgba(255, 20, 147, 0.8);
+  --theme-font: 'Bungee Shade', cursive;
+}
+.mini-apps-wrapper--rap {
+  --theme-accent: rgba(42, 161, 18, 0.8);
+  --theme-font: 'Permanent Marker', cursive;
+}
+.mini-apps-wrapper--country {
+  --theme-accent: rgba(153, 115, 61, 0.8);
+  --theme-font: 'Special Elite', serif;
+}
+.mini-apps-wrapper--lofi {
+  --theme-accent: rgba(157, 141, 247, 0.8);
+  --theme-font: 'Changa One', sans-serif;
+}
+
+.mini-apps-intro {
+  max-width: 600px;
+  margin: 1.25rem auto 0;
+  padding: 0 20px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.mini-apps-grid {
+  width: 92%;
+  max-width: 980px;
+  margin: 2rem auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .mini-apps-grid {
+    grid-template-columns: 1fr;
+    width: 94%;
+  }
+}

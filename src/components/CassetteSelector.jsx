@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { vibeManager } from '../Utils/VibeManager';
-import profilePic from '/images/profile-standard.webp'; 
+import profilePic from '/images/profile-standard.webp';
+import SEO from './SEO';
 
 
 /**
@@ -190,8 +191,13 @@ export default function CassetteSelector() {
 
   return (
     <div className="selector-page">
+      <SEO
+        title="8BitGinger | Ryan J. Fann - Fullstack Developer & Music Producer"
+        description="Pick a vibe. Fullstack developer, OBS tool builder, TTRPG creator, and AI-assisted music producer based in Lubbock, TX."
+        path="/"
+      />
       <div className="content-wrapper">
-        
+
         {/* Using your existing .logo class design */}
         <img 
           src={profilePic}

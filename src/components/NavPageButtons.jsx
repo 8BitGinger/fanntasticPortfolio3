@@ -1,22 +1,29 @@
-import { Link } from "react-router-dom"
-import { FaFastBackward } from "react-icons/fa";
-import { FaFastForward } from "react-icons/fa";
+import { Link, useLocation } from 'react-router-dom';
+import { FaFastBackward, FaFastForward } from 'react-icons/fa';
+import '../assets/styles/navPageButtons.css';
 
+const PAGE_ORDER = ['/', '/about', '/projects', '/mini-apps', '/contact'];
 
-const NavPageButtons = ({ theme, btn1Link, btn2Link }) => {
+const NavPageButtons = ({ theme }) => {
+  const location = useLocation();
+  const currentIndex = PAGE_ORDER.indexOf(location.pathname);
+
+  // Hidden on the home/selector page (and any unrecognized route).
+  if (currentIndex <= 0) return null;
+
+  const prevLink = PAGE_ORDER[(currentIndex - 1 + PAGE_ORDER.length) % PAGE_ORDER.length];
+  const nextLink = PAGE_ORDER[(currentIndex + 1) % PAGE_ORDER.length];
+
   return (
-    <aside className={`weblinks-container float-btn-box weblinks-container--${theme}`}>
-        <div className="btnBox">        
-            <Link to={btn1Link} className={`link link--${theme}`}><FaFastBackward /></Link>
-       <span className="small-text"> Rewind Page </span>
-       </div>
-        <div className="btnBox">
-            <Link to={btn2Link} className={`link link--${theme}`}><FaFastForward /></Link>
-       <span className="small-text">Fast Forward Page</span>
-        </div>
+    <aside className={`nav-page-buttons nav-page-buttons--${theme}`}>
+      <Link to={prevLink} className="nav-page-btn" aria-label="Previous page">
+        <FaFastBackward />
+      </Link>
+      <Link to={nextLink} className="nav-page-btn" aria-label="Next page">
+        <FaFastForward />
+      </Link>
     </aside>
-  )
-}
+  );
+};
 
 export default NavPageButtons;
-

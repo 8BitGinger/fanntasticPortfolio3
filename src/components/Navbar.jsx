@@ -63,6 +63,18 @@ export default function Navbar() {
         </li>
         <li>
           <NavLink
+            to="/mini-apps"
+            onClick={handleNavClick}
+            className={({ isActive }) =>
+              isActive ? 'nav-item active' : 'nav-item'
+            }
+          >
+            <span className="nav-text">Mini Apps</span>
+            <div className="audio-bar"></div>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
             to="/contact"
             onClick={handleNavClick}
             className={({ isActive }) =>

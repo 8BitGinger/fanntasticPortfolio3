@@ -1,0 +1,373 @@
+/* 🎲 DICE ROLLER */
+.dice-roller {
+  --theme-accent: #07818a;
+  position: relative;
+  background: radial-gradient(circle at 30% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+    rgba(10, 10, 12, 0.78);
+  border: 1px solid var(--theme-accent);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dice-roller--rock {
+  --theme-accent: rgba(255, 0, 0, 0.8);
+}
+.dice-roller--jazz {
+  --theme-accent: rgba(136, 117, 109, 0.8);
+}
+.dice-roller--pop {
+  --theme-accent: rgba(255, 20, 147, 0.8);
+}
+.dice-roller--rap {
+  --theme-accent: rgba(42, 161, 18, 0.8);
+}
+.dice-roller--country {
+  --theme-accent: rgba(153, 115, 61, 0.8);
+}
+.dice-roller--lofi {
+  --theme-accent: rgba(157, 141, 247, 0.8);
+}
+
+.dice-roller__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--theme-accent);
+}
+
+.dice-roller__header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  margin: 0;
+}
+
+/* ── Polygon die buttons ───────────────────────────────── */
+.dice-roller__quick-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.1rem;
+}
+
+.die-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: linear-gradient(155deg, rgba(255, 255, 255, 0.12), rgba(0, 0, 0, 0.35)),
+    rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.die-btn span {
+  position: relative;
+  z-index: 1;
+}
+
+.die-btn:hover {
+  box-shadow: 0 0 14px var(--theme-accent);
+  color: white;
+}
+
+.die-btn.is-selected {
+  background: linear-gradient(155deg, var(--theme-accent), rgba(0, 0, 0, 0.2));
+  color: black;
+  box-shadow: 0 0 18px var(--theme-accent);
+}
+
+.die-btn--square {
+  border-radius: 10px;
+}
+.die-btn--triangle {
+  clip-path: polygon(50% 6%, 4% 94%, 96% 94%);
+}
+.die-btn--diamond {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+.die-btn--pentagon {
+  clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+}
+.die-btn--hexagon {
+  clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0% 50%);
+}
+.die-btn--octagon {
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+.die-btn--circle {
+  border-radius: 50%;
+}
+
+/* d20 gets a little extra presence — it's the main event */
+.die-btn--octagon {
+  width: 54px;
+  height: 54px;
+  font-size: 0.78rem;
+}
+
+/* ── Controls ───────────────────────────────────────────── */
+.dice-roller__controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.dice-roller__controls label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+  gap: 0.25rem;
+}
+
+.dice-roller__controls input {
+  width: 60px;
+  padding: 0.4rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.dice-roller__roll-btn {
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--theme-accent);
+  background: var(--theme-accent);
+  color: black;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: filter 0.2s ease;
+}
+
+.dice-roller__roll-btn:hover {
+  filter: brightness(1.15);
+}
+
+.dice-roller__notation {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.dice-roller__notation input {
+  flex: 1;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+}
+
+.dice-roller__notation button {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dice-roller__notation button:hover {
+  border-color: var(--theme-accent);
+  color: var(--theme-accent);
+}
+
+/* ── Result stage ───────────────────────────────────────── */
+.dice-roller__result {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.25rem;
+  min-height: 110px;
+}
+
+.dice-roller__result--fail {
+  animation: shake-bg 0.5s ease;
+}
+
+@keyframes shake-bg {
+  0%,
+  100% {
+    background: transparent;
+  }
+  30% {
+    background: rgba(220, 40, 40, 0.1);
+  }
+}
+
+.dice-roller__cycling-number {
+  display: block;
+  font-family: 'Space Grotesk', monospace;
+  font-size: 3rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.5);
+  filter: blur(0.5px);
+}
+
+.dice-roller__sum {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dice-roller__crit-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.15rem;
+}
+
+.dice-roller__crit-tag--success {
+  background: linear-gradient(90deg, #ffd700, #ffae00);
+  color: black;
+  box-shadow: 0 0 16px rgba(255, 215, 0, 0.7);
+}
+
+.dice-roller__crit-tag--fail {
+  background: rgba(220, 40, 40, 0.25);
+  color: #ff8a8a;
+  border: 1px solid rgba(220, 40, 40, 0.6);
+}
+
+.dice-roller__sum-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dice-roller__sum-total {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: var(--theme-accent);
+  text-shadow: 0 0 16px var(--theme-accent);
+  line-height: 1.1;
+}
+
+.dice-roller__pips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.3rem;
+  max-width: 260px;
+}
+
+.dice-roller__pip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+  padding: 0 0.3rem;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: 'Space Grotesk', monospace;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.dice-roller__pip--nat20 {
+  background: linear-gradient(135deg, #ffd700, #ffae00);
+  color: black;
+  border-color: transparent;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+.dice-roller__pip--nat1 {
+  background: rgba(220, 40, 40, 0.3);
+  border-color: rgba(220, 40, 40, 0.6);
+  color: #ffb3b3;
+}
+
+.dice-roller__empty {
+  font-family: 'Oswald', sans-serif;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 0.9rem;
+}
+
+/* ── Critical success spark burst ──────────────────────── */
+.dice-roller__burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.dice-roller__spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 22px;
+  margin: -11px 0 0 -2px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #ffd700, transparent);
+  transform-origin: center 60px;
+  transform: rotate(var(--angle)) translateY(-10px);
+}
+
+/* ── History ────────────────────────────────────────────── */
+.dice-roller__history {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 110px;
+  overflow-y: auto;
+}
+
+.dice-roller__history li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0.1rem;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dice-roller__history li span:last-child {
+  color: white;
+  font-weight: 600;
+}

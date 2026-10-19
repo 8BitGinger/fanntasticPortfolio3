@@ -1,0 +1,65 @@
+/* 🎛️ GLOBAL PAGE NAV — fixed, centered, icon-only rewind/fast-forward */
+.nav-page-buttons {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+
+  --nav-accent: #07818a;
+}
+
+.nav-page-buttons--rock {
+  --nav-accent: rgba(255, 0, 0, 0.9);
+}
+.nav-page-buttons--jazz {
+  --nav-accent: rgba(136, 117, 109, 0.9);
+}
+.nav-page-buttons--pop {
+  --nav-accent: rgba(255, 20, 147, 0.9);
+}
+.nav-page-buttons--rap {
+  --nav-accent: rgba(42, 161, 18, 0.9);
+}
+.nav-page-buttons--country {
+  --nav-accent: rgba(153, 115, 61, 0.9);
+}
+.nav-page-buttons--lofi {
+  --nav-accent: rgba(157, 141, 247, 0.9);
+}
+
+.nav-page-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nav-accent);
+  font-size: 1.5rem;
+  line-height: 1;
+  text-decoration: none;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+  transition: all 0.25s ease;
+}
+
+.nav-page-btn:hover {
+  color: white;
+  filter: drop-shadow(0 0 10px var(--nav-accent));
+  transform: scale(1.15);
+}
+
+.nav-page-btn:active {
+  transform: scale(0.92);
+}
+
+@media (max-width: 768px) {
+  .nav-page-buttons {
+    bottom: 16px;
+    gap: 1.25rem;
+  }
+
+  .nav-page-btn {
+    font-size: 1.25rem;
+  }
+}
