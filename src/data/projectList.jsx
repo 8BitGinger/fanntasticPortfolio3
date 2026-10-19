@@ -41,7 +41,7 @@ const projectList = [
     title: 'Gumshoe RPG',
     subtitle: 'React, Spline',
     description:
-      'A noir detective-themed RPG companion site built with React and interactive 3D Spline scenes to bring the world of Gumshoe to life.',
+      'A noir detective-themed TTRPG companion site built with React and interactive 3D Spline scene to bring the world of Gumshoe to life.',
     link: 'https://gumshoerpg.com/',
     git: 'https://github.com/8BitGinger/GumshoeReact',
     youtube: '',
@@ -76,7 +76,7 @@ const projectList = [
     title: 'Cindervoid RPG',
     subtitle: 'Framer, React, Suno',
     description:
-      'A dark fantasy TTRPG companion site built with React and Framer Motion, featuring an AI-composed soundtrack created with Suno.',
+      'A dark fantasy TTRPG companion site built with React and Framer Motion, featuring a soundtrack created with Suno.',
     link: 'https://www.cindervoid.fun',
     git: 'https://github.com/8BitGinger/cindervoidrpg',
     youtube: '',
@@ -88,7 +88,7 @@ const projectList = [
     title: 'OBS Show Timer',
     subtitle: 'OBS, Websockets',
     description:
-      'A lightweight OBS overlay tool that displays a live, WebSocket-driven countdown timer for broadcasts and streams.',
+      'A lightweight OBS dock and talent display tool that displays a live, WebSocket-driven countdown timer for broadcasts and streams.',
     link: '',
     git: 'https://github.com/8BitGinger/obsDisplayTimer',
     youtube: '',
@@ -159,7 +159,7 @@ const projectList = [
     img: img15,
     title: "8Bit's Gemini",
     subtitle: 'Gemini API',
-    description: "A conversational AI chat interface built around Google's Gemini API.",
+    description: "A conversational AI chat interface built around Google's Gemini API and designed to be a clone to gemini.",
     link: 'https://gemini-ryan.netlify.app/',
     git: 'https://github.com/8BitGinger/ryansGemini',
     youtube: '',
