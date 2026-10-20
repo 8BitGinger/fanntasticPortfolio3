@@ -11,11 +11,12 @@ import { HiMiniCircleStack } from 'react-icons/hi2';
 import { MdOutlineDisabledByDefault } from 'react-icons/md';
 
 import img1 from '../assets/pictures/project-pics/gumshoeProject.webp';
-import img2 from '../assets/pictures/project-pics/socialEyesProject.webp';
+import img2 from '../assets/pictures/project-pics/anonymouseLogo.png';
 import img3 from '../assets/pictures/project-pics/socialUpProject.webp';
 import img4 from '../assets/pictures/project-pics/aiGenProject.webp';
 import img5 from '../assets/pictures/project-pics/cindervoidProject.webp';
 import img6 from '../assets/pictures/project-pics/workforceManagerProject.webp';
+import img8 from '../assets/pictures/project-pics/lyricMusicVideoMakerProject.webp';
 import img9 from '../assets/pictures/project-pics/weeklyMoodalProject.webp';
 import img13 from '../assets/pictures/project-pics/casinoSlotProject.webp';
 import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
@@ -36,17 +37,7 @@ const projectList = [
     youtube: '',
     category: 'obs',
   },
-  {
-    img: img1,
-    title: 'Gumshoe RPG',
-    subtitle: 'React, Spline',
-    description:
-      'A noir detective-themed TTRPG companion site built with React and interactive 3D Spline scene to bring the world of Gumshoe to life.',
-    link: 'https://gumshoerpg.com/',
-    git: 'https://github.com/8BitGinger/GumshoeReact',
-    youtube: '',
-    category: 'game',
-  },
+
 
   {
     img: img19,
@@ -109,24 +100,35 @@ const projectList = [
 
   {
     img: img2,
-    title: 'Social Eyes',
+    title: 'Anonymouse',
     subtitle: 'MERNg Stack',
     description:
-      'A full-stack social media platform built on the MERN stack with GraphQL, exploring social app architecture end to end.',
+      'A full-stack social media platform built on the MERN stack with GraphQL, exploring a completely anonymous social media experience.',
     link: 'https://antisocialeyes.onrender.com/',
-    git: 'https://github.com/8BitGinger/antiSocialMedia',
+    git: 'https://github.com/8BitGinger/socialEyes',
     youtube: '',
     category: 'fullstack',
   },
 
   {
+    img: img8,
+    title: 'Lyric Music Video Maker',
+    subtitle: 'Python',
+    description: 'A web app that allows users to create lyric music videos by syncing lyrics with audio tracks.',
+    link: '',
+    git: 'https://github.com/8BitGinger/lyricMaker',
+    youtube: '',
+    category: 'script',
+  },
+
+  {
     img: img9,
     title: 'Weekly Moodal',
-    subtitle: 'APIs, Dynamic Date',
+    subtitle: 'TypeScript, Svelte',
     description:
       'A weekly mood-tracking web app that pulls dynamic date-based data to help users log and reflect on how they feel.',
-    link: 'https://jameslwilson364.github.io/weeklyMoodal/',
-    git: 'https://github.com/jameslwilson364/weeklyMoodal',
+    link: 'https://8bitginger.github.io/newWeeklyMoodal/',
+    git: 'https://github.com/8BitGinger/newWeeklyMoodal',
     youtube: '',
     category: 'web',
   },
@@ -164,6 +166,18 @@ const projectList = [
     git: 'https://github.com/8BitGinger/ryansGemini',
     youtube: '',
     category: 'ai',
+  },
+
+    {
+    img: img1,
+    title: 'Gumshoe RPG',
+    subtitle: 'React, Spline',
+    description:
+      'A noir detective-themed TTRPG companion site built with React and interactive 3D Spline scene to bring the world of Gumshoe to life.',
+    link: 'https://gumshoerpg.com/',
+    git: 'https://github.com/8BitGinger/GumshoeReact',
+    youtube: '',
+    category: 'game',
   },
 ];
 
