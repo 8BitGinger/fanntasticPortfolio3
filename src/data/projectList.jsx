@@ -25,6 +25,7 @@ import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 import img7 from '../assets/pictures/project-pics/obsShowTimerProject.webp';
 import img19 from '../assets/pictures/project-pics/ryfiProject.webp';
 import img20 from '../assets/pictures/project-pics/webPhotoLogo.webp';
+import img21 from '../assets/pictures/project-pics/silverKnight.webp';
 
 const projectList = [
   {
@@ -191,6 +192,17 @@ const projectList = [
     git: 'https://github.com/8BitGinger/webPhotoOptimizer',
     youtube: '',
     category: 'script',
+  },
+
+  {
+    img: img21,
+    title: 'Silver Order',
+    subtitle: 'JavaScript',
+    description: 'A browser based action RPG set in the world of the Nine Vales.  Plagued by Werewolves it challenges players to survive and uncover the mysteries of the land.',
+    link: 'https://8bitginger.github.io/silverKnight/',
+    git: 'https://github.com/8BitGinger/silverKnight',
+    youtube: '',
+    category: 'game',
   }
 ];
 
