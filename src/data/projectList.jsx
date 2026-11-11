@@ -26,6 +26,7 @@ import img7 from '../assets/pictures/project-pics/obsShowTimerProject.webp';
 import img19 from '../assets/pictures/project-pics/ryfiProject.webp';
 import img20 from '../assets/pictures/project-pics/webPhotoLogo.webp';
 import img21 from '../assets/pictures/project-pics/silverKnight.webp';
+import img22 from '../assets/pictures/project-pics/desktopCleanerProject.webp';
 
 const projectList = [
   {
@@ -203,6 +204,17 @@ const projectList = [
     git: 'https://github.com/8BitGinger/silverKnight',
     youtube: '',
     category: 'game',
+  }, 
+
+  {
+    img: img22,
+    title: 'Desktop Cleaner',
+    subtitle: 'Python tkinter',
+    description: 'A desktop app for cleaning and organizing files on your computer, built with Python and tkinter.',
+    link: '',
+    git: 'https://github.com/8BitGinger/desktopCleaner',
+    youtube: '',
+    category: 'script',
   }
 ];
 
