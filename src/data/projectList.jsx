@@ -11,7 +11,7 @@ import { HiMiniCircleStack } from 'react-icons/hi2';
 import { MdOutlineDisabledByDefault } from 'react-icons/md';
 
 import img1 from '../assets/pictures/project-pics/gumshoeProject.webp';
-import img2 from '../assets/pictures/project-pics/anonymouseLogo.png';
+import img2 from '../assets/pictures/project-pics/anonymouseLogo.webp';
 import img3 from '../assets/pictures/project-pics/socialUpProject.webp';
 import img4 from '../assets/pictures/project-pics/aiGenProject.webp';
 import img5 from '../assets/pictures/project-pics/cindervoidProject.webp';
@@ -24,6 +24,7 @@ import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
 import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 import img7 from '../assets/pictures/project-pics/obsShowTimerProject.webp';
 import img19 from '../assets/pictures/project-pics/ryfiProject.webp';
+import img20 from '../assets/pictures/project-pics/webPhotoLogo.webp';
 
 const projectList = [
   {
@@ -179,6 +180,18 @@ const projectList = [
     youtube: '',
     category: 'game',
   },
+
+  {
+    img: img20,
+    title: 'Web Media Optimizer',
+    subtitle: 'Python tkinter',
+    description:
+      'A desktop app for optimizing and managing media files, built with Python and tkinter.',
+    link: '',
+    git: 'https://github.com/8BitGinger/webPhotoOptimizer',
+    youtube: '',
+    category: 'script',
+  }
 ];
 
 const getCategoryIcon = (category) => {
