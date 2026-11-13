@@ -8,7 +8,7 @@
   margin: auto;
   padding: 40px;
   padding-top: 130px;
-    background: rgba(12, 12, 12, 0.6);
+  background: rgba(12, 12, 12, 0.6);
 
   backdrop-filter: blur(16px) saturate(1.8);
   -webkit-backdrop-filter: blur(16px) saturate(1.8);
@@ -24,41 +24,38 @@
 }
 
 .contact-wrapper--rock {
- 
-    border-color: rgba(255, 0, 0, 0.5);
-    box-shadow: 0 25px 50px -12px rgba(255, 0, 0, 0.5);
-
+  border-color: rgba(255, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(255, 0, 0, 0.5);
 }
 
 .contact-wrapper--jazz {
-    border-color: rgba(143, 141, 140, 0.8);
-    box-shadow: 0 25px 50px -12px rgba(63, 62, 61, 0.5);
+  border-color: rgba(143, 141, 140, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(63, 62, 61, 0.5);
 }
 
 .contact-wrapper--pop {
   border-color: rgba(255, 20, 147, 0.5);
-    box-shadow: 0 25px 50px -12px rgba(255, 20, 147, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(255, 20, 147, 0.5);
 }
 
 .contact-wrapper--lofi {
-    border-color: rgba(88, 61, 184, 0.8);
-    box-shadow: 0 25px 50px -12px rgba(88, 61, 184, 0.7);
+  border-color: rgba(88, 61, 184, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(88, 61, 184, 0.7);
 }
 
 .contact-wrapper--rap {
-    border-color: rgba(42, 161, 18, 0.7);
-    box-shadow: 0 25px 50px -12px rgba(42, 161, 18, 0.5);
+  border-color: rgba(42, 161, 18, 0.7);
+  box-shadow: 0 25px 50px -12px rgba(42, 161, 18, 0.5);
 }
 
 .contact-wrapper--country {
   border-color: rgba(153, 115, 61, 0.7);
-    box-shadow: 0 25px 50px -12px rgba(153, 115, 61, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(153, 115, 61, 0.5);
 }
-
 
 .theme-styled-title {
   font-family: 'Oswald', sans-serif; /* A pixelated font for that retro vibe */
-  
+
   color: var(--theme-accent);
   font-weight: bold;
   text-transform: uppercase;
@@ -136,8 +133,6 @@
     0 0 10px rgb(153, 115, 61),
     0 0 20px rgb(153, 115, 61);
 }
-
-
 
 .icon {
   font-size: 25px;
@@ -230,7 +225,6 @@
 
 .btn-rock {
   border: 1px solid rgb(247, 6, 6);
-
 }
 
 .btn-rock:hover {

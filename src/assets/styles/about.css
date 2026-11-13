@@ -17,12 +17,11 @@
   margin: auto;
 
   /* Background image controlled via inline style in About.jsx */
-  
+
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;
   background-blend-mode: darken;
- 
 
   border-bottom: 2px solid rgba(166, 185, 187, 0.274);
   border-bottom-left-radius: 20%;
@@ -98,8 +97,6 @@
 .about-section {
   width: 100%;
   position: relative;
-  
-
 
   padding: 3rem 0;
 }
@@ -134,7 +131,6 @@
 .about-section--lofi .about-section__inner {
   border-color: rgba(88, 61, 184, 0.9);
   box-shadow: 0 8px 32px rgba(96, 59, 228, 0.7);
-  
 }
 .about-section--rap .about-section__inner {
   border-color: rgba(42, 161, 18, 0.9);
@@ -220,7 +216,6 @@
   backdrop-filter: blur(8px) saturate(1.6);
   vertical-align: middle;
   transition: ease all 0.3s;
-  
 }
 
 .link:hover {
@@ -231,15 +226,14 @@
 
 .link:active {
   scale: 0.85;
-  opacity:0.8;
+  opacity: 0.8;
 }
 
- .link--rock {
+.link--rock {
   border-color: rgba(255, 0, 0, 0.5);
-  
 }
 
-.link--rock:hover{
+.link--rock:hover {
   color: red;
   border-color: rgba(255, 0, 0, 0.9);
   background: rgba(255, 0, 0, 0.08);
@@ -265,13 +259,11 @@
   color: rgb(136, 117, 109);
   border-color: rgba(136, 117, 109, 0.9);
   background: rgba(136, 117, 109, 0.08);
-    box-shadow: 0 4px 10px rgba(136, 117, 109, 0.5);
-
+  box-shadow: 0 4px 10px rgba(136, 117, 109, 0.5);
 }
 
 .wrapper-jazz .link {
   border-color: rgba(136, 117, 109, 0.5);
-  
 }
 .wrapper-jazz .link:hover {
   color: rgb(136, 117, 109);
@@ -287,8 +279,7 @@
   color: rgb(255, 20, 147);
   border-color: rgba(255, 20, 147, 0.9);
   background: rgba(255, 20, 147, 0.08);
-    box-shadow: 0 4px 10px rgba(255, 20, 147, 0.5);
-
+  box-shadow: 0 4px 10px rgba(255, 20, 147, 0.5);
 }
 
 .wrapper-pop .link {
@@ -308,9 +299,7 @@
   color: rgb(88, 61, 184);
   border-color: rgba(88, 61, 184, 0.9);
   background: rgba(88, 61, 184, 0.08);
-    box-shadow: 0 4px 10px rgba(88, 61, 184, 0.5);
-
-  
+  box-shadow: 0 4px 10px rgba(88, 61, 184, 0.5);
 }
 
 .wrapper-lofi .link {
@@ -329,13 +318,11 @@
   color: rgb(42, 161, 18);
   border-color: rgba(42, 161, 18, 0.9);
   background: rgba(42, 161, 18, 0.08);
-    box-shadow: 0 4px 10px rgba(42, 161, 18, 0.5);
-
+  box-shadow: 0 4px 10px rgba(42, 161, 18, 0.5);
 }
 
 .wrapper-rap .link {
   border-color: rgba(42, 161, 18, 0.5);
-
 }
 .wrapper-rap .link:hover {
   color: rgb(42, 161, 18);
@@ -351,8 +338,7 @@
   color: rgb(153, 115, 61);
   border-color: rgba(153, 115, 61, 0.9);
   background: rgba(153, 115, 61, 0.08);
-    box-shadow: 0 4px 10px rgba(153, 115, 61, 0.5);
-
+  box-shadow: 0 4px 10px rgba(153, 115, 61, 0.5);
 }
 
 .wrapper-country .link {
@@ -407,38 +393,32 @@
   color: red;
   font-family: 'Rock Salt', cursive;
   font-weight: 900 !important;
-    text-shadow: 0 4px 10px var(--theme-accent, #b41414d8);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #b41414d8);
 }
 .jazz {
   color: rgb(136, 135, 134);
   font-family: 'Limelight', display;
-    text-shadow: 0 4px 10px var(--theme-accent, #424242c0);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #424242c0);
 }
 .pop {
   color: rgb(255, 20, 147);
   font-family: 'Bungee Shade', cursive;
-    text-shadow: 0 4px 10px var(--theme-accent, #c931b4c9);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #c931b4c9);
 }
 .rap {
   color: rgb(42, 161, 18);
   font-family: 'Permanent Marker', cursive;
-    text-shadow: 0 4px 10px var(--theme-accent, #5ad1429a);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #5ad1429a);
 }
 .country {
   color: rgb(153, 115, 61);
   font-family: 'Special Elite', system-ui;
-    text-shadow: 0 4px 10px var(--theme-accent, #aa823777);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #aa823777);
 }
 .lofi {
   color: rgb(88, 61, 184);
   font-family: 'Changa One', sans-serif;
-    text-shadow: 0 4px 10px var(--theme-accent, #8929e4d8);
-
+  text-shadow: 0 4px 10px var(--theme-accent, #8929e4d8);
 }
 
 .link-buttons {
@@ -467,22 +447,23 @@
 
 .container-player {
   margin: auto;
- 
 }
 
 .applemusic {
-  color:#ee2752;
+  color: #ee2752;
 }
 
 .spotify {
-  color:#1ed75f;
+  color: #1ed75f;
 }
 
 .youtube {
-  color:#dd0808;
+  color: #dd0808;
 }
 
-
+.add-gap {
+  margin-bottom: 100px;
+}
 
 .subtitle {
   font-size: 1rem;
@@ -523,7 +504,7 @@
 .icon2 {
   display: inline-block;
   vertical-align: middle;
-    font-size: 1.2rem;
+  font-size: 1.2rem;
   color: rgba(7, 129, 138, 0.9);
 }
 
@@ -608,7 +589,12 @@
     gap: 1.2rem;
   }
 
-  .country, .pop, .rap, .rock, .jazz, .lofi {
+  .country,
+  .pop,
+  .rap,
+  .rock,
+  .jazz,
+  .lofi {
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
   }
   .profile-image-container {
@@ -639,11 +625,9 @@
   .link-button {
     font-size: 1rem;
     padding: 0.6rem 0.8rem;
-
   }
 
   .flexRow {
     flex-direction: column;
- 
   }
 }

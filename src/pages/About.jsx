@@ -121,11 +121,6 @@ export default function About({ theme }) {
         </div>
       </motion.div>
 
-      <PageHeader theme={theme} title="Music Info" />
-        <ArtistInfo theme={theme} />
-    
-
-
       <PageHeader theme={theme} title="Specs" />
 
       <div className="bento">
@@ -139,8 +134,6 @@ export default function About({ theme }) {
             theme={theme}
           />
         </div>
-
-      
 
         <div className="bento-cell quote">
           <Cards.ListCard
@@ -156,10 +149,8 @@ export default function About({ theme }) {
         </div>
 
         <div className={`bento-cell card card--${theme} card--span-2`}>
-            <img src={twinJobsSmallImg} alt="Twin Jobs" className="card__img" />
+          <img src={twinJobsSmallImg} alt="Twin Jobs" className="card__img" />
         </div>
-
-
 
         <div className="bento-cell span-1">
           <div className={`card card--${theme} resume-tile`}>
@@ -173,7 +164,7 @@ export default function About({ theme }) {
           </div>
         </div>
 
-                <div className="bento-cell span-1">
+        <div className="bento-cell span-1">
           <Cards.ListCardReverse
             theme={theme}
             title="The B-Side"
@@ -255,7 +246,7 @@ export default function About({ theme }) {
                 <h2> ➤ My Artists</h2>
                 <div className="bento-cell span-2">
                   <Cards.ChildCard theme={theme}>
-                                  <Link
+                    <Link
                       to="https://music.apple.com/us/artist/8bitginger/6790270313"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -318,7 +309,6 @@ export default function About({ theme }) {
                         loading="lazy"
                       />
                     </Link>
-      
                   </Cards.ChildCard>
                 </div>
                 <h3 className="music-credit span-2">
@@ -419,7 +409,8 @@ export default function About({ theme }) {
           },
         ]}
       />
-
+      <PageHeader theme={theme} title="Music Info" />
+      <ArtistInfo theme={theme} />
     </div>
   );
 }
