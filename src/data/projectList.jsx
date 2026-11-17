@@ -27,6 +27,7 @@ import img19 from '../assets/pictures/project-pics/ryfiProject.webp';
 import img20 from '../assets/pictures/project-pics/webPhotoLogo.webp';
 import img21 from '../assets/pictures/project-pics/silverKnight.webp';
 import img22 from '../assets/pictures/project-pics/desktopCleanerProject.webp';
+import img23 from '../assets/pictures/project-pics/terraCotta.webp';
 
 const projectList = [
   {
@@ -215,7 +216,19 @@ const projectList = [
     git: 'https://github.com/8BitGinger/desktopCleaner',
     youtube: '',
     category: 'script',
+  },
+
+  {
+    img: img23,
+    title: 'TerraCotta Bot',
+    subtitle: 'Javascript, OpenAI',
+    description: 'An automated, multi-stage media pipeline that transforms real-world daily news headlines into satire and renders them into ready-to-post 9:16 vertical videos.',
+    link: '',
+    git: 'https://github.com/8BitGinger/terracotta-bot',
+    youtube: 'https://www.youtube.com/@TalesfromTerraCotta',
+    category: 'script',
   }
+
 ];
 
 const getCategoryIcon = (category) => {
