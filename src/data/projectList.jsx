@@ -20,7 +20,7 @@ import img8 from '../assets/pictures/project-pics/lyricMusicVideoMakerProject.we
 import img9 from '../assets/pictures/project-pics/weeklyMoodalProject.webp';
 import img13 from '../assets/pictures/project-pics/casinoSlotProject.webp';
 import img14 from '../assets/pictures/project-pics/fxWizardProject.webp';
-// import img18 from '../assets/pictures/project-pics/citrusProject.webp';
+import img18 from '../assets/pictures/project-pics/golfGame.webp';
 import img15 from '../assets/pictures/project-pics/geminiProject.webp';
 import img7 from '../assets/pictures/project-pics/obsShowTimerProject.webp';
 import img19 from '../assets/pictures/project-pics/ryfiProject.webp';
@@ -41,7 +41,6 @@ const projectList = [
     youtube: '',
     category: 'obs',
   },
-
 
   {
     img: img19,
@@ -118,7 +117,8 @@ const projectList = [
     img: img8,
     title: 'Lyric Music Video Maker',
     subtitle: 'Python',
-    description: 'A web app that allows users to create lyric music videos by syncing lyrics with audio tracks.',
+    description:
+      'A web app that allows users to create lyric music videos by syncing lyrics with audio tracks.',
     link: '',
     git: 'https://github.com/8BitGinger/lyricMaker',
     youtube: '',
@@ -165,14 +165,15 @@ const projectList = [
     img: img15,
     title: "8Bit's Gemini",
     subtitle: 'Gemini API',
-    description: "A conversational AI chat interface built around Google's Gemini API and designed to be a clone to gemini.",
+    description:
+      "A conversational AI chat interface built around Google's Gemini API and designed to be a clone to gemini.",
     link: 'https://gemini-ryan.netlify.app/',
     git: 'https://github.com/8BitGinger/ryansGemini',
     youtube: '',
     category: 'ai',
   },
 
-    {
+  {
     img: img1,
     title: 'Gumshoe RPG',
     subtitle: 'React, Spline',
@@ -180,6 +181,18 @@ const projectList = [
       'A noir detective-themed TTRPG companion site built with React and interactive 3D Spline scene to bring the world of Gumshoe to life.',
     link: 'https://gumshoerpg.com/',
     git: 'https://github.com/8BitGinger/GumshoeReact',
+    youtube: '',
+    category: 'game',
+  },
+
+  {
+    img: img18,
+    title: 'Golf Simulator',
+    subtitle: 'JavaScript, Canvas',
+    description:
+      'A browser-based mini golf game built with JavaScript and HTML5 Canvas, featuring interactive gameplay and physics-based mechanics.',
+    link: 'https://8bitginger.github.io/golfSimulator/',
+    git: 'https://github.com/8BitGinger/golfSimulator',
     youtube: '',
     category: 'game',
   },
@@ -200,18 +213,20 @@ const projectList = [
     img: img21,
     title: 'Silver Order',
     subtitle: 'JavaScript',
-    description: 'A browser based action RPG set in the world of the Nine Vales.  Plagued by Werewolves it challenges players to survive and uncover the mysteries of the land.',
+    description:
+      'A browser based action RPG set in the world of the Nine Vales.  Plagued by Werewolves it challenges players to survive and uncover the mysteries of the land.',
     link: 'https://8bitginger.github.io/silverKnight/',
     git: 'https://github.com/8BitGinger/silverKnight',
     youtube: '',
     category: 'game',
-  }, 
+  },
 
   {
     img: img22,
     title: 'Desktop Cleaner',
     subtitle: 'Python tkinter',
-    description: 'A desktop app for cleaning and organizing files on your computer, built with Python and tkinter.',
+    description:
+      'A desktop app for cleaning and organizing files on your computer, built with Python and tkinter.',
     link: '',
     git: 'https://github.com/8BitGinger/desktopCleaner',
     youtube: '',
@@ -222,13 +237,13 @@ const projectList = [
     img: img23,
     title: 'TerraCotta Bot',
     subtitle: 'Javascript, OpenAI',
-    description: 'An automated, multi-stage media pipeline that transforms real-world daily news headlines into satire and renders them into ready-to-post 9:16 vertical videos.',
+    description:
+      'An automated, multi-stage media pipeline that transforms real-world daily news headlines into satire and renders them into ready-to-post 9:16 vertical videos.',
     link: '',
     git: 'https://github.com/8BitGinger/terracotta-bot',
     youtube: 'https://www.youtube.com/@TalesfromTerraCotta',
     category: 'script',
-  }
-
+  },
 ];
 
 const getCategoryIcon = (category) => {
