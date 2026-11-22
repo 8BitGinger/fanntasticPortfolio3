@@ -30,6 +30,8 @@ import img22 from '../assets/pictures/project-pics/desktopCleanerProject.webp';
 import img23 from '../assets/pictures/project-pics/terraCotta.webp';
 import img24 from '../assets/pictures/project-pics/8bitgotchi.webp';
 import img25 from '../assets/pictures/project-pics/backdropStudio.png';
+import img26 from '../assets/pictures/project-pics/scifiChess.webp';
+import img27 from '../assets/pictures/project-pics/neonStudioProject.webp';
 
 const projectList = [
   {
@@ -132,7 +134,7 @@ const projectList = [
     title: 'Weekly Moodal',
     subtitle: 'TypeScript, Svelte',
     description:
-      'A weekly mood-tracking web app that pulls dynamic date-based data to help users log and reflect on how they feel.',
+      'A weekly mood-tracking web app that pulls dynamic date-based data to help users log and reflect on how they feel.  This was a shared school project',
     link: 'https://8bitginger.github.io/newWeeklyMoodal/',
     git: 'https://github.com/8BitGinger/newWeeklyMoodal',
     youtube: '',
@@ -256,7 +258,7 @@ const projectList = [
     link: 'https://8bitginger.github.io/8BitGotchi/',
     git: 'https://github.com/8BitGinger/8BitGotchi',
     youtube: '',
-    category: 'game',
+    category: 'web',
   },
 
   {
@@ -268,7 +270,30 @@ const projectList = [
     git: 'https://github.com/8BitGinger/motionDesignEngine',
     youtube: '',
     category: 'script',
-  }
+  },
+  
+  {
+    img: img26,
+    title: '3D Sci-Fi Chess',
+    subtitle: 'JavaScript',
+    description: 'Sci-fi 3D chess in the browser. Command the cyan Aegis Fleet against the crimson Void Armada, a computer opponent, on a holographic board floating in deep space. Every capture plays as a short cinematic attack scene.',
+    link: 'https://8bitginger.github.io/scifiChess/',
+    git: 'https://github.com/8BitGinger/scifiChess',
+    youtube: '',
+    category: 'game',
+  },
+
+  {
+    img: img27,
+    title: 'Neon Studio - Web Audio Synthesizer',
+    subtitle: 'Media Recorder, Web Audio API',
+    description: 'NEON STUDIO MK-IV is a zero-dependency, browser-based retro-analog synthesizer and multi-instrument workstation designed to run natively on GitHub Pages or offline directly from index.html.  Built exclusively with the Web Audio API, HTML5 Canvas, and MediaRecorder.',
+    link: 'https://8bitginger.github.io/neonStudio/',
+    git: 'https://github.com/8BitGinger/neonStudio',
+    youtube: '',
+    category: 'web',
+  },
+
 ];
 
 const getCategoryIcon = (category) => {
