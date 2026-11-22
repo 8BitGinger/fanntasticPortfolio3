@@ -30,6 +30,7 @@ import auraveilAlbumCover from '../assets/pictures/auraveil.webp';
 import cashHarlanAlbumCover from '../assets/pictures/cashHarlan.webp';
 import blacklistDahliaAlbumCover from '../assets/pictures/blacklistDahlia.webp';
 import bit8Pic from '../assets/pictures/ginger8Bit.webp';
+import newsPic from '../assets/pictures/ryanNews.webp';
 
 const themeData = {
   rock: {
@@ -174,6 +175,17 @@ export default function About({ theme }) {
               'Content Creation: Producing engaging media that resonates with communities',
               'Continuous Learning: Always leveling up my skills and knowledge',
             ]}
+          />
+        </div>
+      </div>
+
+       <div className="bento">
+        <div className="bento-cell span-2">
+          <Cards.PhotoCardWide
+            img={newsPic}
+
+       
+            theme={theme}
           />
         </div>
       </div>

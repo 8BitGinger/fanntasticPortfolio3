@@ -28,6 +28,8 @@ import img20 from '../assets/pictures/project-pics/webPhotoLogo.webp';
 import img21 from '../assets/pictures/project-pics/silverKnight.webp';
 import img22 from '../assets/pictures/project-pics/desktopCleanerProject.webp';
 import img23 from '../assets/pictures/project-pics/terraCotta.webp';
+import img24 from '../assets/pictures/project-pics/8bitgotchi.webp';
+import img25 from '../assets/pictures/project-pics/backdropStudio.png';
 
 const projectList = [
   {
@@ -244,6 +246,29 @@ const projectList = [
     youtube: 'https://www.youtube.com/@TalesfromTerraCotta',
     category: 'script',
   },
+
+    {
+    img: img24,
+    title: '8BitGotchi',
+    subtitle: 'Javascript',
+    description:
+      'A pocket pixel pet you raise in your browser. Pick a T-Rex, a ducky, or a toucan, then keep it fed, clean, and happy. Time keeps passing while the page is closed.',
+    link: 'https://8bitginger.github.io/8BitGotchi/',
+    git: 'https://github.com/8BitGinger/8BitGotchi',
+    youtube: '',
+    category: 'game',
+  },
+
+  {
+    img: img25,
+    title: 'Backdrop Studio',
+    subtitle: 'Canvas 2D, Remotion Player, Remotion CLI',
+    description: 'Seeded, procedural motion backgrounds (29 patterns + a Chaos layer-stacker) drawn with Canvas 2D, previewed with the Remotion Player and rendered to video with the Remotion CLI. Every frame is a pure function of (look, time), so the same JSON renders the same pixels at any resolution, in any order, on any number of cores.',
+    link: '',
+    git: 'https://github.com/8BitGinger/motionDesignEngine',
+    youtube: '',
+    category: 'script',
+  }
 ];
 
 const getCategoryIcon = (category) => {
