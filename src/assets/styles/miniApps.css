@@ -36,6 +36,12 @@
   --theme-font: 'Changa One', sans-serif;
 }
 
+/* Keep the page header flush-left like the other pages — the wrapper
+   centers its children, which would otherwise center the header too. */
+.mini-apps-wrapper > .page-header {
+  align-self: flex-start;
+}
+
 .mini-apps-intro {
   max-width: 600px;
   margin: 1.25rem auto 0;
@@ -54,6 +60,11 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
   align-items: start;
+}
+
+.mini-apps-grid__wide {
+  grid-column: 1 / -1;
+  min-width: 0;
 }
 
 @media (max-width: 768px) {

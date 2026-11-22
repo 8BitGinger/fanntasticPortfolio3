@@ -1,0 +1,270 @@
+/* 🛡️ COAT OF ARMS MAKER */
+.coa {
+  --theme-accent: #07818a;
+  position: relative;
+  background: radial-gradient(circle at 80% 0%, rgba(255, 255, 255, 0.05), transparent 60%),
+    rgba(10, 10, 12, 0.78);
+  border: 1px solid var(--theme-accent);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: white;
+}
+
+.coa--rock { --theme-accent: rgba(255, 0, 0, 0.8); }
+.coa--jazz { --theme-accent: rgba(136, 117, 109, 0.8); }
+.coa--pop { --theme-accent: rgba(255, 20, 147, 0.8); }
+.coa--rap { --theme-accent: rgba(42, 161, 18, 0.8); }
+.coa--country { --theme-accent: rgba(153, 115, 61, 0.8); }
+.coa--lofi { --theme-accent: rgba(157, 141, 247, 0.8); }
+
+.coa__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--theme-accent);
+}
+
+.coa__header h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  margin: 0;
+}
+
+.coa__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 1.75rem;
+  margin-top: 1.1rem;
+  align-items: start;
+}
+
+/* ── Preview ───────────────────────────────────────────── */
+.coa__stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  perspective: 800px;
+}
+
+.coa__svg {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.6));
+}
+
+.coa__blazon {
+  margin: 0;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.coa__blazon .coa__label {
+  display: block;
+  font-style: normal;
+  margin-bottom: 0.2rem;
+}
+
+.coa__rule {
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-align: center;
+  cursor: help;
+}
+
+.coa__rule--good {
+  background: rgba(227, 178, 60, 0.15);
+  border: 1px solid rgba(227, 178, 60, 0.55);
+  color: #f2cd6b;
+}
+
+.coa__rule--bad {
+  background: rgba(220, 40, 40, 0.18);
+  border: 1px solid rgba(220, 40, 40, 0.55);
+  color: #ff9d9d;
+}
+
+/* ── Controls ──────────────────────────────────────────── */
+.coa__controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.coa__label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.coa__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.coa__field-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6rem;
+}
+
+.coa__field select,
+.coa__field input {
+  width: 100%;
+  padding: 0.5rem 0.65rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.85rem;
+}
+
+.coa__field select option {
+  background: #141418;
+}
+
+.coa__field select:focus,
+.coa__field input:focus {
+  outline: none;
+  border-color: var(--theme-accent);
+}
+
+.coa__chips {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.coa__chip {
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coa__chip:hover {
+  border-color: var(--theme-accent);
+  color: white;
+}
+
+.coa__chip.is-selected {
+  background: var(--theme-accent);
+  border-color: var(--theme-accent);
+  color: black;
+  font-weight: 700;
+}
+
+.coa__chips--count {
+  flex-wrap: nowrap;
+  padding-bottom: 0.15rem;
+}
+
+.coa__swatch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.coa__swatches {
+  display: flex;
+  gap: 0.35rem;
+}
+
+.coa__swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--swatch);
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* metals get a subtle sheen so they read as metal */
+.coa__swatch--metal {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.55), transparent 55%), var(--swatch);
+}
+
+.coa__swatch:hover {
+  transform: scale(1.12);
+}
+
+.coa__swatch.is-selected {
+  border-color: white;
+  box-shadow: 0 0 0 2px var(--theme-accent), 0 0 12px var(--theme-accent);
+}
+
+.coa__actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+.coa__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.coa__btn:hover {
+  border-color: var(--theme-accent);
+  color: var(--theme-accent);
+}
+
+.coa__btn--primary {
+  flex: 1;
+  background: var(--theme-accent);
+  border-color: var(--theme-accent);
+  color: black;
+  font-weight: 700;
+}
+
+.coa__btn--primary:hover {
+  color: black;
+  filter: brightness(1.15);
+}
+
+@media (max-width: 768px) {
+  .coa__body {
+    grid-template-columns: 1fr;
+  }
+
+  .coa__svg {
+    max-width: 240px;
+  }
+}
