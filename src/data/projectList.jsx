@@ -32,6 +32,7 @@ import img24 from '../assets/pictures/project-pics/8bitgotchi.webp';
 import img25 from '../assets/pictures/project-pics/backdropStudio.png';
 import img26 from '../assets/pictures/project-pics/scifiChess.webp';
 import img27 from '../assets/pictures/project-pics/neonStudioProject.webp';
+import img28 from '../assets/pictures/project-pics/oracleDeck.webp';
 
 const projectList = [
   {
@@ -293,6 +294,17 @@ const projectList = [
     youtube: '',
     category: 'web',
   },
+
+  {
+    img: img28,
+    title: 'Oracle Deck',
+    subtitle: 'JavaScript',
+    description: 'OBS dock and overlay for an oracle deck.  Create fullscreen readings for your stream.',
+    link: '',
+    git: 'https://github.com/8BitGinger/manifestationOracle',
+    youtube: '',
+    category: 'obs',
+  }
 
 ];
 
