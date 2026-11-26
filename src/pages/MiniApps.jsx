@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/styles/miniApps.css';
 import PageHeader from '../components/PageHeader';
 import WeatherWidget from '../components/WeatherWidget';
@@ -8,6 +8,8 @@ import PasswordGenerator from '../components/PasswordGenerator';
 import SEO from '../components/SEO';
 
 export default function MiniApps({ theme }) {
+  const [diceBaseHeight, setDiceBaseHeight] = useState(null);
+
   return (
     <div className={`mini-apps-wrapper mini-apps-wrapper--${theme}`}>
       <SEO
@@ -24,9 +26,12 @@ export default function MiniApps({ theme }) {
         itself out in whatever genre the site is playing. More to come.
       </p>
 
-      <div className="mini-apps-grid">
+      <div
+        className="mini-apps-grid"
+        style={diceBaseHeight ? { '--dice-base-height': `${diceBaseHeight}px` } : undefined}
+      >
         <WeatherWidget theme={theme} />
-        <DiceRoller theme={theme} />
+        <DiceRoller theme={theme} onBaseHeight={setDiceBaseHeight} />
         <div className="mini-apps-grid__wide">
           <CoatOfArmsMaker theme={theme} />
         </div>

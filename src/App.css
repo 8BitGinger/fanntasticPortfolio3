@@ -427,3 +427,15 @@
 
 
 }
+
+
+/* Autoplaying background-style videos (see InlineVideo.jsx). Taps pass through
+   them, and iOS doesn't draw its large play button over them. */
+.inline-video {
+    pointer-events: none;
+}
+
+.inline-video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}

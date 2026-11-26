@@ -12,6 +12,9 @@ import AboutTabs from '../components/AboutTabs';
 import { Code2, Music2, Mic2, Gamepad2 } from 'lucide-react';
 import ArtistInfo from '../components/ArtistInfo';
 import SEO from '../components/SEO';
+import InlineVideo from '../components/InlineVideo';
+import AiToolkit from '../components/AiToolkit';
+import IntroReel from '../components/IntroReel';
 
 import obsImg from '../assets/pictures/obsPic.webp';
 import ttrpgImg from '../assets/pictures/ttrpgPic.webp';
@@ -121,6 +124,14 @@ export default function About({ theme }) {
           </div>
         </div>
       </motion.div>
+
+      <PageHeader theme={theme} title="Intro Reel" />
+      <IntroReel
+        theme={theme}
+        profileImg={content.image}
+        backgroundImg={content.background}
+        edition={content.title}
+      />
 
       <PageHeader theme={theme} title="Specs" />
 
@@ -386,33 +397,11 @@ export default function About({ theme }) {
                 <div className="bento-cell span-2">
                   <Cards.ChildCard theme={theme}>
                     <Link to="/projects" className="video-link">
-                      <video
-                        width="560"
-                        height="315"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        loading="lazy"
-                      >
-                        <source src={cindervoidVid} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                      <InlineVideo src={cindervoidVid} width="560" height="315" />
                     </Link>
 
                     <Link to="/projects" className="video-link">
-                      <video
-                        width="560"
-                        height="315"
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        loading="lazy"
-                      >
-                        <source src={gumshoeVid} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
+                      <InlineVideo src={gumshoeVid} width="560" height="315" />
                     </Link>
                   </Cards.ChildCard>
                 </div>
@@ -421,6 +410,8 @@ export default function About({ theme }) {
           },
         ]}
       />
+      <PageHeader theme={theme} title="AI Toolkit" />
+      <AiToolkit theme={theme} />
       <PageHeader theme={theme} title="Music Info" />
       <ArtistInfo theme={theme} />
     </div>

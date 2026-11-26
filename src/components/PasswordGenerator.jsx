@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Check, Copy, KeyRound, RefreshCw } from 'lucide-react';
+import { AlertTriangle, Check, Copy, Eye, EyeOff, KeyRound, Lightbulb, RefreshCw, X } from 'lucide-react';
+import { assessPassword } from '../Utils/assessPassword';
 import '../assets/styles/passwordGenerator.css';
 
 const SETS = {
@@ -78,6 +79,7 @@ function generatePassword(length, pools) {
 }
 
 function phoneticFor(char, alphabet) {
+  if (char === ' ') return { word: 'space', kind: 'symbol' };
   if (/[a-z]/.test(char)) return { word: alphabet[char.charCodeAt(0) - 97], kind: 'lower' };
   if (/[A-Z]/.test(char)) return { word: alphabet[char.charCodeAt(0) - 65].toUpperCase(), kind: 'upper' };
   if (/[0-9]/.test(char)) return { word: DIGIT_WORDS[Number(char)], kind: 'digit' };
@@ -139,6 +141,11 @@ const PasswordGenerator = ({ theme }) => {
   const [display, setDisplay] = useState(password);
   const [scrambling, setScrambling] = useState(false);
   const [copied, setCopied] = useState(false);
+  // 'generate' makes a password; 'check' rates one the visitor types.
+  const [mode, setMode] = useState('generate');
+  const [typed, setTyped] = useState('');
+  const [revealed, setRevealed] = useState(false);
+  const isChecking = mode === 'check';
   const timerRef = useRef(null);
   const copiedTimerRef = useRef(null);
 
@@ -210,13 +217,25 @@ const PasswordGenerator = ({ theme }) => {
     }
   };
 
-  const bits = password ? length * Math.log2(poolSize) : 0;
+  const switchMode = (next) => {
+    // Don't keep a typed password around after leaving the checker.
+    setTyped('');
+    setRevealed(false);
+    setMode(next);
+  };
+
+  const assessment = useMemo(() => assessPassword(typed), [typed]);
+  const hasResult = isChecking ? typed.length > 0 : Boolean(password);
+  const generatedBits = password ? length * Math.log2(poolSize) : 0;
+  const bits = isChecking ? assessment.bits : generatedBits;
   const strength = strengthFor(bits);
-  const crackSeconds = 2 ** (bits - 1) / GUESSES_PER_SECOND;
+  const crackSeconds = hasResult ? 2 ** (bits - 1) / GUESSES_PER_SECOND : 0;
   const genreUnit = GENRE_UNITS[genre];
+  // A typed password is only spelled out while it's visible.
+  const spelled = !isChecking ? password : revealed ? typed : '';
   const phonetic = useMemo(
-    () => password.split('').map((c) => ({ char: c, ...phoneticFor(c, alphabet) })),
-    [password, alphabet]
+    () => Array.from(spelled, (c) => ({ char: c, ...phoneticFor(c, alphabet) })),
+    [spelled, alphabet]
   );
 
   return (
@@ -227,96 +246,183 @@ const PasswordGenerator = ({ theme }) => {
         <span className="pwgen__genre-tag">{genre === 'default' ? '8-bit' : genre} edition</span>
       </div>
 
+      <div className="pwgen__modes" role="group" aria-label="Password tool mode">
+        {[
+          ['generate', 'Generate'],
+          ['check', 'Check mine'],
+        ].map(([value, label]) => (
+          <button
+            key={value}
+            type="button"
+            aria-pressed={mode === value}
+            className={`pwgen__chip ${mode === value ? 'is-on' : ''}`}
+            onClick={() => mode !== value && switchMode(value)}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+
       <div className="pwgen__body">
         <div className="pwgen__main">
-          <div className={`pwgen__output ${scrambling ? 'is-scrambling' : ''}`}>
-            <code aria-live="polite" aria-busy={scrambling}>
-              {display || ' '}
-            </code>
-            <div className="pwgen__output-actions">
-              <motion.button
-                type="button"
-                className="pwgen__icon-btn"
-                onClick={() => generate(length, options)}
-                whileTap={{ rotate: -180, scale: 0.9 }}
-                aria-label="Generate a new password"
-                title="Generate"
-              >
-                <RefreshCw size={18} />
-              </motion.button>
-              <motion.button
-                type="button"
-                className={`pwgen__icon-btn ${copied ? 'is-copied' : ''}`}
-                onClick={handleCopy}
-                whileTap={{ scale: 0.9 }}
-                aria-label="Copy password"
-                title="Copy"
-              >
-                {copied ? <Check size={18} /> : <Copy size={18} />}
-              </motion.button>
+          {isChecking ? (
+            <div className="pwgen__output">
+              <input
+                className="pwgen__input"
+                type={revealed ? 'text' : 'password'}
+                value={typed}
+                onChange={(e) => setTyped(e.target.value)}
+                placeholder="Type a password to test..."
+                aria-label="Password to assess"
+                maxLength={128}
+                // Keep browsers and password managers from filling, saving, or
+                // spell-checking whatever is typed here.
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="none"
+                spellCheck={false}
+                data-1p-ignore="true"
+                data-lpignore="true"
+              />
+              <div className="pwgen__output-actions">
+                <button
+                  type="button"
+                  className="pwgen__icon-btn"
+                  onClick={() => setRevealed((v) => !v)}
+                  aria-label={revealed ? 'Hide password' : 'Show password'}
+                  title={revealed ? 'Hide' : 'Show'}
+                >
+                  {revealed ? <EyeOff size={18} /> : <Eye size={18} />}
+                </button>
+                <button
+                  type="button"
+                  className="pwgen__icon-btn"
+                  onClick={() => setTyped('')}
+                  aria-label="Clear password"
+                  title="Clear"
+                >
+                  <X size={18} />
+                </button>
+              </div>
             </div>
-          </div>
+          ) : (
+            <div className={`pwgen__output ${scrambling ? 'is-scrambling' : ''}`}>
+              <code aria-live="polite" aria-busy={scrambling}>
+                {display || ' '}
+              </code>
+              <div className="pwgen__output-actions">
+                <motion.button
+                  type="button"
+                  className="pwgen__icon-btn"
+                  onClick={() => generate(length, options)}
+                  whileTap={{ rotate: -180, scale: 0.9 }}
+                  aria-label="Generate a new password"
+                  title="Generate"
+                >
+                  <RefreshCw size={18} />
+                </motion.button>
+                <motion.button
+                  type="button"
+                  className={`pwgen__icon-btn ${copied ? 'is-copied' : ''}`}
+                  onClick={handleCopy}
+                  whileTap={{ scale: 0.9 }}
+                  aria-label="Copy password"
+                  title="Copy"
+                >
+                  {copied ? <Check size={18} /> : <Copy size={18} />}
+                </motion.button>
+              </div>
+            </div>
+          )}
 
           <div className="pwgen__meter">
             <div className="pwgen__meter-track">
               <motion.div
                 className={`pwgen__meter-fill pwgen__meter-fill--${strength.level}`}
-                animate={{ width: `${Math.min(100, (bits / 128) * 100)}%` }}
+                animate={{ width: `${hasResult ? Math.min(100, (bits / 128) * 100) : 0}%` }}
                 transition={{ type: 'spring', stiffness: 200, damping: 26 }}
               />
             </div>
             <div className="pwgen__meter-meta">
-              <span className={`pwgen__strength pwgen__strength--${strength.level}`}>{strength.label}</span>
-              <span>{Math.round(bits)} bits of entropy</span>
+              {hasResult ? (
+                <>
+                  <span className={`pwgen__strength pwgen__strength--${strength.level}`}>
+                    {strength.label}
+                  </span>
+                  <span>
+                    {isChecking ? 'about ' : ''}
+                    {Math.round(bits)} bits of entropy
+                  </span>
+                </>
+              ) : (
+                <span>Waiting for a password</span>
+              )}
             </div>
           </div>
 
-          <p className="pwgen__crack">
-            Time to crack: <strong>{humanDuration(crackSeconds)}</strong>
-            {crackSeconds >= 1 && (
-              <>
-                <br />
-                That's about <strong>{bigNumber(crackSeconds / genreUnit.seconds)}</strong> {genreUnit.unit}{' '}
-                back to back.
-              </>
-            )}
-          </p>
+          {hasResult && (
+            <p className="pwgen__crack">
+              {isChecking ? 'Estimated time to crack' : 'Time to crack'}: <strong>{humanDuration(crackSeconds)}</strong>
+              {crackSeconds >= 1 && (
+                <>
+                  <br />
+                  That's about <strong>{bigNumber(crackSeconds / genreUnit.seconds)}</strong> {genreUnit.unit}{' '}
+                  back to back.
+                </>
+              )}
+            </p>
+          )}
 
-          <label className="pwgen__length">
-            <span className="pwgen__label">
-              Length <strong>{length}</strong>
-            </span>
-            <input
-              type="range"
-              min={8}
-              max={64}
-              value={length}
-              onChange={(e) => handleLength(Number(e.target.value))}
-            />
-          </label>
+          {isChecking && assessment.tips.length > 0 && (
+            <ul className="pwgen__feedback">
+              {assessment.tips.map((tip) => (
+                <li key={tip.text} className={`pwgen__feedback-item pwgen__feedback-item--${tip.kind}`}>
+                  {tip.kind === 'warn' ? <AlertTriangle size={15} /> : <Lightbulb size={15} />}
+                  <span>{tip.text}</span>
+                </li>
+              ))}
+            </ul>
+          )}
 
-          <div className="pwgen__toggles">
-            {Object.entries(SETS).map(([k, s]) => (
-              <button
-                key={k}
-                type="button"
-                aria-pressed={options[k]}
-                className={`pwgen__chip ${options[k] ? 'is-on' : ''}`}
-                onClick={() => toggle(k)}
-              >
-                {s.label}
-              </button>
-            ))}
-            <button
-              type="button"
-              aria-pressed={options.noAmbiguous}
-              className={`pwgen__chip ${options.noAmbiguous ? 'is-on' : ''}`}
-              onClick={() => toggle('noAmbiguous')}
-              title="Leave out look-alike characters: I l 1 O 0 o"
-            >
-              No look-alikes
-            </button>
-          </div>
+          {!isChecking && (
+            <>
+              <label className="pwgen__length">
+                <span className="pwgen__label">
+                  Length <strong>{length}</strong>
+                </span>
+                <input
+                  type="range"
+                  min={8}
+                  max={64}
+                  value={length}
+                  onChange={(e) => handleLength(Number(e.target.value))}
+                />
+              </label>
+
+              <div className="pwgen__toggles">
+                {Object.entries(SETS).map(([k, s]) => (
+                  <button
+                    key={k}
+                    type="button"
+                    aria-pressed={options[k]}
+                    className={`pwgen__chip ${options[k] ? 'is-on' : ''}`}
+                    onClick={() => toggle(k)}
+                  >
+                    {s.label}
+                  </button>
+                ))}
+                <button
+                  type="button"
+                  aria-pressed={options.noAmbiguous}
+                  className={`pwgen__chip ${options.noAmbiguous ? 'is-on' : ''}`}
+                  onClick={() => toggle('noAmbiguous')}
+                  title="Leave out look-alike characters: I l 1 O 0 o"
+                >
+                  No look-alikes
+                </button>
+              </div>
+            </>
+          )}
         </div>
 
         <div className="pwgen__phonetic">
@@ -324,7 +430,7 @@ const PasswordGenerator = ({ theme }) => {
           <ol className="pwgen__phonetic-list">
             {phonetic.map((p, i) => (
               <motion.li
-                key={`${password}-${i}`}
+                key={`${i}-${p.char}`}
                 className={`pwgen__phonetic-item pwgen__phonetic-item--${p.kind}`}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -335,8 +441,21 @@ const PasswordGenerator = ({ theme }) => {
               </motion.li>
             ))}
           </ol>
+          {isChecking && !revealed && (
+            <p className="pwgen__fineprint">Show the password to see it spelled out.</p>
+          )}
           <p className="pwgen__fineprint">
-            Generated in your browser with <code>crypto.getRandomValues</code>. Nothing is sent or stored.
+            {isChecking ? (
+              <>
+                Checked entirely in your browser. Nothing is sent or stored. Still, it's safest not to type a
+                password you actually use into any website. This is only an estimate: it spots some common
+                patterns but doesn't check data breaches, so it can rate a password too highly.
+              </>
+            ) : (
+              <>
+                Generated in your browser with <code>crypto.getRandomValues</code>. Nothing is sent or stored.
+              </>
+            )}{' '}
             Switch the site's genre to change the alphabet. Crack time assumes {bigNumber(GUESSES_PER_SECOND)} guesses
             a second.
           </p>

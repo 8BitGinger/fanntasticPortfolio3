@@ -1,9 +1,9 @@
 import {
   FaGlobe,
-  FaCode,
   FaDiceD20,
   FaBrain,
   FaLayerGroup,
+  FaTools,
 } from 'react-icons/fa';
 
 import { SiObsstudio } from 'react-icons/si';
@@ -33,6 +33,8 @@ import img25 from '../assets/pictures/project-pics/backdropStudio.png';
 import img26 from '../assets/pictures/project-pics/scifiChess.webp';
 import img27 from '../assets/pictures/project-pics/neonStudioProject.webp';
 import img28 from '../assets/pictures/project-pics/oracleDeck.webp';
+import img29 from '../assets/pictures/project-pics/rigCheck.webp';
+import img30 from '../assets/pictures/project-pics/ryfiStudioLogo.webp';
 
 const projectList = [
   {
@@ -127,7 +129,7 @@ const projectList = [
     link: '',
     git: 'https://github.com/8BitGinger/lyricMaker',
     youtube: '',
-    category: 'script',
+    category: 'tools',
   },
 
   {
@@ -211,7 +213,7 @@ const projectList = [
     link: '',
     git: 'https://github.com/8BitGinger/webPhotoOptimizer',
     youtube: '',
-    category: 'script',
+    category: 'tools',
   },
 
   {
@@ -235,7 +237,7 @@ const projectList = [
     link: '',
     git: 'https://github.com/8BitGinger/desktopCleaner',
     youtube: '',
-    category: 'script',
+    category: 'tools',
   },
 
   {
@@ -247,7 +249,7 @@ const projectList = [
     link: '',
     git: 'https://github.com/8BitGinger/terracotta-bot',
     youtube: 'https://www.youtube.com/@TalesfromTerraCotta',
-    category: 'script',
+    category: 'tools',
   },
 
     {
@@ -270,7 +272,7 @@ const projectList = [
     link: '',
     git: 'https://github.com/8BitGinger/motionDesignEngine',
     youtube: '',
-    category: 'script',
+    category: 'tools',
   },
   
   {
@@ -304,8 +306,31 @@ const projectList = [
     git: 'https://github.com/8BitGinger/manifestationOracle',
     youtube: '',
     category: 'obs',
-  }
+  },
 
+  {
+    img: img29,
+    title: 'Rig Check',
+    subtitle: 'JavaScript',
+    description: 'RigCheck is a lightweight, read-only local Node.js web dashboard for verifying podcast and broadcast studio readiness before going live or recording. It monitors several system metrics with minimal CPU overhead.',
+    link: '',
+    git: 'https://github.com/8BitGinger/rigcheck',
+    youtube: '',
+    category: 'tools',
+    // Also listed under these filters.
+    extraCategories: ['obs'],
+  },
+
+  {
+    img: img30,
+    title: 'RyFi Studio - DAW',
+    subtitle: 'Canvas, Audio API, JS',
+    description: 'A browser DAW: React + Vite, vanilla CSS, the Web Audio API, and canvas waveforms.',
+    link: '',
+    git: 'https://github.com/8BitGinger/ryfiStudio',
+    youtube: '',
+    category: 'tools',
+  },
 ];
 
 const getCategoryIcon = (category) => {
@@ -314,8 +339,8 @@ const getCategoryIcon = (category) => {
       return <FaGlobe />;
     case 'obs':
       return <SiObsstudio />;
-    case 'script':
-      return <FaCode />;
+    case 'tools':
+      return <FaTools />;
     case 'game':
       return <FaDiceD20 />;
     case 'ai':
@@ -332,7 +357,7 @@ const getCategoryIcon = (category) => {
 const iconList = {
   web: <FaGlobe />,
   obs: <SiObsstudio />,
-  script: <FaCode />,
+  tools: <FaTools />,
   game: <FaDiceD20 />,
   ai: <FaBrain />,
   backend: <HiMiniCircleStack />,
@@ -343,7 +368,7 @@ const iconList = {
 const categoryColors = {
   web: '#4CAF50',
   obs: '#2196F3',
-  script: '#FF9800',
+  tools: '#FF9800',
   game: '#9C27B0',
   ai: '#E91E63',
   backend: '#607D8B',
@@ -353,8 +378,8 @@ const categoryColors = {
 
 const categoryLabels = {
   web: 'Web',
-  obs: 'OBS Tools',
-  script: 'Scripts',
+  obs: 'OBS/vMix',
+  tools: 'Tools',
   game: 'Games',
   ai: 'AI',
   backend: 'Backend',

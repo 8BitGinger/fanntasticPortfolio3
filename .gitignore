@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Intro reel video exports (scripts/render_intro_reel.py)
+exports
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

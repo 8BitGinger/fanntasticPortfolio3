@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion'; // ← add this
 import CassetteSelector from './components/CassetteSelector';
 import Navbar from './components/Navbar';
 import ScrollToTop from './components/ScrollToTop';
+import InlineVideo from './components/InlineVideo';
 import NavPageButtons from './components/NavPageButtons';
 import About from './pages/About';
 import Projects from './pages/Projects';
@@ -42,9 +43,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <video autoPlay loop muted playsInline className="video-bg">
-        <source src="/videos/retro-bgEdit.mp4" type="video/mp4" />
-      </video>
+      <InlineVideo src="/videos/retro-bgEdit.mp4" className="video-bg" />
       <div className="video-overlay"></div>
 
       <Navbar />

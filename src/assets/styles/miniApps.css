@@ -62,6 +62,21 @@
   align-items: start;
 }
 
+/* Side by side, the weather card starts at the same height as the untouched
+   dice card (measured in DiceRoller). It stays put when the dice card grows. */
+@media (min-width: 769px) {
+  .mini-apps-grid > .weather-widget {
+    min-height: var(--dice-base-height, 400px);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mini-apps-grid .weather-widget__body {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 .mini-apps-grid__wide {
   grid-column: 1 / -1;
   min-width: 0;

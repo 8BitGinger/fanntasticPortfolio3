@@ -1,0 +1,1261 @@
+/* 🎬 INTRO REEL (About page)
+   Sizes use cqw (percent of the reel's width), so everything scales like a
+   video at any size. Phones get a taller 4:5 frame with stacked layouts. */
+
+.reel-section {
+  width: 92%;
+  max-width: 980px;
+  margin: 0.5rem auto 1rem;
+}
+
+.reel {
+  --accent: #0fb8c4;
+  --tf: 'Limelight', cursive;
+  --tf-size: 9cqw;
+  --pixel: 'Press Start 2P', monospace;
+  --ar: 1.7778;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  border-radius: 18px;
+  background: #050507;
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--accent) 40%, transparent);
+}
+
+.reel--rock { --accent: #ff3b3b; --tf: 'Rock Salt', cursive; --tf-size: 6cqw; }
+.reel--jazz { --accent: #c2ad9f; --tf: 'Limelight', cursive; --tf-size: 9cqw; }
+.reel--pop { --accent: #ff3fa4; --tf: 'Bungee Shade', cursive; --tf-size: 7cqw; }
+.reel--rap { --accent: #4fd12f; --tf: 'Permanent Marker', cursive; --tf-size: 8.5cqw; }
+.reel--country { --accent: #cf9f5f; --tf: 'Special Elite', serif; --tf-size: 8.5cqw; }
+.reel--lofi { --accent: #a99bff; --tf: 'Changa One', sans-serif; --tf-size: 9cqw; }
+
+.reel__stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  isolation: isolate;
+  container: reel / inline-size;
+  background: #050507;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@media (max-width: 640px) {
+  .reel { --ar: 0.8; }
+  .reel__stage { aspect-ratio: 4 / 5; }
+}
+
+/* ── Shared type ──────────────────────────────────────────── */
+.reel .pixel-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  font-family: var(--pixel);
+  font-size: clamp(9px, 1.15cqw, 13px);
+  line-height: 1.6;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.reel .headline {
+  margin: 0.3em 0 0.25em;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(24px, 4.8cqw, 60px);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+}
+
+.reel .body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(13px, 1.75cqw, 20px);
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.reel .accent {
+  color: var(--accent);
+}
+
+.reel .letters__word {
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.reel .letters__word > span {
+  display: inline-block;
+}
+
+.reel .blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* ── Element animations (delay comes from --d) ────────────── */
+.reel .a {
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+  animation-delay: var(--d, 0s);
+  animation-fill-mode: both;
+}
+
+.reel .a-rise { animation-name: a-rise; }
+.reel .a-left { animation-name: a-left; }
+.reel .a-letter { animation-name: a-letter; animation-duration: 0.6s; }
+.reel .a-pop { animation-name: a-pop; animation-duration: 0.55s; }
+.reel .a-type { animation-name: a-type; animation-duration: 0.01s; animation-timing-function: linear; }
+.reel .a-iris { animation-name: a-iris; animation-duration: 1s; }
+.reel .a-wipe { animation-name: a-wipe; animation-duration: 0.9s; animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1); }
+.reel .a-flip { animation-name: a-flip; animation-duration: 0.7s; }
+.reel .a-fan { animation-name: a-fan; animation-duration: 0.8s; animation-timing-function: cubic-bezier(0.3, 1.35, 0.5, 1); }
+.reel .a-fill { animation-name: a-fill; animation-duration: 1.6s; animation-timing-function: cubic-bezier(0.6, 0, 0.3, 1); }
+.reel .a-glitch { animation-name: a-glitch; animation-duration: 0.8s; animation-timing-function: linear; }
+.reel .a-inout { animation-name: a-inout; animation-duration: var(--life, 2.4s); animation-timing-function: linear; }
+
+@keyframes a-rise {
+  from { opacity: 0; transform: translateY(0.7em); filter: blur(6px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes a-left {
+  from { opacity: 0; transform: translateX(-1.4em); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes a-letter {
+  from { opacity: 0; transform: translateY(0.45em) rotate(6deg); filter: blur(8px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes a-pop {
+  0% { opacity: 0; transform: scale(0.6); }
+  60% { opacity: 1; transform: scale(1.06); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes a-type {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes a-iris {
+  from { clip-path: circle(0% at 50% 50%); transform: scale(1.15); }
+  to { clip-path: circle(71% at 50% 50%); transform: none; }
+}
+@keyframes a-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes a-flip {
+  from { opacity: 0; transform: rotateX(80deg) translateY(25%); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes a-fan {
+  from { opacity: 0; transform: translate(-50%, 35%) rotate(0deg) scale(0.6); }
+  to {
+    opacity: 1;
+    transform: translate(calc(-50% + var(--i) * var(--spread)), calc(var(--ai) * 1.2cqw))
+      rotate(calc(var(--i) * 7deg));
+  }
+}
+@keyframes a-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes a-glitch {
+  0% { opacity: 0; transform: scale(1.35); filter: blur(10px); }
+  30% { opacity: 1; transform: scale(0.97) skewX(-8deg); filter: none; text-shadow: -5px 0 #ff2a6d, 5px 0 #05d9e8; clip-path: inset(0 0 0 0); }
+  45% { transform: translateX(6px) skewX(6deg); clip-path: inset(20% 0 40% 0); }
+  60% { transform: translateX(-4px); clip-path: inset(55% 0 5% 0); }
+  75% { transform: none; clip-path: inset(0 0 0 0); text-shadow: 3px 0 #ff2a6d, -3px 0 #05d9e8; }
+  100% { opacity: 1; transform: none; clip-path: none; text-shadow: 0 0 34px var(--accent); }
+}
+@keyframes a-inout {
+  0% { opacity: 0; transform: translateY(0.4em); filter: blur(6px); }
+  14%, 86% { opacity: 1; transform: none; filter: none; }
+  100% { opacity: 0; transform: translateY(-0.4em); filter: blur(6px); }
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* ── Scenes & transitions ─────────────────────────────────── */
+.reel .scene {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  isolation: isolate;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6cqw 7cqw;
+  background:
+    radial-gradient(circle at 15% 10%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 55%),
+    #07070a;
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+  animation-fill-mode: both;
+}
+
+.reel .scene--fade { animation-name: sc-fade; }
+.reel .scene--iris { animation-name: sc-iris; }
+.reel .scene--wipe { animation-name: sc-wipe; }
+.reel .scene--push { animation-name: sc-push; }
+.reel .scene--zoom { animation-name: sc-zoom; }
+.reel .scene--glitch { animation-name: sc-glitch; animation-duration: 0.6s; animation-timing-function: linear; }
+.reel .scene--dip { animation-name: sc-fade; animation-delay: 0.35s; animation-duration: 0.8s; }
+.reel .scene--diagonal { animation-name: sc-diagonal; }
+
+.reel .scene.is-leaving {
+  z-index: 0;
+  animation: sc-out 0.9s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+@keyframes sc-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes sc-iris {
+  from { clip-path: circle(0% at 50% 50%); }
+  to { clip-path: circle(75% at 50% 50%); }
+}
+@keyframes sc-wipe {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes sc-push {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}
+@keyframes sc-zoom {
+  from { opacity: 0; transform: scale(1.3); filter: blur(14px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes sc-glitch {
+  0% { opacity: 0; clip-path: inset(40% 0 45% 0); transform: translateX(-8%); }
+  20% { opacity: 1; clip-path: inset(10% 0 70% 0); transform: translateX(6%); filter: hue-rotate(90deg); }
+  40% { clip-path: inset(60% 0 10% 0); transform: translateX(-4%); }
+  60% { clip-path: inset(0 0 45% 0); transform: translateX(2%); filter: hue-rotate(-60deg); }
+  80% { clip-path: inset(0 0 0 0); transform: none; filter: none; }
+  100% { opacity: 1; clip-path: inset(0 0 0 0); }
+}
+@keyframes sc-diagonal {
+  from { clip-path: polygon(0 0, 0 0, -30% 100%, -30% 100%); }
+  to { clip-path: polygon(0 0, 130% 0, 100% 100%, -30% 100%); }
+}
+@keyframes sc-out {
+  to { opacity: 0; transform: scale(0.94); filter: blur(4px) brightness(0.6); }
+}
+
+/* Light sweep across the frame at each cut */
+.reel__sweep {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20%;
+  z-index: 3;
+  width: 18%;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--accent) 45%, transparent),
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  mix-blend-mode: screen;
+  animation: sweep 0.85s cubic-bezier(0.7, 0, 0.2, 1) both;
+}
+
+@keyframes sweep {
+  to { transform: translateX(760%); }
+}
+
+/* Faded, slowly zooming photo behind a scene */
+.reel .scene-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.16;
+  filter: blur(2px) saturate(1.1);
+}
+
+.reel .kb {
+  animation: kb 9s linear both;
+}
+
+@keyframes kb {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.16) translate(-1%, -1%); }
+}
+
+.reel .pixel-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(color-mix(in srgb, var(--accent) 16%, transparent) 1px, transparent 1px),
+    linear-gradient(90deg, color-mix(in srgb, var(--accent) 16%, transparent) 1px, transparent 1px);
+  background-size: 4cqw 4cqw;
+  mask-image: radial-gradient(circle at 50% 50%, #000 15%, transparent 70%);
+  -webkit-mask-image: radial-gradient(circle at 50% 50%, #000 15%, transparent 70%);
+  animation: grid-drift 8s linear both;
+}
+
+@keyframes grid-drift {
+  to { background-position: 0 8cqw, 8cqw 0; }
+}
+
+/* Two-column layout used by several scenes */
+.reel .split {
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  gap: 5cqw;
+  align-items: center;
+  width: 100%;
+}
+
+.reel .copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* ── 01 Open ──────────────────────────────────────────────── */
+.reel .open__who {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(16px, 2.8cqw, 34px);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.reel .caret {
+  display: inline-block;
+  width: 0.5em;
+  height: 0.9em;
+  margin-left: 0.15em;
+  vertical-align: -0.1em;
+  background: var(--accent);
+  animation: blink 0.8s steps(1) infinite;
+}
+
+.reel .open__name {
+  position: relative;
+  margin: 0.15em 0 0.35em;
+  font-family: var(--tf);
+  font-size: var(--tf-size);
+  font-weight: 400;
+  line-height: 1.25;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.reel .open__loading {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── 02 Identity ──────────────────────────────────────────── */
+.reel .identity__photo {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--accent) 18%, transparent), 0 0 40px var(--accent);
+}
+
+.reel .identity__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel .identity__place {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+  margin-left: 0.8em;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.reel .identity__tape {
+  margin-top: 0.5em;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(12px, 1.5cqw, 18px);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.reel .roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  margin-top: 1.1em;
+  list-style: none;
+  font-size: clamp(11px, 1.45cqw, 17px);
+}
+
+.reel .roles li,
+.reel .chips li {
+  padding: 0.35em 0.85em;
+  border-radius: 999px;
+  border: 1px solid color-mix(in srgb, var(--accent) 70%, transparent);
+  background: rgba(0, 0, 0, 0.55);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ── 03 Broadcast ─────────────────────────────────────────── */
+.reel .broadcast__photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 2px solid var(--accent);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.reel .broadcast__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* News-style lower third */
+.reel .lower-third {
+  position: absolute;
+  left: 0;
+  right: 12%;
+  bottom: 7%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5em 0.9em;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 60%, #000));
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(10px, 1.4cqw, 16px);
+  line-height: 1.2;
+  color: #fff;
+}
+
+.reel .lower-third strong {
+  font-size: 1.2em;
+  text-transform: uppercase;
+}
+
+.reel .bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8em;
+  margin-top: 0.6em;
+  list-style: none;
+}
+
+.reel .bullets li {
+  position: relative;
+  padding-left: 1.2em;
+}
+
+.reel .bullets li::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: 0;
+  width: 0.45em;
+  height: 0.45em;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* ── 04 Builder ───────────────────────────────────────────── */
+.reel .scene-builder {
+  align-items: flex-start;
+}
+
+.reel .mosaic-wrap {
+  position: absolute;
+  top: -6%;
+  right: -6%;
+  z-index: -2;
+  width: 62%;
+  height: 115%;
+  perspective: 1200px;
+}
+
+.reel .mosaic {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2cqw;
+  transform: rotateY(-16deg) rotateX(4deg);
+  animation: mosaic-pan 8.5s linear both;
+}
+
+@keyframes mosaic-pan {
+  from { translate: 0 2%; }
+  to { translate: 0 -9%; }
+}
+
+.reel .mosaic__tile {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #000;
+}
+
+.reel .mosaic__tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel .builder__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, #07070a 34%, rgba(7, 7, 10, 0.7) 55%, transparent 85%);
+}
+
+.reel .builder__copy {
+  width: 52%;
+}
+
+.reel .avatar {
+  width: 2.6em;
+  height: 2.6em;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--accent);
+}
+
+.reel .stat {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5em;
+  margin: 0.1em 0 0.5em;
+}
+
+.reel .stat__num {
+  min-width: 1.2em;
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(40px, 8.5cqw, 104px);
+  font-weight: 700;
+  line-height: 0.95;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  text-shadow: 0 0 30px color-mix(in srgb, var(--accent) 60%, transparent);
+}
+
+.reel .stat__label {
+  font-family: var(--pixel);
+  font-size: clamp(9px, 1.15cqw, 13px);
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.reel .chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  margin-top: 1em;
+  list-style: none;
+  font-size: clamp(10px, 1.25cqw, 15px);
+}
+
+/* ── 05 Music ─────────────────────────────────────────────── */
+.reel .scene-music {
+  --spread: 14cqw;
+  text-align: center;
+}
+
+.reel .scene-music .scene-bg {
+  opacity: 0.12;
+}
+
+.reel .fan {
+  position: relative;
+  width: 100%;
+  height: 19cqw;
+  margin: 1.6cqw 0 1cqw;
+}
+
+.reel .fan__cover {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15cqw;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
+  transform-origin: 50% 120%;
+}
+
+.reel .music__artists {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(13px, 1.9cqw, 22px);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: pre-wrap;
+  color: var(--accent);
+}
+
+.reel .platforms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5em 1.5em;
+  margin-top: 0.7em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(11px, 1.4cqw, 16px);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.reel .platforms span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.reel .eq {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  align-items: flex-end;
+  gap: 0.6cqw;
+  height: 13cqw;
+  padding: 0 3cqw;
+  opacity: 0.22;
+}
+
+.reel .eq span {
+  flex: 1;
+  height: 100%;
+  transform-origin: bottom;
+  background: linear-gradient(to top, var(--accent), transparent);
+  animation: eq var(--s) ease-in-out var(--d) infinite alternate;
+}
+
+@keyframes eq {
+  from { transform: scaleY(0.1); }
+  to { transform: scaleY(1); }
+}
+
+/* ── 06 Worlds ────────────────────────────────────────────── */
+.reel .scene-worlds {
+  align-items: flex-start;
+  padding-top: 5cqw;
+  padding-bottom: 4.5cqw;
+}
+
+.reel .scene-worlds .scene-bg {
+  opacity: 0.14;
+}
+
+.reel .worlds__clips {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2cqw;
+  width: 84%;
+  margin-top: 2cqw;
+}
+
+.reel .worlds__clip {
+  margin: 0;
+}
+
+.reel .worlds__clip video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 1px solid var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.reel .worlds__clip figcaption {
+  margin-top: 0.8em;
+  color: #fff;
+}
+
+/* ── 07 Drives ────────────────────────────────────────────── */
+.reel .scene-drives .scene-bg {
+  opacity: 0.2;
+}
+
+.reel .quotes {
+  display: grid;
+  width: 100%;
+  margin-top: 2cqw;
+}
+
+.reel .quote {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  max-width: 78cqw;
+  margin: 0;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 5cqw, 60px);
+  font-style: italic;
+  line-height: 1.15;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.7);
+}
+
+.reel .quote__tag {
+  display: block;
+  margin-bottom: 0.9em;
+  font-family: var(--pixel);
+  font-size: clamp(9px, 1.1cqw, 13px);
+  font-style: normal;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ── 08 Next ──────────────────────────────────────────────── */
+.reel .scene-next {
+  align-items: flex-start;
+}
+
+.reel .next__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3cqw;
+  width: min(100%, 64cqw);
+  margin-top: 0.6em;
+  list-style: none;
+}
+
+.reel .next__list li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15em;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(12px, 1.6cqw, 19px);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.reel .next__list strong {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.15em;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.reel .loadbar {
+  display: block;
+  height: max(4px, 0.45cqw);
+  margin-top: 0.4em;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.reel .loadbar__fill {
+  display: block;
+  height: 100%;
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--accent), #fff);
+}
+
+/* Big outlined word drifting behind the list */
+.reel .next__ghost {
+  position: absolute;
+  top: 50%;
+  right: -4cqw;
+  z-index: -1;
+  font-family: 'Oswald', sans-serif;
+  font-size: 26cqw;
+  font-weight: 700;
+  line-height: 0.8;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 2px color-mix(in srgb, var(--accent) 35%, transparent);
+  translate: 0 -50%;
+  animation-name: ghost-drift;
+  animation-duration: 7s;
+  animation-timing-function: linear;
+}
+
+@keyframes ghost-drift {
+  from { opacity: 0; transform: translateX(8cqw); }
+  15% { opacity: 1; }
+  to { opacity: 1; transform: translateX(-4cqw); }
+}
+
+.reel .next__goal {
+  max-width: 64cqw;
+  margin-top: 1.6cqw;
+  font-style: italic;
+}
+
+/* ── 09 Outro ─────────────────────────────────────────────── */
+.reel .scene-outro {
+  text-align: center;
+}
+
+.reel .outro__logo {
+  width: 17cqw;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 15%, transparent), 0 0 50px var(--accent);
+}
+
+.reel .outro__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.reel .outro__name {
+  margin: 0.3em 0 0.2em;
+  font-family: var(--tf);
+  font-size: calc(var(--tf-size) * 0.8);
+  font-weight: 400;
+  line-height: 1.25;
+  color: #fff;
+  text-shadow: 0 0 28px var(--accent);
+}
+
+.reel .scene-outro .pixel-label {
+  margin-top: 1.4em;
+  color: #fff;
+}
+
+/* ── Overlays ─────────────────────────────────────────────── */
+.reel__grain {
+  position: absolute;
+  inset: -50%;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  animation: grain 1s steps(4) infinite;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-5%, 3%); }
+  50% { transform: translate(4%, -4%); }
+  75% { transform: translate(-3%, -2%); }
+}
+
+.reel__vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at center, transparent 55%, rgba(0, 0, 0, 0.55)),
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.025) 0 1px, transparent 1px 3px);
+}
+
+.reel__chapter {
+  position: absolute;
+  top: 2.2cqw;
+  left: 2.6cqw;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  font-family: var(--pixel);
+  font-size: clamp(8px, 0.95cqw, 11px);
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+}
+
+.reel__rec {
+  width: 0.8em;
+  height: 0.8em;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+.reel.is-playing .reel__rec {
+  animation: blink 1.2s steps(1) infinite;
+}
+
+/* Pause every animation inside the scenes with the clock */
+.reel.is-paused .scene,
+.reel.is-paused .scene *,
+.reel.is-paused .scene *::before,
+.reel.is-paused .scene *::after,
+.reel.is-paused .reel__sweep {
+  animation-play-state: paused !important;
+}
+
+/* ── Poster (before play) ─────────────────────────────────── */
+.reel__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6cqw;
+  overflow: hidden;
+  border: none;
+  background: #050507;
+  color: #fff;
+  cursor: pointer;
+}
+
+.reel__poster-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  filter: blur(3px) brightness(0.35) saturate(1.2);
+  transform: scale(1.08);
+}
+
+.reel__poster-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.reel__poster-title span {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(16px, 2.6cqw, 30px);
+  font-weight: 300;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+}
+
+.reel__poster-title strong {
+  font-family: var(--tf);
+  font-size: calc(var(--tf-size) * 0.85);
+  font-weight: 400;
+  line-height: 1.3;
+  text-shadow: 0 0 30px var(--accent);
+}
+
+.reel__play-big {
+  display: grid;
+  place-items: center;
+  width: clamp(56px, 9cqw, 96px);
+  aspect-ratio: 1;
+  padding-left: 0.4%;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 60%, transparent);
+  animation: play-pulse 2.2s ease-in-out infinite;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.reel__poster:hover .reel__play-big,
+.reel__poster:focus-visible .reel__play-big {
+  background: var(--accent);
+  color: #000;
+}
+
+@keyframes play-pulse {
+  0%, 100% { box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 50%, transparent); }
+  50% { box-shadow: 0 0 0 10px color-mix(in srgb, var(--accent) 15%, transparent), 0 0 40px var(--accent); }
+}
+
+.reel__poster-note {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(11px, 1.3cqw, 14px);
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── End card ─────────────────────────────────────────────── */
+.reel__end {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  padding-bottom: 7cqw;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 55%);
+  cursor: default;
+}
+
+.reel__replay {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.7em 1.3em;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.reel__replay:hover {
+  background: var(--accent);
+  color: #000;
+  box-shadow: 0 0 20px var(--accent);
+}
+
+.reel__end-note {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* ── Controls ─────────────────────────────────────────────── */
+.reel__controls {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  height: 52px;
+  padding: 0 0.9rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(10, 10, 12, 0.95);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.reel__btn {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.reel__btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.reel__time {
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.reel__track {
+  display: flex;
+  flex: 1;
+  gap: 3px;
+  min-width: 0;
+}
+
+.reel__seg {
+  flex-basis: 0;
+  height: 22px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.reel__seg-bar {
+  position: relative;
+  display: block;
+  height: 5px;
+  overflow: hidden;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.15);
+  transition: height 0.15s ease;
+}
+
+.reel__seg:hover .reel__seg-bar {
+  height: 8px;
+}
+
+.reel__seg-fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: left;
+  background: var(--accent);
+}
+
+/* ── Full screen ──────────────────────────────────────────── */
+.reel.is-fullscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 0;
+  background: #000;
+}
+
+.reel.is-fullscreen .reel__stage,
+.reel.is-fullscreen .reel__controls {
+  width: min(100vw, calc((100vh - 52px) * var(--ar)));
+}
+
+/* ── Phones: 4:5 frame, stacked layouts ───────────────────── */
+@container reel (max-width: 560px) {
+  .reel .scene {
+    padding: 9cqw 7cqw 7cqw;
+  }
+
+  .reel .pixel-label { font-size: 2.6cqw; }
+  .reel .headline { font-size: 7.6cqw; }
+  .reel .body { font-size: 3.8cqw; }
+
+  .reel .split {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 4cqw;
+    text-align: center;
+  }
+
+  .reel .split .copy {
+    align-items: center;
+  }
+
+  .reel .bullets {
+    text-align: left;
+  }
+
+  .reel .identity__photo {
+    width: 40cqw;
+  }
+
+  .reel .identity__place {
+    display: flex;
+    justify-content: center;
+    margin: 0.2em 0 0;
+  }
+
+  .reel .identity__tape { font-size: 3.4cqw; }
+  .reel .roles { justify-content: center; font-size: 3.2cqw; }
+
+  .reel .broadcast__photo {
+    width: 30cqw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+
+  .reel .lower-third {
+    display: none;
+  }
+
+  .reel .scene-builder {
+    justify-content: flex-end;
+  }
+
+  .reel .mosaic-wrap {
+    top: -4%;
+    right: -14%;
+    width: 128%;
+    height: 60%;
+  }
+
+  .reel .builder__shade {
+    background: linear-gradient(180deg, transparent 18%, rgba(7, 7, 10, 0.85) 42%, #07070a 55%);
+  }
+
+  .reel .builder__copy { width: 100%; }
+  .reel .stat__num { font-size: 15cqw; }
+  .reel .stat__label { font-size: 2.6cqw; }
+  .reel .chips { font-size: 2.9cqw; }
+
+  .reel .scene-music { --spread: 15cqw; }
+  .reel .fan { height: 30cqw; }
+  .reel .fan__cover { width: 22cqw; }
+  .reel .music__artists { font-size: 3.6cqw; }
+  .reel .platforms { font-size: 3.2cqw; }
+
+  .reel .scene-worlds {
+    justify-content: center;
+    padding-top: 10cqw;
+  }
+
+  .reel .worlds__clips {
+    grid-template-columns: 1fr;
+    width: 64%;
+    margin: 3cqw auto 0;
+    gap: 3cqw;
+  }
+
+  .reel .next__ghost {
+    font-size: 40cqw;
+    top: auto;
+    bottom: -6cqw;
+  }
+
+  .reel .quote { font-size: 8.5cqw; max-width: 86cqw; }
+  .reel .quote__tag { font-size: 2.6cqw; }
+
+  .reel .next__list { width: 100%; gap: 3.5cqw; }
+  .reel .next__list li { font-size: 3.6cqw; }
+  .reel .next__goal { max-width: none; margin-top: 4cqw; }
+
+  .reel .outro__logo { width: 34cqw; }
+  .reel__chapter { font-size: 2.2cqw; top: 3cqw; left: 4cqw; }
+  .reel__poster { gap: 4cqw; }
+  .reel__poster-title span { font-size: 4.2cqw; }
+  .reel__poster-note { font-size: 3.2cqw; }
+
+  /* Theme title fonts need more room in the narrow frame */
+  .reel .open__name { font-size: calc(var(--tf-size) * 1.45); }
+  .reel__poster-title strong { font-size: calc(var(--tf-size) * 1.35); }
+  .reel .outro__name { font-size: calc(var(--tf-size) * 1.3); }
+  .reel .open__who { font-size: 4.6cqw; }
+}
+
+@media (max-width: 480px) {
+  .reel__controls {
+    gap: 0.45rem;
+    padding: 0 0.6rem;
+  }
+
+  .reel__time {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reel .kb,
+  .reel .mosaic,
+  .reel .eq span,
+  .reel .pixel-grid,
+  .reel__grain,
+  .reel__play-big {
+    animation: none !important;
+  }
+
+  .reel .scene:not(.is-leaving) {
+    animation-name: sc-fade !important;
+  }
+}

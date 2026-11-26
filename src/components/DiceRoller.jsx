@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Dices, Skull } from 'lucide-react';
 import '../assets/styles/diceRoller.css';
@@ -42,7 +42,7 @@ const SPARKS = Array.from({ length: 10 }, (_, i) => i);
 // sequence so the roll always finishes in exactly this many steps.
 const CYCLE_DELAYS = [35, 45, 60, 75, 95];
 
-const DiceRoller = ({ theme }) => {
+const DiceRoller = ({ theme, onBaseHeight }) => {
   const [sides, setSides] = useState(20);
   const [count, setCount] = useState(1);
   const [modifier, setModifier] = useState(0);
@@ -55,6 +55,29 @@ const DiceRoller = ({ theme }) => {
 
   const cycleTimeoutRef = useRef(null);
   useEffect(() => () => clearTimeout(cycleTimeoutRef.current), []);
+
+  // Report the card's "untouched" height (roll results and history removed)
+  // so the weather widget can match it without growing along with the dice.
+  const rootRef = useRef(null);
+  const resultRef = useRef(null);
+  const historyRef = useRef(null);
+
+  useLayoutEffect(() => {
+    if (!onBaseHeight) return;
+    const measure = () => {
+      const stage = resultRef.current;
+      const log = historyRef.current;
+      const stageGrowth = stage.offsetHeight - parseFloat(getComputedStyle(stage).minHeight);
+      const logHeight = log
+        ? log.offsetHeight + parseFloat(getComputedStyle(log).marginTop)
+        : 0;
+      onBaseHeight(Math.round(rootRef.current.offsetHeight - stageGrowth - logHeight));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(rootRef.current);
+    return () => observer.disconnect();
+  }, [onBaseHeight, history.length]);
 
   const performRoll = (rollSides, rollCount, rollModifier) => {
     clearTimeout(cycleTimeoutRef.current);
@@ -108,7 +131,7 @@ const DiceRoller = ({ theme }) => {
   };
 
   return (
-    <div className={`dice-roller dice-roller--${theme}`}>
+    <div ref={rootRef} className={`dice-roller dice-roller--${theme}`}>
       <div className="dice-roller__header">
         <Dices size={22} />
         <h3>Dice Roller</h3>
@@ -169,7 +192,10 @@ const DiceRoller = ({ theme }) => {
         <button type="submit">Roll</button>
       </form>
 
-      <div className={`dice-roller__result ${critState ? `dice-roller__result--${critState}` : ''}`}>
+      <div
+        ref={resultRef}
+        className={`dice-roller__result ${critState ? `dice-roller__result--${critState}` : ''}`}
+      >
         {critState === 'crit' && (
           <div className="dice-roller__burst">
             {SPARKS.map((i) => (
@@ -258,7 +284,7 @@ const DiceRoller = ({ theme }) => {
       </div>
 
       {history.length > 0 && (
-        <ul className="dice-roller__history">
+        <ul ref={historyRef} className="dice-roller__history">
           {history.map((h) => (
             <li key={h.id}>
               <span>{h.label}</span>
