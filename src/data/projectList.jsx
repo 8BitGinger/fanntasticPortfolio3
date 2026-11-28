@@ -35,6 +35,7 @@ import img27 from '../assets/pictures/project-pics/neonStudioProject.webp';
 import img28 from '../assets/pictures/project-pics/oracleDeck.webp';
 import img29 from '../assets/pictures/project-pics/rigCheck.webp';
 import img30 from '../assets/pictures/project-pics/ryfiStudioLogo.webp';
+import img31 from '../assets/pictures/project-pics/satTracker.webp';
 
 const projectList = [
   {
@@ -331,6 +332,17 @@ const projectList = [
     youtube: '',
     category: 'tools',
   },
+
+  {
+    img: img31,
+    title: 'Starlink Satellite Tracker',
+    subtitle: 'JS, API',
+    description: 'A visual tracker for Starlink satellites.',
+    link: 'https://8bitginger.github.io/starlinkSatTracker/',
+    git: 'https://github.com/8BitGinger/starlinkSatTracker',
+    youtube: '',
+    category: 'web',
+  }
 ];
 
 const getCategoryIcon = (category) => {
